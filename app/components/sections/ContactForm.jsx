@@ -93,6 +93,7 @@ const ContactForm = () => {
                   opacity-100 group-hover:opacity-100 group-hover:via-black/60 transition-all duration-1000"
           ></div>
           <div className="absolute top-8 right-8 bg-[#ff6600] text-white p-4 rounded-full shadow-2xl animate-pulse">
+            
             <Car size={32} strokeWidth={2.5} />
           </div>
           <div className="absolute bottom-12 left-12 text-white z-10">
