@@ -5,14 +5,46 @@ import { X, ChevronLeft, ChevronRight, Camera } from "lucide-react";
 
 // 8 Dummy Images for Driving School
 const galleryImages = [
-  { id: 1, url: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800", title: "Learning to Drive" },
-  { id: 2, url: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800", title: "Passing the Test" },
-  { id: 3, url: "https://images.unsplash.com/photo-1449960232330-79ba99575d65?q=80&w=800", title: "Professional Instructor" },
-  { id: 4, url: "https://images.unsplash.com/photo-1516515429572-1f9f74c7424e?q=80&w=800", title: "Safety First" },
-  { id: 5, url: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800", title: "Classroom Training" },
-  { id: 6, url: "https://images.unsplash.com/photo-1521791136064-7986c2959210?q=80&w=800", title: "Successful Student" },
-  { id: 7, url: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=800", title: "Modern Cars" },
-  { id: 8, url: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8df0?q=80&w=800", title: "Road Trips" },
+  {
+    id: 1,
+    url: "/images/gallery/TM-Car.png",
+    title: "Learning to Drive",
+  },
+  {
+    id: 2,
+    url: "/images/gallery/TM-Car-1.png",
+    title: "Passing the Test",
+  },
+  {
+    id: 3,
+    url: "/images/gallery/TM-Car-2.jpg",
+    title: "Professional Instructor",
+  },
+  {
+    id: 4,
+    url: "/images/gallery/TM-Car-3.jpg",
+    title: "Safety First",
+  },
+  {
+    id: 5,
+    url: "/images/gallery/TM-Car-4.jpg",
+    title: "Classroom Training",
+  },
+  {
+    id: 6,
+    url: "/images/gallery/TM-Car-5.jpg",
+    title: "Successful Student",
+  },
+  {
+    id: 7,
+    url: "/images/gallery/TM-Car-6.jpg",
+    title: "Modern Cars",
+  },
+  {
+    id: 8,
+    url: "/images/gallery/TM-Car-7.png",
+    title: "Road Trips",
+  },
 ];
 
 const Gallery = () => {
@@ -35,7 +67,8 @@ const Gallery = () => {
 
   const prevImage = (e) => {
     e.stopPropagation();
-    const newIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    const newIndex =
+      (currentIndex - 1 + galleryImages.length) % galleryImages.length;
     setCurrentIndex(newIndex);
     setSelectedImage(galleryImages[newIndex]);
   };
@@ -46,7 +79,9 @@ const Gallery = () => {
       <div className="relative h-[450px] md:h-[500px] w-full overflow-hidden bg-gray-900">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-50"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1449960232330-79ba99575d65?q=80&w=1600')" }}
+          style={{
+            backgroundImage: "url('/images/hero-3.avif')",
+          }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-white"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 h-full flex flex-col justify-center items-center text-center">
@@ -56,7 +91,7 @@ const Gallery = () => {
             className="flex items-center justify-center gap-3 text-[#ff6600] font-bold tracking-[0.2em] uppercase text-sm mb-4"
           >
             <div className="h-[2px] w-8 bg-[#ff6600]"></div>
-            Our Success Stories
+            View Our Gallery
             <div className="h-[2px] w-8 bg-[#ff6600]"></div>
           </motion.div>
 
@@ -65,7 +100,7 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic leading-none"
           >
-            Image <span className="text-[#ff6600] ml-2">Gallery</span>
+            Our Successes <span className="text-[#ff6600] ml-2">on the Road</span>
           </motion.h1>
         </div>
       </div>
@@ -87,7 +122,9 @@ const Gallery = () => {
                 className="w-full h-64 object-cover rounded-lg"
               />
               <div className="p-3 text-center">
-                <p className="text-gray-800 font-bold uppercase text-xs tracking-widest">{item.title}</p>
+                <p className="text-gray-800 font-bold uppercase text-xs tracking-widest">
+                  {item.title}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -110,7 +147,7 @@ const Gallery = () => {
             </button>
 
             {/* Left Arrow */}
-            <button 
+            <button
               onClick={prevImage}
               className="absolute left-4 md:left-10 text-white hover:text-[#ff6600] transition p-2 bg-white/10 rounded-full"
             >
@@ -118,7 +155,7 @@ const Gallery = () => {
             </button>
 
             {/* Image Container */}
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
@@ -135,7 +172,7 @@ const Gallery = () => {
             </motion.div>
 
             {/* Right Arrow */}
-            <button 
+            <button
               onClick={nextImage}
               className="absolute right-4 md:right-10 text-white hover:text-[#ff6600] transition p-2 bg-white/10 rounded-full"
             >
