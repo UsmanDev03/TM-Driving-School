@@ -100,7 +100,8 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic leading-none"
           >
-            Our Successes <span className="text-[#ff6600] ml-2">on the Road</span>
+            Our Successes{" "}
+            <span className="text-[#ff6600] ml-2">on the Road</span>
           </motion.h1>
         </div>
       </div>
@@ -132,26 +133,35 @@ const Gallery = () => {
       </div>
 
       {/* 3. Popup Modal (Lightbox) */}
+      {/* 3. Popup Modal (Lightbox) */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={closeModal}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 md:p-10"
+            className="fixed inset-0 z-[110] bg-black/95 flex items-center justify-center p-4"
           >
+            {/* Overlay Click to Close */}
+            <div className="absolute inset-0" onClick={closeModal}></div>
+
             {/* Close Button */}
-            <button className="absolute top-6 right-6 text-white hover:text-[#ff6600] transition">
+            <button
+              onClick={closeModal}
+              className="absolute top-6 right-6 text-white/70 hover:text-[#ff6600] transition-all z-[130]"
+            >
               <X size={40} />
             </button>
 
-            {/* Left Arrow */}
+            {/* Left Arrow - Blur Removed */}
             <button
-              onClick={prevImage}
-              className="absolute left-4 md:left-10 text-white hover:text-[#ff6600] transition p-2 bg-white/10 rounded-full"
+              onClick={(e) => {
+                e.stopPropagation();
+                prevImage(e);
+              }}
+              className="absolute left-2 md:left-10 text-white/80 hover:text-[#ff6600] transition-all z-[130] active:scale-90"
             >
-              <ChevronLeft size={48} />
+              <ChevronLeft size={40} className="md:w-16 md:h-16" />
             </button>
 
             {/* Image Container */}
@@ -159,24 +169,27 @@ const Gallery = () => {
               initial={{ scale: 0.8 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0.8 }}
-              className="relative max-w-5xl w-full h-[80vh] flex flex-col items-center justify-center"
+              className="relative max-w-5xl w-full h-[70vh] flex flex-col items-center justify-center z-[120] pointer-events-none"
             >
               <img
                 src={selectedImage.url}
                 alt="Selected"
-                className="max-w-full max-h-full object-contain shadow-2xl rounded-lg border-4 border-white/10"
+                className="max-w-full max-h-full object-contain shadow-2xl rounded-lg border-2 border-white/10 pointer-events-auto"
               />
-              <p className="text-white mt-4 text-xl font-bold italic uppercase tracking-widest">
+              <p className="text-white mt-6 text-lg md:text-xl font-bold italic uppercase tracking-widest text-center">
                 {selectedImage.title}
               </p>
             </motion.div>
 
-            {/* Right Arrow */}
+            {/* Right Arrow - Blur Removed */}
             <button
-              onClick={nextImage}
-              className="absolute right-4 md:right-10 text-white hover:text-[#ff6600] transition p-2 bg-white/10 rounded-full"
+              onClick={(e) => {
+                e.stopPropagation();
+                nextImage(e);
+              }}
+              className="absolute right-2 md:right-10 text-white/80 hover:text-[#ff6600] transition-all z-[130] active:scale-90"
             >
-              <ChevronRight size={48} />
+              <ChevronRight size={40} className="md:w-16 md:h-16" />
             </button>
           </motion.div>
         )}
