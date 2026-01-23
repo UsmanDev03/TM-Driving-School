@@ -1,6 +1,13 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+// 1. Pehle navLinks ko Footer component ke bahar define kar len
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "Prices", href: "/price" },
+  { name: "Testimonials", href: "/testimonials" },
+  { name: "Gallery", href: "/gallery" },
+];
 import {
   Phone,
   Mail,
@@ -30,7 +37,7 @@ const Footer = () => {
           </div>
           <p className="text-gray-400 leading-relaxed text-sm">
             I offer a high standard of driving tuition at a price that you can
-            afford. With over 28 years of experience, I help you pass with
+            afford. With over 20+ years of experience, I help you pass with
             confidence.
           </p>
           <div className="flex gap-4">
@@ -52,14 +59,19 @@ const Footer = () => {
             Quick Links
           </h4>
           <ul className="flex flex-col gap-4">
-            {["Home", "Prices", "Testimonials", "Gallery", "Contact"].map(
+            {/* 2. Ab yahan error nahi aayega kyunki navLinks upar define hai */}
+            {[...navLinks, { name: "Contact", href: "/contact" }].map(
               (item) => (
-                <motion.li key={item} whileHover={{ x: 5 }}>
+                <motion.li key={item.name} whileHover={{ x: 5 }}>
                   <a
-                    href={`#${item.toLowerCase()}`}
-                    className="text-gray-400 hover:text-[#ff6600] flex items-center gap-2 text-sm transition-colors"
+                    href={item.href}
+                    className="text-gray-400 hover:text-[#ff6600] flex items-center gap-2 text-sm transition-colors group"
                   >
-                    <ArrowRight size={14} className="text-[#ff6600]" /> {item}
+                    <ArrowRight
+                      size={14}
+                      className="text-[#ff6600] opacity-70 group-hover:opacity-100 transition-opacity"
+                    />
+                    {item.name}
                   </a>
                 </motion.li>
               ),
@@ -113,9 +125,15 @@ const Footer = () => {
               </div>
             </motion.a>
 
-            <div className="flex items-start gap-4 group">
-              <div className="bg-[#ff6600]/10 p-3 rounded-lg">
-                <MapPin size={20} className="text-[#ff6600]" />
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="flex items-start gap-4 group cursor-default"
+            >
+              <div className="bg-[#ff6600]/10 p-3 rounded-lg group-hover:bg-[#ff6600] transition-colors duration-300">
+                <MapPin
+                  size={20}
+                  className="text-[#ff6600] group-hover:text-white transition-colors duration-300"
+                />
               </div>
               <div>
                 <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">
@@ -125,7 +143,7 @@ const Footer = () => {
                   Maida Vale, London
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
