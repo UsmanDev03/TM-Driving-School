@@ -24,31 +24,34 @@ const Contact = () => {
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-white"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10 h-full flex flex-col justify-center">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 h-full flex flex-col justify-center items-center text-center">
+          {/* Sub-heading - Matching the 'Professional manual driving...' style weight */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="flex items-center gap-2 text-[#ff6600] font-black tracking-widest uppercase text-sm mb-4"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center justify-center gap-3 text-[#ff6600] font-bold tracking-[0.2em] uppercase text-sm mb-4"
           >
-            <div className="h-[2px] w-8 bg-[#ff6600]"></div> Let's Get On The
-            Road
+            <div className="h-[2px] w-8 bg-[#ff6600]"></div>
+            Let's Get On The Road
+            <div className="h-[2px] w-8 bg-[#ff6600]"></div>
           </motion.div>
+
+          {/* Main Title - EXACT same size and weight as Pricing Hero */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase italic leading-none"
+            className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic leading-none whitespace-nowrap"
           >
-            Contact <br />
-            <span className="text-[#ff6600]">Paul May</span>
+            Contact <span className="text-[#ff6600] ml-2">Turon Miah</span>
           </motion.h1>
         </div>
       </div>
 
       {/* 2. Main Contact Card Section */}
-      <ContactForm/>
-      
+      <ContactForm />
+
       {/* 4. Areas Covered Section */}
-      <Map/>
+      <Map />
     </div>
   );
 };
