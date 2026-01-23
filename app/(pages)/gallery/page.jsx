@@ -13,37 +13,37 @@ const galleryImages = [
   {
     id: 2,
     url: "/images/gallery/TM-Car-1.png",
-    title: "Passing the Test",
+    title: "Precision Parking Practice",
   },
   {
     id: 3,
     url: "/images/gallery/TM-Car-2.jpg",
-    title: "Professional Instructor",
+    title: "The Look of Confidence",
   },
   {
     id: 4,
     url: "/images/gallery/TM-Car-3.jpg",
-    title: "Safety First",
+    title: "Modern Car",
   },
   {
     id: 5,
     url: "/images/gallery/TM-Car-4.jpg",
-    title: "Classroom Training",
+    title: "Confidence Behind the Wheel",
   },
   {
     id: 6,
     url: "/images/gallery/TM-Car-5.jpg",
-    title: "Successful Student",
+    title: "Smooth Gear Transitions",
   },
   {
     id: 7,
     url: "/images/gallery/TM-Car-6.jpg",
-    title: "Modern Cars",
+    title: "Safety First",
   },
   {
     id: 8,
     url: "/images/gallery/TM-Car-7.png",
-    title: "Road Trips",
+    title: "Ready for the Road Test",
   },
 ];
 
