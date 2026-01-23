@@ -154,14 +154,15 @@ const Gallery = () => {
             </button>
 
             {/* Left Arrow - Blur Removed */}
+            {/* Left Arrow - Light Blur Added */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 prevImage(e);
               }}
-              className="absolute left-2 md:left-10 text-white/80 hover:text-[#ff6600] transition-all z-[130] active:scale-90"
+              className="absolute left-2 md:left-10 text-white hover:text-[#ff6600] transition-all p-3 bg-white/2 backdrop-blur-[2px] rounded-full z-[130] active:scale-95"
             >
-              <ChevronLeft size={40} className="md:w-16 md:h-16" />
+              <ChevronLeft size={36} className="md:w-12 md:h-12" />
             </button>
 
             {/* Image Container */}
@@ -182,14 +183,15 @@ const Gallery = () => {
             </motion.div>
 
             {/* Right Arrow - Blur Removed */}
+            {/* Right Arrow - Light Blur Added */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 nextImage(e);
               }}
-              className="absolute right-2 md:right-10 text-white/80 hover:text-[#ff6600] transition-all z-[130] active:scale-90"
+              className="absolute right-2 md:right-10 text-white hover:text-[#ff6600] transition-all p-3 bg-white/2 backdrop-blur-[2px] rounded-full z-[130] active:scale-95"
             >
-              <ChevronRight size={40} className="md:w-16 md:h-16" />
+              <ChevronRight size={36} className="md:w-12 md:h-12" />
             </button>
           </motion.div>
         )}
