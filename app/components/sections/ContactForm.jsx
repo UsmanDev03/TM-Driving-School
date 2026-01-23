@@ -84,7 +84,7 @@ const ContactForm = () => {
 
         <div className="relative min-h-[500px] bg-gray-900 group overflow-hidden">
           <img
-            src="/images/contact-image.avif"
+            src="/images/gallery/TM-Car-7.png"
             alt="Professional Driving Lesson"
             className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90"
           />
