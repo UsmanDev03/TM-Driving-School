@@ -44,13 +44,13 @@ export const formFields = [{
     id: "phone",
     type: "tel",
     placeholder: "Mobile Number",
-    icon: Smartphone, // Smartphone likhen
+    icon: Smartphone,
   },
   {
     id: "time",
     type: "select",
     placeholder: "Preferred Lesson Time",
-    icon: Clock, // Clock likhen
+    icon: Clock,
     options: [{
         label: "Morning (8am - 12pm)",
         value: "morning"
