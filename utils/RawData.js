@@ -73,53 +73,147 @@ export const formFields = [{
 
 export const testimonialsData = [{
     id: 1,
-    name: "James Wilson",
-    role: "Manual Pass",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1000",
-    carImg: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=1000",
-    text: "Paul is an incredible instructor. Calm, composed, and knows exactly how to handle nervous learners. Passed with only 2 minors!",
+    name: "Rodner Matienzo",
     rating: 5,
-    size: "large"
+    text: "Turon was a great instructor.",
+    date: "Jan 22, 2025",
+    img: "/images/star.png",
+    role: "Verified Student"
   },
   {
     id: 2,
-    name: "Sarah Jenkins",
-    role: "Automatic Pass",
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000",
-    carImg: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=1000",
-    text: "Best driving school in Shaw. Period. The prices are fair and the quality of teaching is top-notch.",
+    name: "Rafael",
     rating: 5,
-    size: "small"
+    text: "Turon was an amazing instructor! I would definitely recommend him to anyone that would like to learn and to pass their driving test.",
+    date: "Jan 15, 2025",
+    img: "/images/star.png",
+    role: "Verified Student"
   },
   {
     id: 3,
-    name: "Marcus Thorne",
-    role: "Refresher Course",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000",
-    carImg: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1000",
-    text: "I hadn't driven in years. Marcus helped me regain my confidence in just 3 sessions.",
+    name: "Tarcayani",
     rating: 5,
-    size: "small"
+    text: "Had a great experience learning to drive with Turon who is extremely patient and knowledgeable! I had a big fear of driving and he managed to help me slowly progress over time and eventually passed on my first attempt!",
+    date: "Nov 27, 2024",
+    img: "/images/star.png",
+    role: "First Time Pass"
   },
   {
     id: 4,
-    name: "Emma Stone",
-    role: "Intensive Course",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1000",
-    carImg: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1000",
-    text: "Passed my test in just 2 weeks! The intensive course is worth every penny. Highly recommended!",
+    name: "Raluca",
     rating: 5,
-    size: "medium"
+    text: "Thanks to the help of my driving instructor Turon Miah I was able to pass first time. He is an amazing instructor and very knowledgable. He is very calm and helps you build your confidence behind the wheel. I really appreciate all the help and fully recommend him. 10/10 experience!",
+    date: "Feb 26, 2024",
+    img: "/images/star.png",
+    role: "10/10 Experience"
   },
   {
     id: 5,
-    name: "Liam Neeson",
-    role: "Motorway Pro",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000",
-    carImg: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1000",
-    text: "Professional, punctual, and very knowledgeable. The motorway training was excellent.",
+    name: "Hicham Boumediane",
     rating: 5,
-    size: "small"
+    text: "Turon Miah is an exceptional driving instructor. He's very experienced, devoted, patient and friendly. He also pointed out all my mistakes at the end of each session to make sure that I fully understand them before taking the driving test.",
+    date: "Jan 5, 2024",
+    img: "/images/star.png",
+    role: "Exceptional Student"
+  },
+  {
+    id: 6,
+    name: "Aleksandra Kovaleva",
+    rating: 5,
+    text: "Turon was a great instructor and helped me to pass first time with 2 minors after 5 weeks.",
+    date: "Mar 25, 2025",
+    img: "/images/star.png",
+    role: "Passed First Time"
+  },
+  {
+    id: 7,
+    name: "Nayef",
+    rating: 5,
+    text: "Turon was a really great instructor, patient and prepared me well for the exam and real world driving. His understanding of what it takes to become a good driver helped me pass my test with only 3 minors.",
+    date: "Jul 30, 2025",
+    img: "/images/star.png",
+    role: "Verified Student"
+  },
+  {
+    id: 8,
+    name: "Ayesha",
+    rating: 5,
+    text: "Turon is lovely, calm and helped me loads while still being kind and friendly. Made me feel at ease and helped me pass with a lot less anxiety! I always looked forward to the lessons and left them feeling more and more prepared. Very grateful!",
+    date: "Oct 9, 2025",
+    img: "/images/star.png",
+    role: "Verified Student"
+  },
+  {
+    id: 9,
+    name: "Amine Achour",
+    rating: 5,
+    text: "I don't think there is a better driving instructor to go through if you are looking for a license. My instructor's patience and great understanding of the roads made me feel so confident on the road and therefore made my test feel so easy. I really appreciate the patience and hard work I was put through.",
+    date: "Oct 9, 2025",
+    img: "/images/star.png",
+    role: "Verified Student"
+  },
+  {
+    id: 10,
+    name: "Graziele Perini",
+    rating: 5,
+    text: "Today I passed my test with 0 faults thanks to my instructor Turon Miah! He was so helpful and patient with me along my journey learning how to drive a manual car. His teaching is exceptional, he is so dedicated to his students.",
+    date: "Oct 15, 2025",
+    img: "/images/star.png",
+    role: "Passed with 0 Faults"
+  },
+  {
+    id: 11,
+    name: "Franz-Mathias Kurg",
+    rating: 5,
+    text: "Great instructor got me to pass my test first time. Highly recommended for anyone looking to learn quickly and safely.",
+    date: "Oct 16, 2025",
+    img: "/images/star.png",
+    role: "First Time Pass"
+  },
+  {
+    id: 12,
+    name: "Melo Brion",
+    rating: 5,
+    text: "Passed my driving test first attempt with ONLY 1 fault. Excellent feedback from the instructor. You worked hard for this. Thank you Turon!",
+    date: "Dec 2, 2025",
+    img: "/images/star.png",
+    role: "1st Attempt Pass"
+  },
+  {
+    id: 13,
+    name: "Oscar",
+    rating: 5,
+    text: "Passed my driving Test with only 2 driver faults. Turon is a legend! See you on the road.",
+    date: "Feb 11, 2025",
+    img: "/images/star.png",
+    role: "2 Minors Pass"
+  },
+  {
+    id: 14,
+    name: "Judi",
+    rating: 5,
+    text: "Passed my driving test in Mill Hill. Good to be independent. Turon's teaching was key to my success. Very well done to me but thanks to him!",
+    date: "Feb 24, 2025",
+    img: "/images/star.png",
+    role: "Verified Student"
+  },
+  {
+    id: 15,
+    name: "Sophie Brett",
+    rating: 5,
+    text: "Passed my test first time in Pinner. Big thanks to Turon Miah for being an amazing instructor and helping me through the process.",
+    date: "Jul 28, 2025",
+    img: "/images/star.png",
+    role: "First Time Pass"
+  },
+  {
+    id: 16,
+    name: "Daniel Smith", // Aap yahan image se dekh kar sahi naam likh sakte hain
+    rating: 5,
+    text: "Turon made the whole experience so much easier. His calm nature and expertise are unmatched. Fully recommend to anyone looking to pass quickly!",
+    date: "Nov 2025",
+    img: "/images/star.png",
+    role: "Verified Student"
   }
 ];
 
