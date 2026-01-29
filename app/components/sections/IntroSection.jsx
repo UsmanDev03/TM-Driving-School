@@ -30,14 +30,6 @@ const IntroSection = () => {
     { title: "Free Theory Help", icon: <Mail className="text-orange-500" /> },
   ];
 
-  const locations = [
-    { area: "Oldham" },
-    { area: "Rochdale" },
-    { area: "Tameside" },
-    { area: "North Manchester" },
-    { area: "Middleton" },
-  ];
-
   return (
     <section className="py-16 bg-[#fdfdfd]">
       <div className="max-w-7xl mx-auto px-6">

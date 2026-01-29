@@ -1,50 +1,348 @@
-// export const locations = [
-//         { area: "Oldham", address: "17 Hertfordshire Park Close, TM, OL2 7YP" },
-//         { area: "Rochdale", address: "Main Street, Rochdale Area" },
-//         { area: "Tameside", address: "Local Service Area, Tameside" },
-//         { area: "North Manchester", address: "Serving North Manchester" },
-//         { area: "Middleton", address: "Middleton & Surrounding" }
-
 import {
   Clock,
   Smartphone,
-  User
+  User,
+  MapPin
 } from "lucide-react";
 
-//     ];
-export const locations = [{
-    area: "Maida Vale"
+export const locations_map = [{
+    name: "Notting Hill (W8)",
+    lat: 51.5096,
+    lng: -0.1960
   },
   {
-    area: "Notting Hill"
+    name: "Maida Vale (W9)",
+    lat: 51.5295,
+    lng: -0.1857
   },
   {
-    area: "Shepherds Bush"
+    name: "Holland Park (W8)",
+    lat: 51.5056,
+    lng: -0.2056
   },
   {
-    area: "Hammersmith"
+    name: "Kensington (W8)",
+    lat: 51.5009,
+    lng: -0.1936
   },
   {
-    area: "South Kensington"
+    name: "Bayswater (W2)",
+    lat: 51.5123,
+    lng: -0.1878
   },
   {
-    area: "Fulham"
+    name: "Queensway (W2)",
+    lat: 51.5128,
+    lng: -0.1870
   },
   {
-    area: "Chelsea"
+    name: "Paddington (W2)",
+    lat: 51.5154,
+    lng: -0.1755
+  },
+  {
+    name: "Westbourne Grove (W2)",
+    lat: 51.5145,
+    lng: -0.1973
+  },
+
+  {
+    name: "Earls Court (SW5)",
+    lat: 51.4915,
+    lng: -0.1939
+  },
+  {
+    name: "South Kensington (SW7)",
+    lat: 51.4941,
+    lng: -0.1739
+  },
+  {
+    name: "Fulham (SW6)",
+    lat: 51.4751,
+    lng: -0.2011
+  },
+  {
+    name: "Chelsea (SW3)",
+    lat: 51.4875,
+    lng: -0.1687
+  },
+
+  {
+    name: "Hammersmith (W6)",
+    lat: 51.4927,
+    lng: -0.2235
+  },
+  {
+    name: "White City (W12)",
+    lat: 51.5123,
+    lng: -0.2245
+  },
+  {
+    name: "Shepherd’s Bush (W12)",
+    lat: 51.5058,
+    lng: -0.2265
+  },
+  {
+    name: "East Acton (W3)",
+    lat: 51.5175,
+    lng: -0.2478
+  },
+  {
+    name: "Acton (W3/W12)",
+    lat: 51.5088,
+    lng: -0.2765
+  },
+
+  {
+    name: "Park Royal (NW10)",
+    lat: 51.5276,
+    lng: -0.2844
+  },
+  {
+    name: "Queens Park (NW6)",
+    lat: 51.5344,
+    lng: -0.2045
+  },
+  {
+    name: "Ladbroke Grove (W10/W11)",
+    lat: 51.5179,
+    lng: -0.2106
+  },
+  {
+    name: "Kensal Rise (NW10)",
+    lat: 51.5341,
+    lng: -0.2202
+  },
+
+  {
+    name: "St John's Wood (NW8)",
+    lat: 51.5348,
+    lng: -0.1740
+  },
+  {
+    name: "Swiss Cottage (NW8)",
+    lat: 51.5430,
+    lng: -0.1749
+  },
+  {
+    name: "West Hampstead (NW6)",
+    lat: 51.5467,
+    lng: -0.1907
   },
 ];
+
+export const locations = [{
+    area: "Notting Hill",
+    postcode: "W8"
+  },
+  {
+    area: "Maida Vale",
+    postcode: "W9"
+  },
+  {
+    area: "Holland Park",
+    postcode: "W8"
+  },
+  {
+    area: "Kensington",
+    postcode: "W8"
+  },
+  {
+    area: "Bayswater",
+    postcode: "W2"
+  },
+  {
+    area: "Queensway",
+    postcode: "W2"
+  },
+  {
+    area: "Paddington",
+    postcode: "W2"
+  },
+  {
+    area: "Westbourne Grove",
+    postcode: "W2"
+  },
+  {
+    area: "Earls Court",
+    postcode: "SW5"
+  },
+  {
+    area: "South Kensington",
+    postcode: "SW7"
+  },
+  {
+    area: "Fulham",
+    postcode: "SW6"
+  },
+  {
+    area: "Chelsea",
+    postcode: "SW3"
+  },
+  {
+    area: "Hammersmith",
+    postcode: "W6"
+  },
+  {
+    area: "White City",
+    postcode: "W12"
+  },
+  {
+    area: "Shepherd’s Bush",
+    postcode: "W12"
+  },
+  {
+    area: "East Acton",
+    postcode: "W3"
+  },
+  {
+    area: "Acton",
+    postcode: "W3, W12"
+  },
+  {
+    area: "Park Royal",
+    postcode: "NW10"
+  },
+  {
+    area: "Queens Park",
+    postcode: "NW6"
+  },
+  {
+    area: "Ladbroke Grove",
+    postcode: "W10, W11"
+  },
+  {
+    area: "Kensal Rise",
+    postcode: "NW10"
+  },
+  {
+    area: "St John's Wood",
+    postcode: "NW8"
+  },
+  {
+    area: "Swiss Cottage",
+    postcode: "NW8"
+  },
+  {
+    area: "West Hampstead",
+    postcode: "NW6"
+  }
+];
+
 export const formFields = [{
     id: "name",
     type: "text",
     placeholder: "Full Name",
-    icon: User, // <User /> ki jagah sirf User likhen
+    icon: User,
   },
   {
     id: "phone",
     type: "tel",
     placeholder: "Mobile Number",
     icon: Smartphone,
+  },
+  {
+    id: "area", // Naya Area Dropdown
+    type: "select",
+    placeholder: "Select Your Area",
+    icon: MapPin,
+    options: [{
+        label: "Notting Hill W8",
+        value: "notting-hill-w8"
+      },
+      {
+        label: "Maida Vale W9",
+        value: "maida-vale-w9"
+      },
+      {
+        label: "Holland Park W8",
+        value: "holland-park-w8"
+      },
+      {
+        label: "Kensington W8",
+        value: "kensington-w8"
+      },
+      {
+        label: "Bayswater W2",
+        value: "bayswater-w2"
+      },
+      {
+        label: "Queensway W2",
+        value: "queensway-w2"
+      },
+      {
+        label: "Paddington W2",
+        value: "paddington-w2"
+      },
+      {
+        label: "Westbourne Grove W2",
+        value: "westbourne-grove-w2"
+      },
+      {
+        label: "Earls Court SW5",
+        value: "earls-court-sw5"
+      },
+      {
+        label: "South Kensington SW7",
+        value: "south-kensington-sw7"
+      },
+      {
+        label: "Fulham SW6",
+        value: "fulham-sw6"
+      },
+      {
+        label: "Chelsea SW3",
+        value: "chelsea-sw3"
+      },
+      {
+        label: "Hammersmith W6",
+        value: "hammersmith-w6"
+      },
+      {
+        label: "White City W12",
+        value: "white-city-w12"
+      },
+      {
+        label: "Shepherd’s Bush W12",
+        value: "shepherds-bush-w12"
+      },
+      {
+        label: "East Acton W3",
+        value: "east-acton-w3"
+      },
+      {
+        label: "Acton W3, W12",
+        value: "acton-w3-w12"
+      },
+      {
+        label: "Park Royal NW10",
+        value: "park-royal-nw10"
+      },
+      {
+        label: "Queens Park NW6",
+        value: "queens-park-nw6"
+      },
+      {
+        label: "Ladbroke Grove W10, W11",
+        value: "ladbroke-grove-w10-w11"
+      },
+      {
+        label: "Kensal Rise NW10",
+        value: "kensal-rise-nw10"
+      },
+      {
+        label: "St John's Wood NW8",
+        value: "st-johns-wood-nw8"
+      },
+      {
+        label: "Swiss Cottage NW8",
+        value: "swiss-cottage-nw8"
+      },
+      {
+        label: "West Hampstead NW6",
+        value: "west-hampstead-nw6"
+      },
+    ],
   },
   {
     id: "time",
@@ -215,42 +513,4 @@ export const testimonialsData = [{
     img: "/images/star.png",
     role: "Verified Student"
   }
-];
-
-export const galleryImagesData = [{
-    id: 1,
-    src: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=1000',
-    alt: 'Driving Student',
-    title: 'First Time Pass'
-  },
-  {
-    id: 2,
-    src: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800',
-    alt: 'Instructor Car',
-    title: 'Modern Fleet'
-  },
-  {
-    id: 3,
-    src: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800',
-    alt: 'Happy Student',
-    title: 'Success Story'
-  },
-  {
-    id: 4,
-    src: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=800',
-    alt: 'Driving Lesson',
-    title: 'Expert Coaching'
-  },
-  {
-    id: 5,
-    src: 'https://images.unsplash.com/photo-1526726533690-5cbe947c9052?q=80&w=800',
-    alt: 'Road Test',
-    title: 'Confidence'
-  },
-  {
-    id: 6,
-    src: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1000',
-    alt: 'Car Exterior',
-    title: 'Quality Cars'
-  },
 ];
