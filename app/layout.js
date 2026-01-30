@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header title={"MIRZA USAMA"}/>
+        <Header title={"Usman"}/>
         {children}
         <Footer/>
       </body>
