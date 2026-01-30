@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="flex flex-col">
           {/* Sirf yahan tabdeeli ki hai: Logo add kiya hai */}
           <Link href="/" className="inline-block cursor-pointer w-fit">
-            <div className="relative xl:h-14 h-12 w-48 xl:w-52">
+            <div className="relative h-12 w-48">
               <Image
                 src="/images/logo/logo-1.png"
                 alt="TM Driving School Logo"
