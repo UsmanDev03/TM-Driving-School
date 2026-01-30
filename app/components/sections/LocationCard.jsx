@@ -11,7 +11,6 @@ const LocationCard = () => {
   const SliderRow = ({ items, direction = 1, speed = 40 }) => {
     const controls = useAnimation();
 
-    // Auto-play function
     const startAutoPlay = () => {
       controls.start({
         x: direction > 0 ? [-20, -2000] : [-2000, -20],
@@ -31,11 +30,10 @@ const LocationCard = () => {
     }, []);
 
     const handleDragStart = () => {
-      controls.stop(); // User jab pakray ga, animation ruk jayegi
+      controls.stop();
     };
 
     const handleDragEnd = () => {
-      // 3 second wait karne ke baad auto-play wapis shuru hoga
       setTimeout(() => {
         startAutoPlay();
       }, 3000);
@@ -56,15 +54,17 @@ const LocationCard = () => {
               key={index}
               className="inline-flex flex-col items-center justify-center bg-white min-w-[160px] p-4 rounded-2xl border border-gray-100 shadow-sm group relative overflow-hidden pointer-events-none"
             >
-              {/* pointer-events-none is liye taake drag smooth ho aur card beech mein na aaye */}
-              <div className="bg-orange-50 w-10 h-10 rounded-lg flex items-center justify-center mb-3 text-[#ff6600] group-hover:bg-[#ff6600] group-hover:text-white transition-all duration-300">
+              {/* UPDATED: Default background to Red, Hover to Blue */}
+              <div className="bg-red-50 w-10 h-10 rounded-lg flex items-center justify-center mb-3 text-[#b50926] group-hover:bg-[#0009c5] group-hover:text-white transition-all duration-300">
                 <MapPin size={18} strokeWidth={2.5} />
               </div>
+              
               <h4 className="font-black text-gray-900 text-[10px] uppercase tracking-tighter italic leading-tight">
                 {loc.area}
               </h4>
+              
               {loc.postcode && (
-                <span className="text-[#ff6600] text-[9px] font-black opacity-70 uppercase tracking-widest mt-1">
+                <span className="text-[#b50926] text-[9px] font-black opacity-70 uppercase tracking-widest mt-1">
                   {loc.postcode}
                 </span>
               )}

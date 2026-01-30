@@ -24,13 +24,12 @@ const slides = [
 const HeroSlider = () => {
   const [current, setCurrent] = useState(0);
 
-  // Auto-slide set to EXACTLY 10 seconds (10000ms)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 10000); 
     return () => clearInterval(timer);
-  }, [current]); // Added current to dependency for clean reset
+  }, [current]);
 
   const nextSlide = () => setCurrent(current === slides.length - 1 ? 0 : current + 1);
   const prevSlide = () => setCurrent(current === 0 ? slides.length - 1 : current - 1);
@@ -43,10 +42,9 @@ const HeroSlider = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1 }} // Smooth fade transition
+          transition={{ duration: 1 }}
           className="absolute inset-0"
         >
-          {/* Background Image - Animation slow rakhi hai taake 10s tak chale */}
           <motion.div
             initial={{ scale: 1 }}
             animate={{ scale: 1.1 }}
@@ -54,17 +52,16 @@ const HeroSlider = () => {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slides[current].image})` }}
           >
-            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-black/60" />
           </motion.div>
 
-          {/* Content */}
           <div className="relative h-full flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto">
             
             <motion.span 
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
-              className="text-[#ff6600] text-[10px] md:text-xs font-black uppercase tracking-[0.5em] mb-4"
+              className="text-white text-[10px] md:text-xs font-black uppercase tracking-[0.5em] mb-4 bg-[#b50926] px-5 py-2 rounded-full shadow-lg"
             >
               Excellence in Driving
             </motion.span>
@@ -93,13 +90,18 @@ const HeroSlider = () => {
               transition={{ delay: 0.7 }}
             >
               <Link href={slides[current].link}>
+                {/* Main Button - RED STAYING RED ON HOVER */}
                 <motion.button
-                  whileHover={{ scale: 1.05, backgroundColor: "#ff6600", color: "#ffffff" }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    backgroundColor: "#b50926",
+                    boxShadow: "0 20px 40px rgba(181,9,38,0.4)" 
+                  }}
                   whileTap={{ scale: 0.95 }}
-                  className="group bg-white text-black px-10 py-4 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs shadow-2xl flex items-center gap-2 transition-all"
+                  className="group bg-[#b50926] text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs shadow-[0_10px_30px_rgba(181,9,38,0.3)] flex items-center gap-2 transition-all"
                 >
                   {slides[current].buttonText}
-                  <ArrowUpRight size={16} className="group-hover:rotate-45 transition-transform" />
+                  <ArrowUpRight size={18} className="group-hover:rotate-45 transition-transform" />
                 </motion.button>
               </Link>
             </motion.div>
@@ -107,22 +109,20 @@ const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
-      <button onClick={prevSlide} className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-[#ff6600] transition-all z-20">
-        <ChevronLeft size={40} strokeWidth={1} />
+      <button onClick={prevSlide} className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-[#b50926] transition-all z-20">
+        <ChevronLeft size={48} strokeWidth={1.5} />
       </button>
 
-      <button onClick={nextSlide} className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-[#ff6600] transition-all z-20">
-        <ChevronRight size={40} strokeWidth={1} />
+      <button onClick={nextSlide} className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/40 hover:text-[#b50926] transition-all z-20">
+        <ChevronRight size={48} strokeWidth={1.5} />
       </button>
 
-      {/* Progress Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-4 z-20">
         {slides.map((_, index) => (
           <button 
             key={index}
             onClick={() => setCurrent(index)}
-            className={`h-[3px] transition-all duration-500 ${index === current ? "w-8 bg-[#ff6600]" : "w-4 bg-white/30"}`}
+            className={`h-1.5 transition-all duration-500 rounded-full ${index === current ? "w-12 bg-[#b50926]" : "w-6 bg-white/20 hover:bg-[#b50926]/50"}`}
           />
         ))}
       </div>
