@@ -16,17 +16,18 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "TM Driving School",
   description: "Learn to drive with TM Driving School",
+  icons: {
+    icon: "/images/logo/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Header title={"Usman"}/>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Header title="Usman" />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
