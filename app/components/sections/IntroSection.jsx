@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import {
   Phone,
   Mail,
+  MapPin,
   Gift,
   Users,
   Award,
@@ -15,43 +16,42 @@ import Map from "@/app/components/sections/Map";
 
 const IntroSection = () => {
   const wideServices = [
-    { title: "Gift Vouchers", icon: <Gift className="text-[#0009c5]" /> },
+    { title: "Gift Vouchers", icon: <Gift className="text-orange-500" /> },
     {
       title: "Block Booking Discounts",
-      icon: <Star className="text-[#0009c5]" />,
+      icon: <Star className="text-orange-500" />,
     },
-    { title: "Learn at 16", icon: <Users className="text-[#0009c5]" /> },
+    { title: "Learn at 16", icon: <Users className="text-orange-500" /> },
     {
       title: "Student Specials",
-      icon: <GraduationCap className="text-[#0009c5]" />,
+      icon: <GraduationCap className="text-orange-500" />,
     },
-    { title: "Pass Plus Courses", icon: <Award className="text-[#0009c5]" /> },
-    { title: "Free Theory Help", icon: <Mail className="text-[#0009c5]" /> },
+    { title: "Pass Plus Courses", icon: <Award className="text-orange-500" /> },
+    { title: "Free Theory Help", icon: <Mail className="text-orange-500" /> },
   ];
 
   return (
     <section className="py-16 bg-[#fdfdfd]">
       <div className="max-w-7xl mx-auto px-6">
-        
-        {/* 1. Top Contact Cards - Blue Theme */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-20 rounded-2xl overflow-hidden shadow-2xl shadow-blue-100/50">
+        {/* 1. Top Contact Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-20 rounded-2xl overflow-hidden shadow-2xl shadow-orange-100/50">
           <ContactCard
             icon={<Phone size={28} />}
             label="Call or Text"
             value="+44 7949 488211"
-            bgColor="bg-[#0009c5]" 
+            bgColor="bg-[#ff6600]"
           />
           <ContactCard
             icon={<Mail size={28} />}
             label="Email Paul"
             value="turonmiah123@aol.com"
-            bgColor="bg-[#0008b0]" 
+            bgColor="bg-[#e65c00]"
           />
           <ContactCard
             icon={<Award size={28} />}
             label="Experience"
             value="20+ Years in Industry"
-            bgColor="bg-[#00079c]" 
+            bgColor="bg-[#cc5200]"
           />
         </div>
 
@@ -63,16 +63,15 @@ const IntroSection = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 tracking-tight leading-tight uppercase italic">
+              <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 tracking-tight leading-tight">
                 Premium Driving Tuition <br />
-                <span className="text-[#0009c5]">In Oldham & Beyond</span>
+                <span className="text-[#ff6600]">In Oldham & Beyond</span>
               </h2>
               <div className="prose prose-lg text-gray-600 space-y-6 font-sans">
                 <p className="text-xl leading-relaxed">
                   Learning to drive is one of the greatest milestones in your
                   life. At{" "}
-                  {/* TM Driving School - NOW BLUE (#0009c5) */}
-                  <span className="font-black text-[#0009c5]">
+                  <span className="font-bold text-gray-900">
                     TM Driving School
                   </span>
                   , we offer a refreshing approach to tuition that makes you
@@ -83,10 +82,10 @@ const IntroSection = () => {
                   {wideServices.map((s, i) => (
                     <motion.div
                       key={i}
-                      whileHover={{ scale: 1.02, x: 5, borderColor: "#0009c5" }}
+                      whileHover={{ scale: 1.02, x: 5 }}
                       className="flex items-center gap-4 p-4 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all"
                     >
-                      <div className="bg-blue-50 p-2 rounded-lg">
+                      <div className="bg-orange-50 p-2 rounded-lg">
                         {s.icon}
                       </div>
                       <span className="font-bold text-gray-800">{s.title}</span>
@@ -102,34 +101,29 @@ const IntroSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="lg:col-span-4 bg-white p-8 rounded-3xl border border-gray-100 shadow-xl shadow-blue-50 sticky top-24"
+            className="lg:col-span-4 bg-white p-8 rounded-3xl border border-gray-100 shadow-xl shadow-gray-100/50 sticky top-24"
           >
-            {/* Quick Info Heading - REMAINS RED */}
-            <h3 className="text-2xl font-black text-[#b50926] mb-8 flex items-center gap-3 uppercase italic">
-              <div className="w-10 h-10 bg-[#b50926] rounded-xl flex items-center justify-center shadow-lg shadow-red-200">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
+              <div className="w-10 h-10 bg-[#ff6600] rounded-xl flex items-center justify-center shadow-lg shadow-orange-200">
                 <ArrowRight size={20} className="text-white" />
               </div>
               Quick Info
             </h3>
-            
             <div className="space-y-8">
-              {/* Info Items - HOVER REMAINS RED */}
-              <InfoItem label="Manual Lessons" detail="High standard manual tuition" />
+              <InfoItem
+                label="Manual Lessons"
+                detail="High standard manual tuition"
+              />
               <InfoItem label="Areas" detail="Oldham, Rochdale, Tameside" />
-              <InfoItem label="Established" detail="Proudly serving since 1995" />
+              <InfoItem
+                label="Established"
+                detail="Proudly serving since 1995"
+              />
             </div>
-            
-            {/* BUTTON - RED with BLUE Hover */}
-            <motion.button 
-              whileHover={{ scale: 1.05, backgroundColor: "#0009c5" }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full mt-8 bg-[#b50926] text-white py-4 rounded-xl font-black uppercase tracking-widest text-[11px] shadow-lg shadow-red-100 transition-all duration-300"
-            >
-              Book a Lesson
-            </motion.button>
           </motion.div>
         </div>
 
+        {/* 3. Areas Covered Section */}
         <Map />
       </div>
     </section>
@@ -138,7 +132,7 @@ const IntroSection = () => {
 
 const ContactCard = ({ icon, label, value, bgColor }) => (
   <motion.div
-    whileHover={{ backgroundColor: "#00057a" }} 
+    whileHover={{ backgroundColor: "#a33b00" }}
     className={`${bgColor} p-8 text-white flex flex-col items-center text-center gap-2 transition-all cursor-pointer relative overflow-hidden group`}
   >
     <div className="bg-white/20 p-3 rounded-xl mb-2 group-hover:scale-110 transition-transform">
@@ -147,13 +141,13 @@ const ContactCard = ({ icon, label, value, bgColor }) => (
     <span className="text-[10px] uppercase tracking-[0.2em] font-black opacity-70">
       {label}
     </span>
-    <span className="text-lg font-bold tracking-tight group-hover:scale-105 transition-transform">{value}</span>
+    <span className="text-lg font-bold tracking-tight">{value}</span>
   </motion.div>
 );
 
 const InfoItem = ({ label, detail }) => (
-  <div className="border-l-4 border-gray-50 pl-5 hover:border-[#b50926] transition-all duration-300 group">
-    <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-1 group-hover:text-[#b50926]">
+  <div className="border-l-4 border-gray-50 pl-5 hover:border-[#ff6600] transition-all duration-300 group">
+    <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-1 group-hover:text-[#ff6600]">
       {label}
     </p>
     <p className="text-lg text-gray-800 font-extrabold leading-tight">

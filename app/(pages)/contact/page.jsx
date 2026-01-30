@@ -23,29 +23,26 @@ const Contact = () => {
             backgroundImage: "url('/images/hero-3.avif')",
           }}
         ></div>
-        {/* Gradient Overlay with a touch of Blue */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#0009c5]/10 to-white"></div>
-        
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-white"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 h-full flex flex-col justify-center items-center text-center">
-          
-          {/* UPDATED: Red Background Badge for 'Let's Get On The Road' */}
+          {/* Sub-heading - Matching the 'Professional manual driving...' style weight */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-[#b50926] text-white px-6 py-2 rounded-full font-black tracking-[0.3em] uppercase text-[10px] md:text-xs mb-6 shadow-xl flex items-center gap-3"
+            className="flex items-center justify-center gap-3 text-[#ff6600] font-bold tracking-[0.2em] uppercase text-sm mb-4"
           >
-            <div className="h-[1px] w-4 bg-white/50"></div>
+            <div className="h-[2px] w-8 bg-[#ff6600]"></div>
             Let's Get On The Road
-            <div className="h-[1px] w-4 bg-white/50"></div>
+            <div className="h-[2px] w-8 bg-[#ff6600]"></div>
           </motion.div>
 
-          {/* UPDATED: Main Title - Name in Blue */}
+          {/* Main Title - EXACT same size and weight as Pricing Hero */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic leading-none"
+            className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic leading-none whitespace-nowrap"
           >
-            Contact <span className="text-[#0009c5] ml-2">Turon Miah</span>
+            Contact <span className="text-[#ff6600] ml-2">Turon Miah</span>
           </motion.h1>
         </div>
       </div>

@@ -28,9 +28,9 @@ const Header = () => {
   const buttonVariants = {
     hover: {
       scale: 1.05,
-      backgroundColor: "#0007a3", // Hover par thora gehra Blue
-      boxShadow: "0px 0px 20px rgba(0, 9, 197, 0.4)",
-      transition: { duration: 0.3 },
+      backgroundColor: "#e65c00",
+      boxShadow: "0px 0px 20px rgba(255, 102, 0, 0.4)",
+      transition: { duration: 0.3, yoyo: Infinity },
     },
     tap: { scale: 0.95 },
   };
@@ -38,8 +38,11 @@ const Header = () => {
   return (
     <header className="w-full shadow-md font-sans sticky top-0 z-50 bg-white">
       {/* Top Bar */}
-      <div className="bg-[#0009c5] text-white py-2.5 px-4 sm:px-6 overflow-x-auto whitespace-nowrap">
+      {/* Top Bar */}
+      <div className="bg-[#ff6600] text-white py-2.5 px-4 sm:px-6 overflow-x-auto whitespace-nowrap">
+        {/* font-black ko badal kar font-bold ya font-semibold kar diya hai */}
         <div className="max-w-7xl mx-auto flex items-center justify-start gap-6 text-[11px] sm:text-[12px] font-bold uppercase tracking-widest opacity-95">
+          {/* SOCIAL ICON */}
           <motion.a
             href="https://facebook.com"
             target="_blank"
@@ -48,48 +51,57 @@ const Header = () => {
           >
             <Facebook size={16} fill="white" strokeWidth={0} />
           </motion.a>
+
           <div className="h-4 w-[1px] bg-white/20 hidden sm:block"></div>
+
+          {/* PHONE */}
           <a
             href="tel:+447949488211"
-            className="flex items-center gap-2 hover:text-white/80 transition-colors"
+            className="flex items-center gap-2 hover:text-black transition-colors"
           >
             <Phone size={13} fill="white" />
             <span>+44 7949 488211</span>
           </a>
+
           <div className="h-4 w-[1px] bg-white/20 hidden md:block"></div>
+
+          {/* EMAIL */}
           <a
             href="mailto:turonmiah123@aol.com"
-            className="hidden md:flex items-center gap-2 hover:text-white/80 transition-colors"
+            className="hidden md:flex items-center gap-2 hover:text-black transition-colors"
           >
             <Mail size={13} />
             <span>turonmiah123@aol.com</span>
           </a>
+
           <div className="h-4 w-[1px] bg-white/20 hidden lg:block"></div>
+
+          {/* ADDRESS / AREA */}
           <div className="hidden lg:flex items-center gap-2">
             <MapPin size={13} />
             <span>Maida Vale, London</span>
           </div>
         </div>
       </div>
-
       {/* Main Navigation */}
-      <nav className="bg-white px-4 relative z-10 shadow-sm">
+      <nav className="bg-white px-4 py-4 relative z-10 shadow-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo Section */}
           <Link href="/">
             <motion.div
-              initial={{ scale: 1.2 }}
-              whileHover={{ scale: 1.3 }}
-              whileTap={{ scale: 1.1 }}
-              className="flex items-center cursor-pointer ml-4"
+              whileHover={{ scale: 1.05 }}
+              className="flex items-center gap-3 cursor-pointer"
             >
-              {/* ONLY LOGO - Scaled to 1.2 as requested */}
-              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
-                <img
-                  src="/images/logo/logo.png"
-                  alt="TM Driving School"
-                  className="w-full h-full object-contain drop-shadow-sm"
-                />
+              <div className="bg-[#ff6600] p-2 rounded-xl">
+                <Car className="text-white" size={26} />
+              </div>
+              <div className="flex flex-col leading-[1.1]">
+                <span className="text-2xl font-black text-gray-900 tracking-tighter">
+                  TM
+                </span>
+                <span className="text-[10px] font-bold text-[#ff6600] tracking-[0.25em] uppercase">
+                  Driving School
+                </span>
               </div>
             </motion.div>
           </Link>
@@ -98,21 +110,20 @@ const Header = () => {
           <div className="hidden md:flex items-center gap-8 text-[15px]">
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href} className="relative group">
-                <span className="text-gray-600 font-bold tracking-tight group-hover:text-[#0009c5] transition-colors duration-300">
+                <span className="text-gray-600 font-bold tracking-tight group-hover:text-[#ff6600] transition-colors duration-300">
                   {link.name}
                 </span>
-                <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-[#0009c5] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-[#ff6600] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
 
-            {/* --- BLUE CONTACT BUTTON --- */}
+            {/* --- ANIMATED CONTACT BUTTON --- */}
             <Link href="/contact">
               <motion.button
                 variants={buttonVariants}
-                initial={{ backgroundColor: "#0009c5" }} // Explicit Blue Base
                 whileHover="hover"
                 whileTap="tap"
-                className="relative flex items-center gap-2 text-white px-8 py-2.5 rounded-full font-black text-sm uppercase tracking-widest overflow-hidden group shadow-lg"
+                className="relative flex items-center gap-2 bg-[#ff6600] text-white px-8 py-2.5 rounded-full font-black text-sm uppercase tracking-widest overflow-hidden group shadow-lg"
               >
                 <span>Contact</span>
                 <motion.div
@@ -127,6 +138,7 @@ const Header = () => {
             </Link>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <motion.button
               whileTap={{ scale: 0.8 }}
@@ -151,16 +163,21 @@ const Header = () => {
             <div className="px-6 py-8 flex flex-col gap-5">
               {navLinks.map((link, index) => (
                 <Link key={link.name} href={link.href} onClick={closeMenu}>
-                  <motion.div className="text-gray-800 font-bold text-xl hover:text-[#0009c5]">
+                  <motion.div
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="text-gray-800 font-bold text-xl hover:text-[#ff6600]"
+                  >
                     {link.name}
                   </motion.div>
                 </Link>
               ))}
-              {/* --- MOBILE BLUE CONTACT BUTTON --- */}
               <Link href="/contact" onClick={closeMenu}>
                 <motion.button
-                  whileHover={{ backgroundColor: "#0007a3" }}
-                  className="w-full bg-[#0009c5] text-white py-4 rounded-xl font-black text-lg shadow-lg flex items-center justify-center gap-3"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-[#ff6600] text-white py-4 rounded-xl font-black text-lg shadow-lg flex items-center justify-center gap-3"
                 >
                   Contact Now <Send size={20} />
                 </motion.button>

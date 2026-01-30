@@ -74,9 +74,8 @@ const Gallery = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen pb-20 font-sans">
-      {/* 1. Hero Section */}
-      {/* 1. Hero Section */}
+    <div className="bg-white min-h-screen pb-20">
+      {/* 1. Hero Section (Matched with your Contact Design) */}
       <div className="relative h-[450px] md:h-[500px] w-full overflow-hidden bg-gray-900">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-50"
@@ -84,17 +83,16 @@ const Gallery = () => {
             backgroundImage: "url('/images/hero-3.avif')",
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#0009c5]/20 to-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-white"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 h-full flex flex-col justify-center items-center text-center">
-          {/* UPDATED: Red Background and White Text Badge */}
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-[#b50926] text-white px-6 py-2 rounded-full font-black tracking-[0.3em] uppercase text-[10px] md:text-xs mb-6 shadow-xl flex items-center gap-3"
+            className="flex items-center justify-center gap-3 text-[#ff6600] font-bold tracking-[0.2em] uppercase text-sm mb-4"
           >
-            <div className="h-[1px] w-4 bg-white/50"></div>
+            <div className="h-[2px] w-8 bg-[#ff6600]"></div>
             View Our Gallery
-            <div className="h-[1px] w-4 bg-white/50"></div>
+            <div className="h-[2px] w-8 bg-[#ff6600]"></div>
           </motion.div>
 
           <motion.h1
@@ -103,7 +101,7 @@ const Gallery = () => {
             className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic leading-none"
           >
             Our Successes{" "}
-            <span className="text-[#0009c5] ml-2 font-black">on the Road</span>
+            <span className="text-[#ff6600] ml-2">on the Road</span>
           </motion.h1>
         </div>
       </div>
@@ -116,7 +114,7 @@ const Gallery = () => {
               key={item.id}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className="bg-white p-2 shadow-xl rounded-xl cursor-pointer overflow-hidden border border-gray-100 hover:border-[#0009c5]/30 transition-colors"
+              className="bg-white p-2 shadow-xl rounded-xl cursor-pointer overflow-hidden border border-gray-100"
               onClick={() => openModal(index)}
             >
               <img
@@ -125,7 +123,6 @@ const Gallery = () => {
                 className="w-full h-64 object-cover rounded-lg"
               />
               <div className="p-3 text-center">
-                {/* UPDATED: Title highlight on hover or standard */}
                 <p className="text-gray-800 font-bold uppercase text-xs tracking-widest">
                   {item.title}
                 </p>
@@ -135,6 +132,7 @@ const Gallery = () => {
         </div>
       </div>
 
+      {/* 3. Popup Modal (Lightbox) */}
       {/* 3. Popup Modal (Lightbox) */}
       <AnimatePresence>
         {selectedImage && (
@@ -147,21 +145,21 @@ const Gallery = () => {
             {/* Overlay Click to Close */}
             <div className="absolute inset-0" onClick={closeModal}></div>
 
-            {/* Close Button - UPDATED to Blue/Red hover */}
+            {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-6 right-6 text-white/70 hover:text-[#b50926] transition-all z-[130]"
+              className="absolute top-6 right-6 text-white/70 hover:text-[#ff6600] transition-all z-[130]"
             >
               <X size={40} />
             </button>
 
-            {/* Left Arrow - UPDATED to Blue hover */}
+            {/* Left Arrow - Blur Removed */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 prevImage(e);
               }}
-              className="absolute left-2 md:left-10 text-white/80 hover:text-[#0009c5] transition-all z-[130] active:scale-90"
+              className="absolute left-2 md:left-10 text-white/80 hover:text-[#ff6600] transition-all z-[130] active:scale-90"
             >
               <ChevronLeft size={40} className="md:w-16 md:h-16" />
             </button>
@@ -178,19 +176,18 @@ const Gallery = () => {
                 alt="Selected"
                 className="max-w-full max-h-full object-contain shadow-2xl rounded-lg border-2 border-white/10 pointer-events-auto"
               />
-              {/* UPDATED: Modal text color to Red for impact */}
-              <p className="text-[#b50926] mt-6 text-lg md:text-xl font-black italic uppercase tracking-widest text-center">
+              <p className="text-white mt-6 text-lg md:text-xl font-bold italic uppercase tracking-widest text-center">
                 {selectedImage.title}
               </p>
             </motion.div>
 
-            {/* Right Arrow - UPDATED to Blue hover */}
+            {/* Right Arrow - Blur Removed */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 nextImage(e);
               }}
-              className="absolute right-2 md:right-10 text-white/80 hover:text-[#0009c5] transition-all z-[130] active:scale-90"
+              className="absolute right-2 md:right-10 text-white/80 hover:text-[#ff6600] transition-all z-[130] active:scale-90"
             >
               <ChevronRight size={40} className="md:w-16 md:h-16" />
             </button>
