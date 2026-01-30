@@ -18,7 +18,6 @@ import {
   Twitter,
   ArrowRight,
 } from "lucide-react";
-import Link from "next/link";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,18 +28,16 @@ const Footer = () => {
         {/* 1. Brand Section */}
         <div className="flex flex-col gap-6">
           <div className="flex items-center">
-            <Link href="/">
-              <motion.div
-                initial={{ scale: 1.3 }}
-                className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center"
-              >
-                <img
-                  src="/images/logo/logo.png"
-                  alt="TM Driving School"
-                  className="w-full h-full object-contain drop-shadow-sm"
-                />
-              </motion.div>
-            </Link>
+            <motion.div
+              initial={{ scale: 1.3 }}
+              className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center"
+            >
+              <img
+                src="/images/logo/logo.png"
+                alt="TM Driving School"
+                className="w-full h-full object-contain drop-shadow-sm"
+              />
+            </motion.div>
           </div>
           <p className="text-gray-300 leading-relaxed text-sm">
             I offer a high standard of driving tuition at a price that you can
