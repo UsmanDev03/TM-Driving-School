@@ -1,6 +1,9 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+
 // 1. Pehle navLinks ko Footer component ke bahar define kar len
 const navLinks = [
   { name: "Home", href: "/" },
@@ -8,6 +11,7 @@ const navLinks = [
   { name: "Testimonials", href: "/testimonials" },
   { name: "Gallery", href: "/gallery" },
 ];
+
 import {
   Phone,
   Mail,
@@ -26,21 +30,27 @@ const Footer = () => {
     <footer className="bg-gray-900 text-white pt-10 pb-8 font-sans">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* 1. Brand Section */}
-        <div className="flex flex-col gap-6">
-          <div className="flex items-center gap-2">
-            <div className="bg-[#ff6600] p-2 rounded-lg">
-              <Car className="text-white" size={24} />
+        <div className="flex flex-col">
+          {/* Sirf yahan tabdeeli ki hai: Logo add kiya hai */}
+          <Link href="/" className="inline-block cursor-pointer w-fit">
+            <div className="relative xl:h-14 h-12 w-48 xl:w-52">
+              <Image
+                src="/images/logo/logo-1.png"
+                alt="TM Driving School Logo"
+                fill
+                className="object-contain object-left xl:ml-4 xl:mt-[-10px] xl:scale-[1.3]"
+                priority
+              />
             </div>
-            <span className="text-2xl font-black tracking-tighter">
-              TM <span className="text-[#ff6600]">DRIVING</span>
-            </span>
-          </div>
-          <p className="text-gray-400 leading-relaxed text-sm">
+          </Link>
+
+          <p className="text-gray-400 leading-relaxed text-sm mt-6">
             I offer a high standard of driving tuition at a price that you can
             afford. With over 20+ years of experience, I help you pass with
             confidence.
           </p>
-          <div className="flex gap-4">
+
+          <div className="flex mt-6 gap-4">
             {[Facebook, Instagram, Twitter].map((Icon, i) => (
               <motion.a
                 key={i}
@@ -59,7 +69,6 @@ const Footer = () => {
             Quick Links
           </h4>
           <ul className="flex flex-col gap-4">
-            {/* 2. Ab yahan error nahi aayega kyunki navLinks upar define hai */}
             {[...navLinks, { name: "Contact", href: "/contact" }].map(
               (item) => (
                 <motion.li key={item.name} whileHover={{ x: 5 }}>
@@ -79,7 +88,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* 3. Contact Details - Image se inspired lakin behtar */}
+        {/* 3. Contact Details */}
         <div>
           <h4 className="text-lg font-bold mb-6 border-l-4 border-[#ff6600] pl-3">
             Get In Touch
@@ -105,7 +114,7 @@ const Footer = () => {
             </motion.a>
 
             <motion.a
-              href="turonmiah123@aol.com"
+              href="mailto:turonmiah123@aol.com"
               whileHover={{ scale: 1.02 }}
               className="flex items-start gap-4 group"
             >

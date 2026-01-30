@@ -12,6 +12,7 @@ import {
   MapPin,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -87,23 +88,17 @@ const Header = () => {
       <nav className="bg-white px-4 py-4 relative z-10 shadow-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo Section */}
-          <Link href="/">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-3 cursor-pointer"
-            >
-              <div className="bg-[#ff6600] p-2 rounded-xl">
-                <Car className="text-white" size={26} />
-              </div>
-              <div className="flex flex-col leading-[1.1]">
-                <span className="text-2xl font-black text-gray-900 tracking-tighter">
-                  TM
-                </span>
-                <span className="text-[10px] font-bold text-[#ff6600] tracking-[0.25em] uppercase">
-                  Driving School
-                </span>
-              </div>
-            </motion.div>
+          <Link href="/" className="inline-block cursor-pointer">
+            {/* Header ke liye: Height fixed hai taake nav disturb na ho, width 44 (176px) prominent rakhegi */}
+            <div className="relative h-12 w-44">
+              <Image
+                src="/images/logo/logo.png"
+                alt="TM Driving School Logo"
+                fill
+                className="object-contain object-left xl:ml-[53px] xl:scale-[1.5] scale-[1.3] ml-6"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Menu */}
