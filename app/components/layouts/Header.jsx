@@ -95,7 +95,7 @@ const Header = () => {
                 src="/images/logo/logo.png"
                 alt="TM Driving School Logo"
                 fill
-                className="object-contain object-left xl:ml-[53px] xl:scale-[1.5] scale-[1.3] ml-6"
+                className="object-contain object-left xl:scale-[1.5] scale-[1.3] ml-6"
                 priority
               />
             </div>
