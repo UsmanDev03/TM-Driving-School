@@ -16,7 +16,7 @@ export default function DashboardLayout({ children }) {
         <div className="p-8 flex justify-between items-center">
           <h2 className="text-2xl font-black text-blue-600 tracking-tighter italic flex items-center gap-2">
             <div className="w-2 h-7 bg-blue-600 rounded-full"></div>
-            DRIVE.AI
+            TM Drive
           </h2>
           <button className="md:hidden" onClick={() => setSidebarOpen(false)}><X /></button>
         </div>
@@ -75,7 +75,7 @@ export default function DashboardLayout({ children }) {
         {/* FOOTER */}
         <footer className="p-6 text-center border-t border-gray-100 bg-white">
           <p className="text-[11px] text-gray-400 font-medium tracking-widest uppercase">
-            © 2026 DRIVE.AI — All Rights Reserved. <span className="text-blue-600 font-black italic ml-1">Powered by NextGen</span>
+            © 2026 TM Drive — All Rights Reserved. <span className="text-blue-600 font-black italic ml-1">Powered by Teqnoor</span>
           </p>
         </footer>
       </div>
