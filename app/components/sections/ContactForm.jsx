@@ -69,7 +69,10 @@ const ContactForm = () => {
         <div className="p-8 md:p-12 space-y-8">
           <div>
             <h2 className="text-3xl font-black text-gray-900 italic tracking-tighter uppercase">Book Your Lesson</h2>
-            <p className="text-gray-500 font-medium mt-2 text-sm italic">Fields marked with * are mandatory.</p>
+            {/* Pehli line wahi rakhi hai */}
+            <p className="text-gray-500 font-medium mt-2 text-sm">Fill out the details and I'll get back to you within 24 hours.</p>
+            {/* Mandatory line ko uske niche kar diya */}
+            <p className="text-gray-400 font-bold mt-1 text-[12px] italic tracking-tight">Fields marked with * are mandatory.</p>
           </div>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
