@@ -1,32 +1,29 @@
-import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
+import { query } from "@/lib/db"; 
+import { sendEmails } from "@/lib/mailer";
 
-export async function POST(request) {
-  let connection;
+export async function POST(req) {
   try {
-    const body = await request.json();
-    const { full_name, mobile_number, area, preferred_time, message } = body;
+    const body = await req.json();
 
-    if (!full_name || !mobile_number) {
-      return NextResponse.json({ message: "Name and Phone are required!" }, { status: 400 });
+    await query({
+      query: `INSERT INTO leads (full_name, email, mobile_number, area, preferred_time, message) VALUES (?, ?, ?, ?, ?, ?)`,
+      values: [body.full_name, body.email, body.mobile_number, body.area, body.preferred_time, body.message]
+    });
+
+    try {
+      await sendEmails(body);
+      console.log("Both emails (Admin & User) sent successfully");
+    } catch (mailErr) {
+      console.error("Mail Error:", mailErr.message);
     }
 
-    connection = await db();
-    const sql = `INSERT INTO leads (full_name, mobile_number, area, preferred_time, message) VALUES (?, ?, ?, ?, ?)`;
-    await connection.execute(sql, [full_name, mobile_number, area, preferred_time, message || ""]);
-
-    return NextResponse.json({ 
-      success: true, 
-      message: "Booking received! Turon Miah will contact you shortly." 
+    return NextResponse.json({
+      message: "Congratulations! Your driving lesson request has been submitted successfully."
     }, { status: 200 });
 
   } catch (error) {
-    console.error("DB Error:", error);
-    return NextResponse.json({ 
-      success: false, 
-      message: "Server is busy. Please try calling directly." 
-    }, { status: 500 });
-  } finally {
-    if (connection) await connection.end();
+    console.error("Server Error:", error);
+    return NextResponse.json({ message: "Error processing request" }, { status: 500 });
   }
 }

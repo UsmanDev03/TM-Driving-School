@@ -10,6 +10,7 @@ import { formFields } from "@/utils/RawData";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
+    email: "",
     phone: "",
     area: "",
     time: "",
@@ -30,32 +31,41 @@ const ContactForm = () => {
     e.preventDefault();
 
     let validationErrors = {};
-    if (!formData.name) validationErrors.name = "Full name is required";
-    if (!formData.phone) validationErrors.phone = "Phone number is required";
+    if (!formData.name.trim()) validationErrors.name = "Full name is required";
+    if (!formData.email.trim()) {
+      validationErrors.email = "Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      validationErrors.email = "Invalid email format";
+    }
+
+    if (!formData.phone.trim()) validationErrors.phone = "Phone number is required";
     if (!formData.area) validationErrors.area = "Area selection is required";
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      toast.error("Please fill in the required fields.");
+      toast.error("Please fill in the required fields correctly.");
       return; 
     }
 
     setLoading(true);
-    const toastId = toast.loading("Processing...");
+    const toastId = toast.loading("Processing your request...");
 
     try {
       const response = await axios.post("/api/add_edit_contact", {
         full_name: formData.name,
+        email: formData.email,
         mobile_number: formData.phone,
         area: formData.area,
         preferred_time: formData.time,
         message: formData.message,
       });
-      toast.success(response.data.message, { id: toastId });
-      setFormData({ name: "", phone: "", area: "", time: "", message: "" });
+
+      toast.success(response.data.message || "Request sent successfully!", { id: toastId });
+      setFormData({ name: "", email: "", phone: "", area: "", time: "", message: "" });
       setErrors({});
     } catch (error) {
-      toast.error("Failed to send request.", { id: toastId });
+      console.error("Submission Error:", error);
+      toast.error(error.response?.data?.message || "Failed to send request.", { id: toastId });
     } finally {
       setLoading(false);
     }
@@ -65,19 +75,16 @@ const ContactForm = () => {
     <div className="max-w-7xl mx-auto px-6 -mt-24 relative z-20">
       <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-gray-100 grid grid-cols-1 lg:grid-cols-2">
         
-        {/* LEFT SECTION (Form) */}
         <div className="p-8 md:p-12 space-y-8">
           <div>
             <h2 className="text-3xl font-black text-gray-900 italic tracking-tighter uppercase">Book Your Lesson</h2>
-            {/* Pehli line wahi rakhi hai */}
             <p className="text-gray-500 font-medium mt-2 text-sm">Fill out the details and I'll get back to you within 24 hours.</p>
-            {/* Mandatory line ko uske niche kar diya */}
             <p className="text-gray-400 font-bold mt-1 text-[12px] italic tracking-tight">Fields marked with * are mandatory.</p>
           </div>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
             {formFields.map((data) => {
-              const isRequired = ["name", "phone", "area"].includes(data.id);
+              const isRequired = ["name", "email", "phone", "area"].includes(data.id);
               const starPlaceholder = isRequired ? `${data.placeholder} *` : data.placeholder;
 
               return (
@@ -94,10 +101,7 @@ const ContactForm = () => {
                   />
                   
                   {errors[data.id] && (
-                    <p 
-                      className="text-[11px] font-black uppercase italic ml-4 mt-0.5 tracking-wider"
-                      style={{ color: '#ff0000' }} 
-                    >
+                    <p className="text-[11px] font-black uppercase italic ml-4 mt-0.5 tracking-wider text-red-600">
                       {errors[data.id]}
                     </p>
                   )}
@@ -128,7 +132,6 @@ const ContactForm = () => {
             </motion.button>
           </form>
 
-          {/* Footer Contact Details */}
           <div className="pt-6 border-t border-gray-100 flex flex-wrap gap-4 justify-between">
             <div>
               <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter">Call Now</p>
@@ -141,7 +144,6 @@ const ContactForm = () => {
           </div>
         </div>
 
-        {/* RIGHT SECTION (Car Image & Info) */}
         <div className="relative min-h-[500px] bg-gray-900 group overflow-hidden">
           <img 
             src="/images/gallery/TM-Car-7.png" 

@@ -2,7 +2,8 @@ import {
   Clock,
   Smartphone,
   User,
-  MapPin
+  MapPin,
+  Mail
 } from "lucide-react";
 
 export const locations_map = [{
@@ -234,6 +235,12 @@ export const formFields = [{
     type: "text",
     placeholder: "Full Name",
     icon: User,
+  },
+  {
+    id: "email",
+    type: "email",
+    placeholder: "Email Address",
+    icon: Mail,
   },
   {
     id: "phone",

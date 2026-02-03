@@ -24,13 +24,12 @@ const slides = [
 const HeroSlider = () => {
   const [current, setCurrent] = useState(0);
 
-  // Auto-slide set to EXACTLY 10 seconds (10000ms)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 10000); 
     return () => clearInterval(timer);
-  }, [current]); // Added current to dependency for clean reset
+  }, [current]);
 
   const nextSlide = () => setCurrent(current === slides.length - 1 ? 0 : current + 1);
   const prevSlide = () => setCurrent(current === 0 ? slides.length - 1 : current - 1);
