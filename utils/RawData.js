@@ -351,19 +351,19 @@ export const formFields = [{
     icon: Clock,
     options: [{
         label: "Morning (8am - 12pm)",
-        value: "morning"
+        value: "Morning (8am - 12pm)"
       },
       {
         label: "Afternoon (12pm - 4pm)",
-        value: "afternoon"
+        value: "Afternoon (12pm - 4pm)"
       },
       {
         label: "Evening (4pm - 8pm)",
-        value: "evening"
+        value: "Evening (4pm - 8pm)"
       },
       {
         label: "Weekends Only",
-        value: "weekends"
+        value: "Weekends Only"
       },
     ],
   },

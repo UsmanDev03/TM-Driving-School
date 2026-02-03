@@ -1,109 +1,109 @@
 "use client";
 import { useState } from "react";
 import axios from "axios";
-import {
-  Car,
-  Clock,
-  MessageSquare,
-  Navigation,
-  Send,
-  Smartphone,
-  User,
-} from "lucide-react";
+import toast from "react-hot-toast";
+import { Car, MessageSquare, Navigation, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import Input from "./Input";
 import { formFields } from "@/utils/RawData";
 
 const ContactForm = () => {
-  // 1. State Management (Matching with your Array IDs)
   const [formData, setFormData] = useState({
-  name: "",  // Array ID ke mutabiq
-  phone: "", // Array ID ke mutabiq
-  area: "",
-  time: "",  // Array ID ke mutabiq
-  message: "",
-});
+    name: "",
+    phone: "",
+    area: "",
+    time: "",
+    message: "",
+  });
 
+  const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
 
-  // 2. Change Handler
   const handleChange = (name, value) => {
-  setFormData((prev) => ({ ...prev, [name]: value }));
-};
-
-  // 3. Submit Handler
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
-
-  // Yahan hum convert kar rahe hain Array IDs ko Database IDs mein
-  const dataToSend = {
-    full_name: formData.name,      // 'name' ko 'full_name' banaya
-    mobile_number: formData.phone, // 'phone' ko 'mobile_number' banaya
-    area: formData.area,
-    preferred_time: formData.time, // 'time' ko 'preferred_time' banaya
-    message: formData.message,
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
-  try {
-    const response = await axios.post(
-      "http://127.0.0.1:8000/api/add_edit_contact",
-      dataToSend // Ab sahi data jayega
-    );
-    alert(response.data.message || "Request sent successfully!");
-    
-    // Form Reset
-    setFormData({
-      name: "",
-      phone: "",
-      area: "",
-      time: "",
-      message: "",
-    });
-  } catch (error) {
-    if (error.response && error.response.status === 422) {
-      alert("Validation Error: " + JSON.stringify(error.response.data.errors));
-    } else {
-      alert("Server Error! Check if Laravel is running.");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    let validationErrors = {};
+    if (!formData.name) validationErrors.name = "Full name is required";
+    if (!formData.phone) validationErrors.phone = "Phone number is required";
+    if (!formData.area) validationErrors.area = "Area selection is required";
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      toast.error("Please fill in the required fields.");
+      return; 
     }
-  } finally {
-    setLoading(false);
-  }
-};
+
+    setLoading(true);
+    const toastId = toast.loading("Processing...");
+
+    try {
+      const response = await axios.post("/api/add_edit_contact", {
+        full_name: formData.name,
+        mobile_number: formData.phone,
+        area: formData.area,
+        preferred_time: formData.time,
+        message: formData.message,
+      });
+      toast.success(response.data.message, { id: toastId });
+      setFormData({ name: "", phone: "", area: "", time: "", message: "" });
+      setErrors({});
+    } catch (error) {
+      toast.error("Failed to send request.", { id: toastId });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-6 -mt-24 relative z-20">
       <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-gray-100 grid grid-cols-1 lg:grid-cols-2">
+        
+        {/* LEFT SECTION (Form) */}
         <div className="p-8 md:p-12 space-y-8">
           <div>
-            <h2 className="text-3xl font-black text-gray-900 italic tracking-tighter uppercase">
-              Book Your Lesson
-            </h2>
-            <p className="text-gray-500 font-medium mt-2 text-sm">
-              Fill out the details and I'll get back to you within 24 hours.
-            </p>
+            <h2 className="text-3xl font-black text-gray-900 italic tracking-tighter uppercase">Book Your Lesson</h2>
+            <p className="text-gray-500 font-medium mt-2 text-sm italic">Fields marked with * are mandatory.</p>
           </div>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
-            {formFields.map((data) => (
-              <Input
-                key={data.id}
-                name={data.id}
-                type={data.type}
-                placeholder={data.placeholder}
-                icon={data.icon}
-                options={data.options}
-                value={formData[data.id]}
-                // Yahan e.target.value pass karna zaroori hai
-                onChange={(e) => handleChange(data.id, e.target.value)}
-              />
-            ))}
+            {formFields.map((data) => {
+              const isRequired = ["name", "phone", "area"].includes(data.id);
+              const starPlaceholder = isRequired ? `${data.placeholder} *` : data.placeholder;
+
+              return (
+                <div key={data.id} className="flex flex-col gap-1">
+                  <Input
+                    name={data.id}
+                    type={data.type}
+                    placeholder={starPlaceholder}
+                    icon={data.icon}
+                    options={data.options}
+                    value={formData[data.id]}
+                    onChange={(e) => handleChange(data.id, e.target.value)}
+                    style={errors[data.id] ? { borderColor: '#ef4444' } : {}}
+                  />
+                  
+                  {errors[data.id] && (
+                    <p 
+                      className="text-[11px] font-black uppercase italic ml-4 mt-0.5 tracking-wider"
+                      style={{ color: '#ff0000' }} 
+                    >
+                      {errors[data.id]}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
 
             <div className="relative group">
-              <MessageSquare
-                className="absolute left-4 top-5 text-gray-400 group-focus-within:text-[#ff6600] transition-colors"
-                size={18}
-              />
+              <MessageSquare className="absolute left-4 top-5 text-gray-400 group-focus-within:text-[#ff6600] transition-colors" size={18} />
               <textarea
                 rows={3}
                 value={formData.message}
@@ -120,43 +120,32 @@ const ContactForm = () => {
               whileTap={{ scale: 0.98 }}
               className={`w-full bg-[#ff6600] text-white py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 group shadow-xl shadow-orange-100 ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
             >
-              {loading ? "Sending..." : "Send Request"}{" "}
-              <Send
-                className="group-hover:translate-x-2 transition-transform"
-                size={20}
-              />
+              {loading ? "Sending..." : "Send Request"} 
+              <Send className="group-hover:translate-x-2 transition-transform" size={20} />
             </motion.button>
           </form>
 
-          {/* Footer Info */}
+          {/* Footer Contact Details */}
           <div className="pt-6 border-t border-gray-100 flex flex-wrap gap-4 justify-between">
             <div>
-              <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter">
-                Call Now
-              </p>
-              <p className="text-md font-bold text-gray-900 italic">
-                +44 7949 488211
-              </p>
+              <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter">Call Now</p>
+              <p className="text-md font-bold text-gray-900 italic">+44 7949 488211</p>
             </div>
             <div>
-              <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter text-right">
-                Email
-              </p>
-              <p className="text-md font-bold text-gray-900 italic">
-                turonmiah123@aol.com
-              </p>
+              <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter text-right">Email</p>
+              <p className="text-md font-bold text-gray-900 italic">turonmiah123@aol.com</p>
             </div>
           </div>
         </div>
 
-        {/* Right Side Image Section */}
+        {/* RIGHT SECTION (Car Image & Info) */}
         <div className="relative min-h-[500px] bg-gray-900 group overflow-hidden">
-          <img
-            src="/images/gallery/TM-Car-7.png"
-            alt="Professional Driving Lesson"
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90"
+          <img 
+            src="/images/gallery/TM-Car-7.png" 
+            alt="Driving Lesson" 
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90" 
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-100 group-hover:via-black/60 transition-all duration-1000"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
           <div className="absolute top-8 right-8 bg-[#ff6600] text-white p-4 rounded-full shadow-2xl animate-pulse">
             <Car size={32} strokeWidth={2.5} />
           </div>
@@ -165,15 +154,14 @@ const ContactForm = () => {
               <div className="bg-[#ff6600] p-2 rounded-xl shadow-lg shadow-orange-500/20">
                 <Navigation size={22} strokeWidth={3} />
               </div>
-              <span className="font-black italic tracking-tighter text-xl uppercase">
-                Established 2004
-              </span>
+              <span className="font-black italic tracking-tighter text-xl uppercase">Established 2004</span>
             </div>
             <p className="text-sm text-gray-300 font-bold max-w-xs leading-relaxed uppercase tracking-wider">
               High Pass Rate in West London Areas
             </p>
           </div>
         </div>
+
       </div>
     </div>
   );
