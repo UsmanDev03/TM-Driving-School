@@ -1,16 +1,19 @@
-import { NextResponse } from "next/server";
-import clientPromise from "@/lib/mongodb"; 
-import { sendEmails } from "@/lib/mailer"; 
-
+import {
+  NextResponse
+} from "next/server";
+import clientPromise from "@/lib/mongodb";
+import {
+  sendEmails
+} from "@/lib/mailer";
+import {
+  ObjectId
+} from "mongodb";
 export async function POST(req) {
   try {
     const body = await req.json();
-    
-    // 1. Connect to MongoDB
     const client = await clientPromise;
     const db = client.db("driving_school");
-    
-    // 2. Insert Data
+
     const result = await db.collection("leads").insertOne({
       full_name: body.full_name,
       email: body.email,
@@ -21,24 +24,80 @@ export async function POST(req) {
       submittedAt: new Date(),
     });
 
-    console.log("Data saved successfully with ID:", result.insertedId);
-
-    // 3. Send Emails (Admin & User)
     try {
       await sendEmails(body);
     } catch (mailErr) {
       console.error("Email Error but data was saved:", mailErr.message);
-      // Data save ho gaya hai, isliye hum success hi bhejenge
     }
 
     return NextResponse.json({
-      message: "Congratulations! Your request has been submitted successfully."
-    }, { status: 200 });
-
+      message: "Success"
+    }, {
+      status: 200
+    });
   } catch (error) {
-    console.error("CRITICAL SERVER ERROR:", error);
-    return NextResponse.json({ 
-      message: "Server Error: " + (error.message || "Failed to process request")
-    }, { status: 500 });
+    return NextResponse.json({
+      message: "Server Error"
+    }, {
+      status: 500
+    });
+  }
+}
+
+export async function GET() {
+  try {
+    const client = await clientPromise;
+    const db = client.db("driving_school");
+
+    const queries = await db.collection("leads").find({}).sort({
+      submittedAt: -1
+    }).toArray();
+
+    return NextResponse.json(queries, {
+      status: 200
+    });
+  } catch (error) {
+    console.error("Fetch Error:", error);
+    return NextResponse.json({
+      message: "Failed to fetch queries"
+    }, {
+      status: 500
+    });
+  }
+}
+
+export async function DELETE(req) {
+  try {
+    const {
+      searchParams
+    } = new URL(req.url);
+    const id = searchParams.get("id");
+
+    if (!id) {
+      return NextResponse.json({
+        message: "ID is required"
+      }, {
+        status: 400
+      });
+    }
+
+    const client = await clientPromise;
+    const db = client.db("driving_school");
+
+    await db.collection("leads").deleteOne({
+      _id: new ObjectId(id)
+    });
+
+    return NextResponse.json({
+      message: "Deleted successfully"
+    }, {
+      status: 200
+    });
+  } catch (error) {
+    return NextResponse.json({
+      message: "Delete Error"
+    }, {
+      status: 500
+    });
   }
 }
