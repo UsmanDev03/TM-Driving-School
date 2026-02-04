@@ -31,7 +31,7 @@ export async function POST(req) {
     }
 
     return NextResponse.json({
-      message: "Success"
+      message: "Seatbelts on! We've received your request and are heading your way."
     }, {
       status: 200
     });

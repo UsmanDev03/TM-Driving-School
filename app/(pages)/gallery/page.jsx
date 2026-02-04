@@ -7,12 +7,12 @@ import { X, ChevronLeft, ChevronRight, Camera } from "lucide-react";
 const galleryImages = [
   {
     id: 1,
-    url: "/images/gallery/TM-Car.png",
+    url: "/images/gallery/F-1.png",
     title: "Learning to Drive",
   },
   {
     id: 2,
-    url: "/images/gallery/TM-Car-1.png",
+    url: "/images/gallery/F-2.png",
     title: "Precision Parking Practice",
   },
   {
@@ -42,7 +42,7 @@ const galleryImages = [
   },
   {
     id: 8,
-    url: "/images/gallery/TM-Car-7.png",
+    url: "/images/gallery/F-3.png",
     title: "Ready for the Road Test",
   },
 ];

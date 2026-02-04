@@ -49,8 +49,8 @@ const IntroSection = () => {
           />
           <ContactCard
             icon={<Award size={28} />}
-            label="Experience"
-            value="20+ Years in Industry"
+            label="Result"
+            value="High Pass Rate"
             bgColor="bg-[#cc5200]"
           />
         </div>
@@ -72,7 +72,7 @@ const IntroSection = () => {
                   Learning to drive is one of the greatest milestones in your
                   life. At{" "}
                   <span className="font-bold text-gray-900">
-                    TM Driving School
+                    TM Drive
                   </span>
                   , we offer a refreshing approach to tuition that makes you
                   feel relaxed.
@@ -114,11 +114,11 @@ const IntroSection = () => {
                 label="Manual Lessons"
                 detail="High standard manual tuition"
               />
-              <InfoItem label="Areas" detail="Oldham, Rochdale, Tameside" />
               <InfoItem
-                label="Established"
-                detail="Proudly serving since 1995"
+                label="Success Rate"
+                detail="High First-Time Pass Rate"
               />
+              <InfoItem label="Value" detail="Affordable Expert Coaching" />
             </div>
           </motion.div>
         </div>

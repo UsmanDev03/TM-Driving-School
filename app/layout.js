@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "TM Driving School",
-  description: "TM Driving School offers high-quality driving tuition with over 20+ years of experience. Affordable lessons to help you pass your test with confidence.",
+  description: "Premium driving tuition at affordable rates. TM Driving School helps you master the road and pass with confidence.",
 };
 
 export default function RootLayout({ children }) {

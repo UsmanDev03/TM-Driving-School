@@ -46,8 +46,8 @@ const Footer = () => {
 
           <p className="text-gray-400 leading-relaxed text-sm mt-6">
             I offer a high standard of driving tuition at a price that you can
-            afford. With over 20+ years of experience, I help you pass with
-            confidence.
+            afford. With a focus on expert coaching and safety, I help you
+            master the road and pass your test with confidence.
           </p>
 
           <div className="flex mt-6 gap-4">
