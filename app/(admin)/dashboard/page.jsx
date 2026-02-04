@@ -2,11 +2,11 @@
 
 import React from 'react';
 import { Users, Target, ArrowRight, MessageSquare } from 'lucide-react';
+import Link from 'next/link';
 
 const AdminDashboard = () => {
   return (
-    /* md:h-[65vh] se height thori aur barh jayegi, md:py-16 se padding top-bottom solid ho jayegi */
-    <div className="bg-[#f8fafc] md:h-[65vh] w-full overflow-hidden p-6 md:py-16 md:px-12 select-none rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col justify-center">
+    <div className="bg-white md:min-h-[50vh] w-full p-6 md:p-12 select-none rounded-[2.5rem] border border-gray-100 shadow-sm flex flex-col justify-center">
       <div className="max-w-5xl mx-auto w-full">
         
         {/* Header Section */}
@@ -17,8 +17,6 @@ const AdminDashboard = () => {
 
         {/* 2 Big Stylish Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-10">
-          
-          {/* Card 1: Total Users */}
           <div className="relative overflow-hidden bg-white p-8 rounded-[2rem] border-2 border-gray-50 shadow-sm group hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <div className="absolute top-[-10%] right-[-5%] w-32 h-32 bg-blue-50/50 rounded-full group-hover:scale-125 transition-transform duration-700" />
             <div className="relative z-10">
@@ -33,7 +31,6 @@ const AdminDashboard = () => {
             </div>
           </div>
 
-          {/* Card 2: Success Rate */}
           <div className="relative overflow-hidden bg-white p-8 rounded-[2rem] border-2 border-gray-50 shadow-sm group hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
             <div className="absolute top-[-10%] right-[-5%] w-32 h-32 bg-purple-50/50 rounded-full group-hover:scale-125 transition-transform duration-700" />
             <div className="relative z-10">
@@ -49,15 +46,15 @@ const AdminDashboard = () => {
           </div>
         </div>
 
-        {/* Action Button */}
         <div className="flex justify-start">
-          <button className="group bg-[#0f172a] text-white h-12 px-6 rounded-xl font-bold flex items-center gap-4 hover:bg-blue-600 transition-all active:scale-95 w-full sm:w-auto justify-center shadow-lg shadow-gray-200">
-            <MessageSquare size={16} className="text-blue-400 group-hover:text-white" />
-            <span className="text-xs tracking-wider uppercase font-black">View Contact Queries</span>
-            <ArrowRight size={16} className="text-gray-500 group-hover:translate-x-1 group-hover:text-white transition-all" />
-          </button>
+          <Link href="/queries" className="w-full sm:w-auto">
+            <button className="group bg-[#0f172a] text-white h-12 px-6 rounded-xl font-bold flex items-center gap-4 hover:bg-blue-600 transition-all active:scale-95 w-full justify-center shadow-lg shadow-gray-200">
+              <MessageSquare size={16} className="text-blue-400 group-hover:text-white" />
+              <span className="text-xs tracking-wider uppercase font-black">View Contact Queries</span>
+              <ArrowRight size={16} className="text-gray-500 group-hover:translate-x-1 group-hover:text-white transition-all" />
+            </button>
+          </Link>
         </div>
-
       </div>
     </div>
   );
