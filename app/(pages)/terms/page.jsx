@@ -161,7 +161,7 @@ const TermsPage = () => {
                 Questions <span className="text-[#ff6600]">?</span>
               </h3>
               <p className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.2em]">
-                Administration: +44 7949 488211
+                Administration: 07949 488211
               </p>
             </div>
 

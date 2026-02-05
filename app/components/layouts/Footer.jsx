@@ -135,7 +135,7 @@ const Footer = () => {
                 <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">
                   Call Us
                 </p>
-                <p className="text-sm font-bold">+44 7949 488211</p>
+                <p className="text-sm font-bold">07949 488211</p>
               </div>
             </motion.a>
 
