@@ -45,7 +45,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-start gap-6 text-[11px] sm:text-[12px] font-bold uppercase tracking-widest opacity-95">
           {/* SOCIAL ICON */}
           <motion.a
-            href="https://facebook.com"
+            href="https://www.facebook.com/profile.php?id=61587049696186"
             target="_blank"
             whileHover={{ rotate: 15, scale: 1.2 }}
             className="cursor-pointer"

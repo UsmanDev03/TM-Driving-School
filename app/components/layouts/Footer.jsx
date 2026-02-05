@@ -3,8 +3,20 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-
-// 1. Pehle navLinks ko Footer component ke bahar define kar len
+const TikTokIcon = ({ size = 20 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Prices", href: "/price" },
@@ -12,16 +24,27 @@ const navLinks = [
   { name: "Gallery", href: "/gallery" },
 ];
 
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Facebook,
-  Instagram,
-  Twitter,
-  Car,
-  ArrowRight,
-} from "lucide-react";
+import { Phone, Mail, MapPin, Car, ArrowRight } from "lucide-react";
+import { Facebook, Instagram, X } from "lucide-react";
+
+const socialLinks = [
+  {
+    icon: Facebook,
+    url: "https://www.facebook.com/profile.php?id=61587049696186",
+  },
+  {
+    icon: Instagram,
+    url: "https://www.instagram.com/tmdrive1", // jab ready ho to real link daal dena
+  },
+  {
+    icon: X,
+    url: "https://x.com/tmdrive1",
+  },
+  {
+    icon: TikTokIcon,
+    url: "http://www.tiktok.com/@tmdrive1",
+  },
+];
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -38,7 +61,7 @@ const Footer = () => {
                 src="/images/logo/logo-1.png"
                 alt="TM Driving School Logo"
                 fill
-                className="object-contain object-left xl:ml-4 xl:mt-[-10px] xl:scale-[1.3]"
+                className="object-contain object-left xl:mt-[-8px]"
                 priority
               />
             </div>
@@ -51,9 +74,12 @@ const Footer = () => {
           </p>
 
           <div className="flex mt-6 gap-4">
-            {[Facebook, Instagram, Twitter].map((Icon, i) => (
+            {socialLinks.map(({ icon: Icon, url }, i) => (
               <motion.a
                 key={i}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ y: -5, color: "#ff6600" }}
                 className="bg-white/5 p-3 rounded-full cursor-pointer transition-colors"
               >
@@ -160,13 +186,22 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-medium">
-          <p>
-            © Copyright {currentYear} | TM Driving School. All Rights Reserved.
+          <p className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest">
+            © Copyright {new Date().getFullYear()} | TM Driving School. All
+            Rights Reserved. | Powered by{" "}
+            <a
+              href="https://teqnoor.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#ff6600] hover:text-white transition-all duration-300 font-black border-b border-transparent hover:border-[#ff6600]"
+            >
+              TEQNOOR
+            </a>
           </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">
+            {/* <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
-            </a>
+            </a> */}
             <a href="/terms" className="hover:text-white transition-colors">
               Terms & Conditions
             </a>

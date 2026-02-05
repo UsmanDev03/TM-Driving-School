@@ -13,6 +13,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Map from "@/app/components/sections/Map";
+import TopGalleryPreview from "@/app/components/sections/TopGalleryPreview";
 
 const IntroSection = () => {
   const wideServices = [
@@ -123,8 +124,10 @@ const IntroSection = () => {
           </motion.div>
         </div>
 
+        <TopGalleryPreview />
         {/* 3. Areas Covered Section */}
         <Map />
+
       </div>
     </section>
   );
