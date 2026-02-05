@@ -46,7 +46,9 @@ const ContactQueries = () => {
       ) {
         const errorText = await response.text();
         console.error("API Error Response:", errorText.substring(0, 150));
-        throw new Error("Server ne JSON response nahi bheja. API route check karein.");
+        throw new Error(
+          "Server ne JSON response nahi bheja. API route check karein.",
+        );
       }
 
       const data = await response.json();
@@ -86,7 +88,7 @@ const ContactQueries = () => {
   const filteredQueries = queries.filter(
     (q) =>
       q.full_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      q.area?.toLowerCase().includes(searchQuery.toLowerCase())
+      q.area?.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
   return (
@@ -301,12 +303,20 @@ const ContactQueries = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a
+                  {/* <a
                     href={`https://wa.me/${selectedQuery.mobile_number?.replace(/\D/g, "")}?text=Hello ${selectedQuery.full_name}, regarding your driving school request...`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex-1 bg-[#25D366] text-white py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-[#20bd5a] transition-all flex items-center justify-center gap-3 shadow-lg shadow-green-100"
+                  ></a> */}
+                  <a
+                    href="#"
+                    onClick={(e) => e.preventDefault()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-[#25D366] text-white py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-[#20bd5a] transition-all flex items-center justify-center gap-3 shadow-lg shadow-green-100"
                   >
+                    <MessageCircle size={18} />
                     Reply on WhatsApp
                   </a>
 
