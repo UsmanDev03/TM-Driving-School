@@ -44,7 +44,7 @@ const IntroSection = () => {
           />
           <ContactCard
             icon={<Mail size={28} />}
-            label="Email Paul"
+            label="Email"
             value="turonmiah123@aol.com"
             bgColor="bg-[#e65c00]"
           />
