@@ -121,7 +121,7 @@ const Footer = () => {
           </h4>
           <div className="flex flex-col gap-6">
             <motion.a
-              href="tel:07977045359"
+              href="tel:+447949488211"
               whileHover={{ scale: 1.02 }}
               className="flex items-start gap-4 group"
             >

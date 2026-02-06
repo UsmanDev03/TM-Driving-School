@@ -39,7 +39,7 @@ const IntroSection = () => {
           <ContactCard
             icon={<Phone size={28} />}
             label="Call or Text"
-            value="07949 488211"
+            value="+44 7949 488211"
             bgColor="bg-[#ff6600]"
           />
           <ContactCard
