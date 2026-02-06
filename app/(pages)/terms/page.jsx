@@ -51,7 +51,7 @@ const TermsPage = () => {
         />
       ),
       items: [
-        "Cancellations should be communicated via phone call or text/WhatsApp message to 07949 488211. Email or other forms of communication may not be accepted. If the pupil fails to give the instructor a minimum of two working days (48 Hours) notice before cancelling any lesson/test the pupil shall be liable for the lesson/test fee.",
+        "Cancellations should be communicated via phone call or text/WhatsApp message to +44 7949 488211. Email or other forms of communication may not be accepted. If the pupil fails to give the instructor a minimum of two working days (48 Hours) notice before cancelling any lesson/test the pupil shall be liable for the lesson/test fee.",
         "An administration charge of £30 will be added to any refund. Please allow up to 5 working days for any refund to be processed.",
         "Packages must be used within two months for 10-hour blocks; all other packages must be used within six months from the time of booking the first lesson.",
       ],
@@ -161,7 +161,7 @@ const TermsPage = () => {
                 Questions <span className="text-[#ff6600]">?</span>
               </h3>
               <p className="text-gray-400 font-bold text-[10px] uppercase tracking-[0.2em]">
-                Administration: 07949 488211
+                Administration: +44 7949 488211
               </p>
             </div>
 

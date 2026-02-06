@@ -324,13 +324,13 @@ const PricingPage = () => {
               <p className="text-[#ff6600] font-black uppercase tracking-[0.2em] text-[10px] mb-4 italic">
                 Call Turon For Bookings
               </p>
-              <h3 className="text-3xl font-black italic uppercase mb-8">
-                07949 488211
+              <h3 className="text-3xl font-black italic uppercase mb-8"> 
++44 7949 488211
               </h3>
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="tel:07949488211"
+                href="tel:+447949488211"
                 className="bg-[#ff6600] py-5 rounded-2xl font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2"
               >
                 <Phone size={18} /> Call Now

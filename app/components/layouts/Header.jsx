@@ -57,11 +57,11 @@ const Header = () => {
 
           {/* PHONE */}
           <a
-            href="tel:07949488211"
+            href="tel:+447949488211"
             className="flex items-center gap-2 hover:text-black transition-colors"
           >
             <Phone size={13} fill="white" />
-            <span>07949 488211</span>
+            <span>+44 7949 488211</span>
           </a>
 
           <div className="h-4 w-[1px] bg-white/20 hidden md:block"></div>
@@ -80,7 +80,7 @@ const Header = () => {
           {/* ADDRESS / AREA */}
           <div className="hidden lg:flex items-center gap-2">
             <MapPin size={13} />
-            <span>Maida Vale, London</span>
+            <span>West London</span>
           </div>
         </div>
       </div>
