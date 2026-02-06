@@ -135,7 +135,7 @@ const ContactForm = () => {
           <div className="pt-6 border-t border-gray-100 flex flex-wrap gap-4 justify-between">
             <div>
               <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter">Call Now</p>
-              <p className="text-md font-bold text-gray-900 italic">07949 488211</p>
+              <p className="text-md font-bold text-gray-900 italic">+44 7949 488211</p>
             </div>
             <div>
               <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter text-right">Email</p>
