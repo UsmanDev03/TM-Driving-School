@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import ActionFooter from '@/app/components/sections/ActionFooter';
 import {
   Phone,
   Mail,
@@ -98,7 +99,7 @@ const IntroSection = () => {
         <TopGalleryPreview />
         {/* 3. Areas Covered Section */}
         <Map />
-
+        <ActionFooter/>
       </div>
     </section>
   );
