@@ -1,5 +1,5 @@
 import React from "react";
-import { Scale, ArrowRight } from "lucide-react"; // Icons import karna mat bhooliye ga
+import { Scale, ArrowRight } from "lucide-react";
 
 const ActionFooter = () => {
   return (
