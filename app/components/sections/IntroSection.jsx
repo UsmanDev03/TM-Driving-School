@@ -96,7 +96,7 @@ const IntroSection = () => {
           </motion.div>
         </div>
 
-        <TopGalleryPreview />
+        <TopGalleryPreview/>
         {/* 3. Areas Covered Section */}
         <Map />
         <ActionFooter/>
