@@ -89,7 +89,7 @@ const TermsPage = () => {
             animate={{ opacity: 1 }}
             className="text-[#ff6600] text-[10px] font-black uppercase tracking-[0.5em] mb-4"
           >
-            TM Drive Oldham • Manual Tuition Specialists
+            TM Drive London • Manual Tuition Specialists
           </motion.p>
 
           <motion.h1
@@ -102,7 +102,7 @@ const TermsPage = () => {
 
           <p className="text-gray-200 mt-4 max-w-2xl font-bold uppercase tracking-widest text-sm">
             Professional standards for manual driving tuition. By booking, you
-            enter a formal agreement with TM Drive Oldham.
+            enter a formal agreement with TM Drive London.
           </p>
         </div>
       </div>

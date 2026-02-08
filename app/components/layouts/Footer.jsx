@@ -187,7 +187,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-medium">
           <p className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest">
-            © Copyright {new Date().getFullYear()} | TM Driving School. All
+            © Copyright {new Date().getFullYear()} | TM Drive. All
             Rights Reserved. | Powered by{" "}
             <a
               href="https://teqnoor.com/"

@@ -7,9 +7,9 @@ import Link from "next/link";
 const slides = [
   {
     image: "/images/hero-1.jpg",
-    title: "TM Driving School",
+    title: "Welcome to TM Drive",
     description: "I offer a high standard of driving tuition at a price that you can afford!",
-    buttonText: "Read more...",
+    buttonText: "Read more",
     link: "/price"
   },
   {

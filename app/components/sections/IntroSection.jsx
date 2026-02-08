@@ -16,20 +16,6 @@ import Map from "@/app/components/sections/Map";
 import TopGalleryPreview from "@/app/components/sections/TopGalleryPreview";
 
 const IntroSection = () => {
-  const wideServices = [
-    { title: "Gift Vouchers", icon: <Gift className="text-orange-500" /> },
-    {
-      title: "Block Booking Discounts",
-      icon: <Star className="text-orange-500" />,
-    },
-    { title: "Learn at 16", icon: <Users className="text-orange-500" /> },
-    {
-      title: "Student Specials",
-      icon: <GraduationCap className="text-orange-500" />,
-    },
-    { title: "Pass Plus Courses", icon: <Award className="text-orange-500" /> },
-    { title: "Free Theory Help", icon: <Mail className="text-orange-500" /> },
-  ];
 
   return (
     <section className="py-16 bg-[#fdfdfd]">
@@ -66,7 +52,7 @@ const IntroSection = () => {
             >
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 tracking-tight leading-tight">
                 Premium Driving Tuition <br />
-                <span className="text-[#ff6600]">In Oldham & Beyond</span>
+                <span className="text-[#ff6600]">In London & Beyond</span>
               </h2>
               <div className="prose prose-lg text-gray-600 space-y-6 font-sans">
                 <p className="text-xl leading-relaxed">
@@ -78,21 +64,6 @@ const IntroSection = () => {
                   , we offer a refreshing approach to tuition that makes you
                   feel relaxed.
                 </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
-                  {wideServices.map((s, i) => (
-                    <motion.div
-                      key={i}
-                      whileHover={{ scale: 1.02, x: 5 }}
-                      className="flex items-center gap-4 p-4 bg-white border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all"
-                    >
-                      <div className="bg-orange-50 p-2 rounded-lg">
-                        {s.icon}
-                      </div>
-                      <span className="font-bold text-gray-800">{s.title}</span>
-                    </motion.div>
-                  ))}
-                </div>
               </div>
             </motion.div>
           </div>
