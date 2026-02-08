@@ -38,7 +38,7 @@ const TopGalleryPreview = () => {
   return (
     <div className="max-w-7xl mx-auto px-6 mt-12">
 
-      {/* 🔥 Section Header */}
+      {/* Section Header */}
       <div className="text-center mb-10">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -66,7 +66,7 @@ const TopGalleryPreview = () => {
         </p>
       </div>
 
-      {/* 🖼️ Grid */}
+      {/*  Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {images.map((img, i) => (
           <motion.div
@@ -85,7 +85,7 @@ const TopGalleryPreview = () => {
         ))}
       </div>
 
-      {/* 🔍 Lightbox */}
+      {/* Lightbox */}
       <AnimatePresence>
         {selected && (
           <motion.div

@@ -11,7 +11,6 @@ const TestimonialsHeader = () => {
         alt="Happy Students"
       />
 
-      {/* 2. GRADIENT OVERLAY (Hero section wala same effect) */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#fafafa]"></div>
 
       {/* 3. CONTENT AREA */}

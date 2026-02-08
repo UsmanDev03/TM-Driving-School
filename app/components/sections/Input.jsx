@@ -1,11 +1,9 @@
-// app/components/sections/Input.jsx
 import { User, Smartphone, MapPin, Clock } from "lucide-react";
 import React from "react";
 
 const Input = ({ type, placeholder, icon: Icon, options, name, value, onChange }) => {
   return (
     <div className="relative group">
-      {/* Icon check to prevent "Illegal constructor" */}
       {Icon && typeof Icon === 'function' && (
         <Icon
           className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-[#ff6600] transition-colors z-10"

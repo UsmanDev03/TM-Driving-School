@@ -7,10 +7,9 @@ import { locations_map } from "@/utils/RawData";
 
 const containerStyle = {
   width: "100%",
-  height: "100%", // Iframe ki tarah container full height lega
+  height: "100%",
 };
 
-// West London ka center point (Notting Hill area)
 const center = { lat: 51.5095, lng: -0.2043 };
 
 const Map = () => {
@@ -23,10 +22,8 @@ const Map = () => {
         <div className="w-20 h-1.5 bg-[#ff6600] mx-auto mt-4 rounded-full"></div>
       </div>
 
-      {/* Grid List */}
       <LocationCard />
 
-      {/* Google Map Section */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

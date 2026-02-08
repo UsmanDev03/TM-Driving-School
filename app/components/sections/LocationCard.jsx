@@ -55,15 +55,13 @@ const LocationCard = () => {
               className="inline-flex flex-col items-center justify-center bg-white min-w-[160px] p-4 rounded-2xl border border-gray-100 shadow-sm group relative overflow-hidden pointer-events-none"
             >
               <div className="bg-orange-50 w-10 h-10 rounded-lg flex items-center justify-center mb-2 text-[#ff6600] group-hover:bg-[#ff6600] group-hover:text-white transition-all duration-300">
-                <MapPin size={18} strokeWidth={3} /> {/* Stroke thoda thick kiya hai */}
+                <MapPin size={18} strokeWidth={3} />
               </div>
 
-              {/* Area Name: Size aur Weight barha diya */}
               <h4 className="font-[900] text-gray-900 text-[12px] uppercase tracking-tight italic leading-tight">
                 {loc.area}
               </h4>
 
-              {/* Postcode: Ab zyada prominent hai */}
               {loc.postcode && (
                 <span className="text-[#ff6600] text-[10px] font-[1000] uppercase tracking-wider mt-1">
                   {loc.postcode}

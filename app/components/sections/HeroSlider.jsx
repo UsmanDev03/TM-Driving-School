@@ -42,10 +42,9 @@ const HeroSlider = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1 }} // Smooth fade transition
+          transition={{ duration: 1 }}
           className="absolute inset-0"
         >
-          {/* Background Image - Animation slow rakhi hai taake 10s tak chale */}
           <motion.div
             initial={{ scale: 1 }}
             animate={{ scale: 1.1 }}
@@ -56,7 +55,6 @@ const HeroSlider = () => {
             <div className="absolute inset-0 bg-black/50" />
           </motion.div>
 
-          {/* Content */}
           <div className="relative h-full flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto">
             
             <motion.span 
@@ -106,7 +104,6 @@ const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
       <button onClick={prevSlide} className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-[#ff6600] transition-all z-20">
         <ChevronLeft size={40} strokeWidth={1} />
       </button>
@@ -115,7 +112,6 @@ const HeroSlider = () => {
         <ChevronRight size={40} strokeWidth={1} />
       </button>
 
-      {/* Progress Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {slides.map((_, index) => (
           <button 
