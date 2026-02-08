@@ -36,7 +36,7 @@ const TopGalleryPreview = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 mt-24">
+    <div className="max-w-7xl mx-auto px-6 mt-12">
 
       {/* 🔥 Section Header */}
       <div className="text-center mb-10">

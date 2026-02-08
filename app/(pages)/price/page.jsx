@@ -176,7 +176,7 @@ const PricingPage = () => {
       </motion.div>
 
       {/* 3. BLOCK BOOKINGS - Card Stagger */}
-      <div className="max-w-7xl mx-auto px-6 mt-24">
+      <div className="max-w-7xl mx-auto px-6 mt-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -238,7 +238,7 @@ const PricingPage = () => {
       </div>
 
       {/* 4. AREAS COVERED - Grid Reveal */}
-      <div className="max-w-7xl mx-auto px-6 mt-24">
+      <div className="max-w-7xl mx-auto px-6 mt-12">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -275,7 +275,7 @@ const PricingPage = () => {
       </div>
 
       {/* 5. IMPORTANT INFO - Slide From Sides */}
-      <div className="max-w-7xl mx-auto px-6 mt-24">
+      <div className="max-w-7xl mx-auto px-6 mt-12">
         <div className="bg-gray-900 rounded-[3.5rem] p-10 md:p-16 relative overflow-hidden text-white border-b-8 border-[#ff6600]">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
             <motion.div

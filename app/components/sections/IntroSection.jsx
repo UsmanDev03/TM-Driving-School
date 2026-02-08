@@ -21,7 +21,7 @@ const IntroSection = () => {
     <section className="py-16 bg-[#fdfdfd]">
       <div className="max-w-7xl mx-auto px-6">
         {/* 1. Top Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-20 rounded-2xl overflow-hidden shadow-2xl shadow-orange-100/50">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-orange-100/50">
           <ContactCard
             icon={<Phone size={28} />}
             label="Call or Text"
@@ -43,7 +43,7 @@ const IntroSection = () => {
         </div>
 
         {/* 2. Main Content Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-12">
           <div className="lg:col-span-8 space-y-10">
             <motion.div
               initial={{ opacity: 0, x: -20 }}

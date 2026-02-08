@@ -15,7 +15,7 @@ const center = { lat: 51.5095, lng: -0.2043 };
 
 const Map = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6 mt-24 space-y-12">
+    <div className="max-w-7xl mx-auto px-6 mt-12 space-y-12">
       <div className="text-center">
         <h2 className="text-4xl font-black text-gray-900 tracking-tighter uppercase italic">
           AREAS <span className="text-[#ff6600]">COVERED</span>

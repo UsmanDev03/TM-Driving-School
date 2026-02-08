@@ -11,7 +11,6 @@ const LocationCard = () => {
   const SliderRow = ({ items, direction = 1, speed = 40 }) => {
     const controls = useAnimation();
 
-    // Auto-play function
     const startAutoPlay = () => {
       controls.start({
         x: direction > 0 ? [-20, -2000] : [-2000, -20],
@@ -31,11 +30,10 @@ const LocationCard = () => {
     }, []);
 
     const handleDragStart = () => {
-      controls.stop(); // User jab pakray ga, animation ruk jayegi
+      controls.stop();
     };
 
     const handleDragEnd = () => {
-      // 3 second wait karne ke baad auto-play wapis shuru hoga
       setTimeout(() => {
         startAutoPlay();
       }, 3000);
@@ -56,15 +54,18 @@ const LocationCard = () => {
               key={index}
               className="inline-flex flex-col items-center justify-center bg-white min-w-[160px] p-4 rounded-2xl border border-gray-100 shadow-sm group relative overflow-hidden pointer-events-none"
             >
-              {/* pointer-events-none is liye taake drag smooth ho aur card beech mein na aaye */}
-              <div className="bg-orange-50 w-10 h-10 rounded-lg flex items-center justify-center mb-3 text-[#ff6600] group-hover:bg-[#ff6600] group-hover:text-white transition-all duration-300">
-                <MapPin size={18} strokeWidth={2.5} />
+              <div className="bg-orange-50 w-10 h-10 rounded-lg flex items-center justify-center mb-2 text-[#ff6600] group-hover:bg-[#ff6600] group-hover:text-white transition-all duration-300">
+                <MapPin size={18} strokeWidth={3} /> {/* Stroke thoda thick kiya hai */}
               </div>
-              <h4 className="font-black text-gray-900 text-[10px] uppercase tracking-tighter italic leading-tight">
+
+              {/* Area Name: Size aur Weight barha diya */}
+              <h4 className="font-[900] text-gray-900 text-[12px] uppercase tracking-tight italic leading-tight">
                 {loc.area}
               </h4>
+
+              {/* Postcode: Ab zyada prominent hai */}
               {loc.postcode && (
-                <span className="text-[#ff6600] text-[9px] font-black opacity-70 uppercase tracking-widest mt-1">
+                <span className="text-[#ff6600] text-[10px] font-[1000] uppercase tracking-wider mt-1">
                   {loc.postcode}
                 </span>
               )}
@@ -76,14 +77,14 @@ const LocationCard = () => {
   };
 
   return (
-    <div className="bg-gray-50/50 py-12 rounded-[3rem] overflow-hidden">
+    <div className="bg-gray-50/50 py-4 rounded-[3rem] overflow-hidden">
       <div className="space-y-2">
         <SliderRow items={firstRow} direction={1} />
         <SliderRow items={secondRow} direction={-1} />
       </div>
 
       <div className="mt-8 text-center px-4">
-        <p className="text-gray-400 text-[9px] font-bold uppercase tracking-[0.3em] italic">
+        <p className="text-gray-500 text-[10px] font-black uppercase tracking-[0.3em] italic">
           Serving 24+ Locations across Central & West London
         </p>
       </div>

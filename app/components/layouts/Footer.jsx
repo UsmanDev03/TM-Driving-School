@@ -56,12 +56,12 @@ const Footer = () => {
         <div className="flex flex-col">
           {/* Sirf yahan tabdeeli ki hai: Logo add kiya hai */}
           <Link href="/" className="inline-block cursor-pointer w-fit">
-            <div className="relative h-12 w-48">
+            <div className="relative h-12 w-44">
               <Image
-                src="/images/logo/logo-1.png"
+                src="/images/logo/logo-1-.png"
                 alt="TM Driving School Logo"
                 fill
-                className="object-contain object-left xl:mt-[-8px]"
+                className="object-contain xl:scale-[1.8] scale-[1.3] xl:mt-[-8px]"
                 priority
               />
             </div>
@@ -94,7 +94,7 @@ const Footer = () => {
           <h4 className="text-lg font-bold mb-6 border-l-4 border-[#ff6600] pl-3">
             Quick Links
           </h4>
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-4 font-[600]">
             {[...navLinks, { name: "Contact", href: "/contact" }].map(
               (item) => (
                 <motion.li key={item.name} whileHover={{ x: 5 }}>
@@ -198,7 +198,7 @@ const Footer = () => {
               TEQNOOR
             </a>
           </p>
-          <div className="flex gap-6">
+          <div className="flex gap-6 font-semibold">
             {/* <a href="#" className="hover:text-white transition-colors">
               Privacy Policy
             </a> */}

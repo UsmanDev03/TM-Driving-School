@@ -376,15 +376,7 @@ export const formFields = [{
   },
 ];
 
-export const testimonialsData = [{
-    id: 1,
-    name: "Rodner Matienzo",
-    rating: 5,
-    text: "Turon was a great instructor.",
-    date: "Jan 22, 2025",
-    img: "/images/star.png",
-    role: "Verified Student"
-  },
+export const testimonialsData = [
   {
     id: 2,
     name: "Rafael",
