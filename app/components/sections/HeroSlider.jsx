@@ -3,17 +3,18 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronLeft, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const slides = [
   {
-    image: "/images/hero-1.jpg",
+    image: "/images/hero-1(1).jpg",
     title: "Welcome to TM Drive",
     description: "I offer a high standard of driving tuition at a price that you can afford!",
     buttonText: "Read more",
     link: "/price"
   },
   {
-    image: "/images/hero-2.jpg",
+    image: "/images/hero-2(1).jpg",
     title: "Professional Instruction",
     description: "Expert manual driving lessons tailored to your needs.",
     buttonText: "Get In Touch",
@@ -49,13 +50,21 @@ const HeroSlider = () => {
             initial={{ scale: 1 }}
             animate={{ scale: 1.1 }}
             transition={{ duration: 10, ease: "linear" }}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slides[current].image})` }}
+            className="absolute inset-0"
           >
-            <div className="absolute inset-0 bg-black/50" />
+            <Image
+              src={slides[current].image}
+              alt={slides[current].title}
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+              quality={85}
+            />
+            <div className="absolute inset-0 bg-black/50 z-10" />
           </motion.div>
 
-          <div className="relative h-full flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto">
+          <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-6 max-w-5xl mx-auto">
             
             <motion.span 
               initial={{ y: -10, opacity: 0 }}
@@ -104,15 +113,15 @@ const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      <button onClick={prevSlide} className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-[#ff6600] transition-all z-20">
+      <button onClick={prevSlide} className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-[#ff6600] transition-all z-30">
         <ChevronLeft size={40} strokeWidth={1} />
       </button>
 
-      <button onClick={nextSlide} className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-[#ff6600] transition-all z-20">
+      <button onClick={nextSlide} className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-[#ff6600] transition-all z-30">
         <ChevronRight size={40} strokeWidth={1} />
       </button>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-30">
         {slides.map((_, index) => (
           <button 
             key={index}
