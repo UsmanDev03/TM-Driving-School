@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "TM Drive School",
-  description: "Premium driving tuition at affordable rates. TM Drive School helps you master the road and pass with confidence.",
+  title: "Driving School West London | Manual Lessons | TM Drive",
+  description: "Get expert manual driving lessons in West London. High pass rates and affordable tuition in Notting Hill & Chelsea. Book your first driving lesson now!",
 };
 
 export default function RootLayout({ children }) {
