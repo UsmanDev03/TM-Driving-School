@@ -12,14 +12,14 @@ const Contact = () => {
         position="top-right" 
         reverseOrder={false} 
         toastOptions={{
-          duration: 3000, // 3 seconds me gayab ho jayega
+          duration: 3000, 
           style: {
-            background: '#1f2937', // Dark gray background
+            background: '#1f2937',
             color: '#fff',
             borderRadius: '16px',
             fontSize: '14px',
             fontWeight: '600',
-            border: '1px solid #ff6600', // Orange border
+            border: '1px solid #ff6600',
           },
           success: {
             iconTheme: {
