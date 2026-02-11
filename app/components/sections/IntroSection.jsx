@@ -1,23 +1,22 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import ActionFooter from '@/app/components/sections/ActionFooter';
+import dynamic from 'next/dynamic';
 import {
   Phone,
   Mail,
-  MapPin,
-  Gift,
-  Users,
   Award,
-  Star,
-  GraduationCap,
   ArrowRight,
 } from "lucide-react";
-import Map from "@/app/components/sections/Map";
-import TopGalleryPreview from "@/app/components/sections/TopGalleryPreview";
+
+const ActionFooter = dynamic(() => import('@/app/components/sections/ActionFooter'), { ssr: false });
+const Map = dynamic(() => import("@/app/components/sections/Map"), { 
+  ssr: false,
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-2xl" /> 
+});
+const TopGalleryPreview = dynamic(() => import("@/app/components/sections/TopGalleryPreview"), { ssr: false });
 
 const IntroSection = () => {
-
   return (
     <section className="py-16 bg-[#fdfdfd]">
       <div className="max-w-7xl mx-auto px-6">
@@ -74,7 +73,7 @@ const IntroSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="lg:col-span-4 bg-white p-8 rounded-3xl border border-gray-100 shadow-xl shadow-gray-100/50 sticky top-24"
+            className="lg:col-span-4 bg-white p-8 rounded-3xl border border-gray-100 shadow-xl shadow-gray-100/50 lg:sticky lg:top-24"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-3">
               <div className="w-10 h-10 bg-[#ff6600] rounded-xl flex items-center justify-center shadow-lg shadow-orange-200">
@@ -97,7 +96,6 @@ const IntroSection = () => {
         </div>
 
         <TopGalleryPreview/>
-        {/* 3. Areas Covered Section */}
         <Map />
         <ActionFooter/>
       </div>
