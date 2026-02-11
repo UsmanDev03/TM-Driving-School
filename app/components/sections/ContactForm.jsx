@@ -154,17 +154,6 @@ const ContactForm = () => {
           <div className="absolute top-8 right-8 bg-[#ff6600] text-white p-4 rounded-full shadow-2xl animate-pulse">
             <Car size={32} strokeWidth={2.5} />
           </div>
-          <div className="absolute bottom-12 left-12 text-white z-10">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="bg-[#ff6600] p-2 rounded-xl shadow-lg shadow-orange-500/20">
-                <Navigation size={22} strokeWidth={3} />
-              </div>
-              <span className="font-black italic tracking-tighter text-xl uppercase">Established 2004</span>
-            </div>
-            <p className="text-sm text-gray-300 font-bold max-w-xs leading-relaxed uppercase tracking-wider">
-              High Pass Rate in West London Areas
-            </p>
-          </div>
         </div>
 
       </div>

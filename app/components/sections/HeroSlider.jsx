@@ -8,7 +8,7 @@ import Image from "next/image";
 const slides = [
   {
     image: "/images/hero-1.webp",
-    title: "Welcome to TM Drive",
+    title: "Welcome to\nTM Drive",
     description: "I offer a high standard of driving tuition at a price that you can afford!",
     buttonText: "Read more",
     link: "/price"

@@ -52,7 +52,7 @@ const IntroSection = () => {
             >
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 tracking-tight leading-tight">
                 Premium Driving Tuition <br />
-                <span className="text-[#ff6600]">In London & Beyond</span>
+                <span className="text-[#ff6600]">In London</span>
               </h2>
               <div className="prose prose-lg text-gray-600 space-y-6 font-sans">
                 <p className="text-xl leading-relaxed">
