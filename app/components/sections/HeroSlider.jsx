@@ -8,7 +8,7 @@ import Image from "next/image";
 const slides = [
   {
     image: "/images/hero-1.webp",
-    title: "Welcome to TM Drive",
+    title: "Welcome to\nTM Drive",
     description: "I offer a high standard of driving tuition at a price that you can afford!",
     buttonText: "Read more",
     link: "/price"
@@ -50,7 +50,7 @@ const HeroSlider = () => {
           <div className="absolute inset-0">
             <Image
               src={slides[current].image}
-              alt={slides[current].title}
+              alt={slides[current].title.replace('\n', ' ')}
               fill
               priority={current === 0} 
               quality={75}
@@ -72,7 +72,7 @@ const HeroSlider = () => {
             <motion.h1 
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              className="text-white text-4xl md:text-6xl lg:text-7xl font-black uppercase italic tracking-tighter leading-[0.9] mb-6"
+              className="text-white text-4xl md:text-6xl lg:text-7xl font-black uppercase italic tracking-tighter leading-[0.9] mb-6 whitespace-pre-line md:whitespace-nowrap"
             >
               {slides[current].title}
             </motion.h1>
