@@ -46,11 +46,10 @@ const HeroSlider = () => {
           transition={{ duration: 0.8 }}
           className="absolute inset-0"
         >
-          {/* Background Image Optimization */}
           <div className="absolute inset-0">
             <Image
               src={slides[current].image}
-              alt={slides[current].title}
+              alt={slides[current].title.replace('\n', ' ')}
               fill
               priority={current === 0} 
               quality={75}
@@ -72,7 +71,7 @@ const HeroSlider = () => {
             <motion.h1 
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              className="text-white text-4xl md:text-6xl lg:text-7xl font-black uppercase italic tracking-tighter leading-[0.9] mb-6"
+              className="text-white text-4xl md:text-6xl lg:text-7xl font-black uppercase italic tracking-tighter leading-[0.9] mb-6 whitespace-pre-line md:whitespace-nowrap"
             >
               {slides[current].title}
             </motion.h1>
@@ -95,7 +94,6 @@ const HeroSlider = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Controls */}
       <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-[#ff6600] z-20">
         <ChevronLeft size={40} />
       </button>
