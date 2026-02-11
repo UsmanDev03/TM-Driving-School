@@ -6,14 +6,14 @@ import Link from "next/link";
 
 const slides = [
   {
-    image: "/images/hero-1(1).jpg",
+    image: "/images/hero-1.jpg",
     title: "Welcome to TM Drive",
     description: "I offer a high standard of driving tuition at a price that you can afford!",
     buttonText: "Read more",
     link: "/price"
   },
   {
-    image: "/images/hero-2(1).jpg",
+    image: "/images/hero-2.jpg",
     title: "Professional Instruction",
     description: "Expert manual driving lessons tailored to your needs.",
     buttonText: "Get In Touch",
