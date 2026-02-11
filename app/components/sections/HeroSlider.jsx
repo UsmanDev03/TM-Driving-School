@@ -33,6 +33,7 @@ const HeroSlider = () => {
   }, []);
 
   const nextSlide = () => setCurrent(current === slides.length - 1 ? 0 : current + 1);
+  
   const prevSlide = () => setCurrent(current === 0 ? slides.length - 1 : current - 1);
 
   return (
