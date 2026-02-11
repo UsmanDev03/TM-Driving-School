@@ -3,7 +3,7 @@ import TestimonialCard from '@/app/components/sections/TestimonialCard';
 import TestimonialsBottom from '@/app/components/sections/TestimonialsBottom';
 export const metadata = {
   title: "Student Reviews & Pass Rates | TM Driving School UK",
-  description: " Read success stories from our students in West London. Discover why we are a top-rated driving school with a high pass rate. Start your journey today.",
+  description: "Read success stories from our students in West London. Discover why we are a top-rated driving school with a high pass rate. Start your journey today.",
 };
 const Testimonials = () => {
   return (
