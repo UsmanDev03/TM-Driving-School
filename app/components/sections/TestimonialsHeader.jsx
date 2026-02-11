@@ -6,7 +6,7 @@ const TestimonialsHeader = () => {
     <div className="relative h-[500px] w-full overflow-hidden mb-20">
       {/* 1. BACKGROUND IMAGE */}
       <img
-        src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2070&auto=format&fit=crop"
+        src="/images/team.avif"
         className="w-full h-full object-cover"
         alt="Happy Students"
       />
