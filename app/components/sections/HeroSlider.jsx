@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight, ChevronLeft, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image"; // Optimization ke liye zaroori hai
+import Image from "next/image";
 
 const slides = [
   {
