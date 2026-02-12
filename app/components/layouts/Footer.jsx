@@ -58,7 +58,7 @@ const Footer = () => {
           <Link href="/" className="inline-block cursor-pointer w-fit">
             <div className="relative h-12 w-44">
               <Image
-                src="/images/logo/logo-1-.png"
+                src="/images/logo/logo-1-.webp"
                 alt="TM Driving School Logo"
                 fill
                 className="object-contain xl:scale-[1.8] scale-[1.3] xl:mt-[-8px]"

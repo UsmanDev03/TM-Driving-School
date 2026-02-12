@@ -7,42 +7,42 @@ import { X, ChevronLeft, ChevronRight, Camera } from "lucide-react";
 const galleryImages = [
   {
     id: 1,
-    url: "/images/gallery/F-1.png",
+    url: "/images/gallery/F-1.webp",
     title: "Learning to Drive",
   },
   {
     id: 2,
-    url: "/images/gallery/F-2.png",
+    url: "/images/gallery/F-2.webp",
     title: "Precision Parking Practice",
   },
   {
     id: 3,
-    url: "/images/gallery/TM-Car-2.jpg",
+    url: "/images/gallery/TM-Car-2.webp",
     title: "The Look of Confidence",
   },
   {
     id: 4,
-    url: "/images/gallery/TM-Car-3.jpg",
+    url: "/images/gallery/TM-Car-3.webp",
     title: "Modern Car",
   },
   {
     id: 5,
-    url: "/images/gallery/TM-Car-4.jpg",
+    url: "/images/gallery/TM-Car-4.webp",
     title: "Confidence Behind the Wheel",
   },
   {
     id: 6,
-    url: "/images/gallery/TM-Car-5.jpg",
+    url: "/images/gallery/TM-Car-5.webp",
     title: "Smooth Gear Transitions",
   },
   {
     id: 7,
-    url: "/images/gallery/TM-Car-6.jpg",
+    url: "/images/gallery/TM-Car-6.webp",
     title: "Safety First",
   },
   {
     id: 8,
-    url: "/images/gallery/F-3.png",
+    url: "/images/gallery/F-3.webp",
     title: "Ready for the Road Test",
   },
 ];

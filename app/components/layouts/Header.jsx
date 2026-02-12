@@ -41,7 +41,6 @@ const Header = () => {
       {/* Top Bar */}
       {/* Top Bar */}
       <div className="bg-[#ff6600] text-white py-2.5 px-4 sm:px-6 overflow-x-auto whitespace-nowrap">
-        {/* font-black ko badal kar font-bold ya font-semibold kar diya hai */}
         <div className="max-w-7xl mx-auto flex items-center justify-start gap-6 text-[11px] sm:text-[12px] font-bold uppercase tracking-widest opacity-95">
           {/* SOCIAL ICON */}
           <motion.a
@@ -89,10 +88,10 @@ const Header = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo Section */}
           <Link href="/" className="inline-block cursor-pointer">
-            {/* Header ke liye: Height fixed hai taake nav disturb na ho, width 44 (176px) prominent rakhegi */}
+           
             <div className="relative h-12 w-44">
               <Image
-                src="/images/logo/logo-.png"
+                src="/images/logo/logo-.webp"
                 alt="TM Driving School Logo"
                 fill
                 className="object-contain xl:scale-[1.8] scale-[1.3]"

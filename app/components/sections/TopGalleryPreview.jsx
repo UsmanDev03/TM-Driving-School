@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  { id: 1, url: "/images/gallery/F-1.png", title: "Training Car" },
-  { id: 2, url: "/images/gallery/F-2.png", title: "Interior View" },
-  { id: 3, url: "/images/gallery/TM-Car-5.jpg", title: "On-Road Ready" },
-  { id: 4, url: "/images/gallery/F-3.png", title: "Modern Design" },
+  { id: 1, url: "/images/gallery/F-1.webp", title: "Training Car" },
+  { id: 2, url: "/images/gallery/F-2.webp", title: "Interior View" },
+  { id: 3, url: "/images/gallery/TM-Car-5.webp", title: "On-Road Ready" },
+  { id: 4, url: "/images/gallery/F-3.webp", title: "Modern Design" },
 ];
 
 const TopGalleryPreview = () => {
