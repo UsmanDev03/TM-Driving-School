@@ -82,7 +82,7 @@ const LocationCard = () => {
       </div>
 
       <div className="mt-8 text-center px-4">
-        <p className="text-gray-500 text-[10px] font-black uppercase tracking-[0.3em] italic">
+        <p className="text-gray-700 text-sm font-bold uppercase tracking-widest italic">
           Serving 24+ Locations across Central & West London
         </p>
       </div>

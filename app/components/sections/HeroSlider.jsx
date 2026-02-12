@@ -10,14 +10,14 @@ const slides = [
     image: "/images/hero-1.webp",
     title: "Welcome to\nTM Drive",
     description: "I offer a high standard of driving tuition at a price that you can afford!",
-    buttonText: "Read more",
+    buttonText: "Book your session",
     link: "/price"
   },
   {
     image: "/images/hero-2.webp",
     title: "Professional Instruction",
     description: "Expert manual driving lessons tailored to your needs.",
-    buttonText: "Get In Touch",
+    buttonText: "Talk to Your instructor",
     link: "/contact"
   },
 ];
