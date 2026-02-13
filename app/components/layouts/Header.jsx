@@ -43,14 +43,6 @@ const Header = () => {
       <div className="bg-[#ff6600] text-white py-2.5 px-4 sm:px-6 overflow-x-auto whitespace-nowrap">
         <div className="max-w-7xl mx-auto flex items-center justify-start gap-6 text-[11px] sm:text-[12px] font-bold uppercase tracking-widest opacity-95">
           {/* SOCIAL ICON */}
-          <motion.a
-            href="https://www.facebook.com/profile.php?id=61587049696186"
-            target="_blank"
-            whileHover={{ rotate: 15, scale: 1.2 }}
-            className="cursor-pointer"
-          >
-            <Facebook size={16} fill="white" strokeWidth={0} />
-          </motion.a>
 
           <div className="h-4 w-[1px] bg-white/20 hidden sm:block"></div>
 

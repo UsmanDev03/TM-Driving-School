@@ -2,7 +2,7 @@ import React from 'react'
 
 const TestimonialsBottom = () => {
   return (
-    <div className="mt-12 md:mt-24 bg-gray-900 rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-12 relative overflow-hidden mx-4 md:mx-0">
+    <div className="mt-8 md:mt-16 bg-gray-900 rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-12 relative overflow-hidden mx-4 md:mx-0">
       {/* 1. BACKGROUND GLOW */}
       <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-[#ff6600] blur-[80px] md:blur-[120px] opacity-20"></div>
       

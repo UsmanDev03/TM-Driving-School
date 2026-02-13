@@ -7,7 +7,7 @@ export const metadata = {
 };
 const Testimonials = () => {
   return (
-    <section className="pb-24 bg-[#fcfcfc] overflow-hidden">
+    <section className="pb-12 bg-[#fcfcfc] overflow-hidden">
       <TestimonialsHeader/>
       <div className="max-w-7xl mx-auto px-6">
 

@@ -18,25 +18,22 @@ const TopGalleryPreview = dynamic(() => import("@/app/components/sections/TopGal
 
 const IntroSection = () => {
   return (
-    <section className="py-16 bg-[#fdfdfd]">
+    <section className="py-12 bg-[#fdfdfd]">
       <div className="max-w-7xl mx-auto px-6">
         {/* 1. Top Contact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-orange-100/50">
           <ContactCard
             icon={<Phone size={28} />}
-            label="Call or Text"
             value="+44 7949 488211"
             bgColor="bg-[#ff6600]"
           />
           <ContactCard
             icon={<Mail size={28} />}
-            label="Email"
             value="turonmiah123@aol.com"
             bgColor="bg-[#e65c00]"
           />
           <ContactCard
             icon={<Award size={28} />}
-            label="Result"
             value="High Pass Rate"
             bgColor="bg-[#cc5200]"
           />
