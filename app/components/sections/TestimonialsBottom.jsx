@@ -9,8 +9,6 @@ const TestimonialsBottom = () => {
       {/* 2. STATS GRID */}
       <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-4 md:gap-8 text-center">
         {[
-          { label: "Happy Students", val: "1,200+" },
-          { label: "Driving Years", val: "15+" },
           { label: "Pass Rate", val: "98%" },
           { label: "Reviews", val: "5-Star" }
         ].map((stat, i) => (
