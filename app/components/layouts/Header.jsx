@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 import {
   Car,
   Menu,
@@ -42,8 +43,6 @@ const Header = () => {
       {/* Top Bar */}
       <div className="bg-[#ff6600] text-white py-2.5 px-4 sm:px-6 overflow-x-auto whitespace-nowrap">
         <div className="max-w-7xl mx-auto flex items-center justify-start gap-6 text-[11px] sm:text-[12px] font-bold uppercase tracking-widest opacity-95">
-          {/* SOCIAL ICON */}
-
           <div className="h-4 w-[1px] bg-white/20 hidden sm:block"></div>
 
           {/* PHONE */}
@@ -53,6 +52,18 @@ const Header = () => {
           >
             <Phone size={13} fill="white" />
             <span>+44 7949 488211</span>
+          </a>
+
+          <div className="h-4 w-[1px] bg-white/20 hidden md:block"></div>
+
+          {/* WHATSAPP */}
+          <a
+            href="https://wa.me/447949488211"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-black transition-colors"
+          >
+            <span>WhatsApp</span>
           </a>
 
           <div className="h-4 w-[1px] bg-white/20 hidden md:block"></div>
@@ -80,7 +91,6 @@ const Header = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo Section */}
           <Link href="/" className="inline-block cursor-pointer">
-           
             <div className="relative h-12 w-44">
               <Image
                 src="/images/logo/logo-.webp"

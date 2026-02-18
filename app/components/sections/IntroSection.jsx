@@ -1,20 +1,28 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import {
   Phone,
   Mail,
-  Award,
   ArrowRight,
+  BookOpen,
+  ShieldCheck,
+  Award,
 } from "lucide-react";
 
-const ActionFooter = dynamic(() => import('@/app/components/sections/ActionFooter'), { ssr: false });
-const Map = dynamic(() => import("@/app/components/sections/Map"), { 
+const ActionFooter = dynamic(
+  () => import("@/app/components/sections/ActionFooter"),
+  { ssr: false },
+);
+const Map = dynamic(() => import("@/app/components/sections/Map"), {
   ssr: false,
-  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-2xl" /> 
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-2xl" />,
 });
-const TopGalleryPreview = dynamic(() => import("@/app/components/sections/TopGalleryPreview"), { ssr: false });
+const TopGalleryPreview = dynamic(
+  () => import("@/app/components/sections/TopGalleryPreview"),
+  { ssr: false },
+);
 
 const IntroSection = () => {
   return (
@@ -22,22 +30,27 @@ const IntroSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* 1. Top Contact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-orange-100/50">
-          <ContactCard
-            icon={<Phone size={28} />}
-            value="+44 7949 488211"
-            bgColor="bg-[#ff6600]"
-          />
-          <ContactCard
-            icon={<Mail size={28} />}
-            value="turonmiah123@aol.com"
-            bgColor="bg-[#e65c00]"
-          />
-          <ContactCard
-            icon={<Award size={28} />}
-            value="High Pass Rate"
-            bgColor="bg-[#cc5200]"
-          />
-        </div>
+
+  <ContactCard
+    icon={<BookOpen size={22} />}
+    value="Structured Learning & Expert Instruction"
+    bgColor="bg-[#ff6600]"
+  />
+
+  <ContactCard
+    icon={<ShieldCheck size={22} />}
+    value="Safety & Defensive Driving Techniques"
+    bgColor="bg-[#e65c00]"
+  />
+
+  <ContactCard
+    icon={<Award size={22} />}
+    value="High Pass Rate"
+    bgColor="bg-[#cc5200]"
+  />
+
+</div>
+
 
         {/* 2. Main Content Area */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-12">
@@ -55,11 +68,9 @@ const IntroSection = () => {
                 <p className="text-xl leading-relaxed">
                   Learning to drive is one of the greatest milestones in your
                   life. At{" "}
-                  <span className="font-bold text-gray-900">
-                    TM Drive
-                  </span>
-                  , we offer a refreshing approach to tuition that makes you
-                  feel relaxed.
+                  <span className="font-bold text-gray-900">TM Drive</span>, we
+                  offer a refreshing approach to tuition that makes you feel
+                  relaxed.
                 </p>
               </div>
             </motion.div>
@@ -92,9 +103,9 @@ const IntroSection = () => {
           </motion.div>
         </div>
 
-        <TopGalleryPreview/>
+        <TopGalleryPreview />
         <Map />
-        <ActionFooter/>
+        <ActionFooter />
       </div>
     </section>
   );
