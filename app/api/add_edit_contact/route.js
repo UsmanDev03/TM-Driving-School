@@ -24,11 +24,11 @@ export async function POST(req) {
       submittedAt: new Date(),
     });
 
-    try {
-      await sendEmails(body);
-    } catch (mailErr) {
-      console.error("Email Error but data was saved:", mailErr.message);
-    }
+    // try {
+    //   await sendEmails(body);
+    // } catch (mailErr) {
+    //   console.error("Email Error but data was saved:", mailErr.message);
+    // }
 
     return NextResponse.json({
       message: "Seatbelts on! We've received your request and are heading your way."

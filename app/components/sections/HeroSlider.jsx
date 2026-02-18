@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const slides = [
   {
-    image: "/images/hero-1.webp",
+    image: "/images/gallery/F-3.webp",
     title: "Welcome to\nTM Drive",
     description:
       "I offer a high standard of driving tuition at a price that you can afford!",
@@ -15,7 +15,7 @@ const slides = [
     link: "/price",
   },
   {
-    image: "/images/hero-2.webp",
+    image: "/images/gallery/TM-Car-4.webp",
     title: "Professional Instruction",
     description: "Expert manual driving lessons tailored to your needs.",
     buttonText: "Talk to Your instructor",

@@ -273,7 +273,6 @@ const PricingPage = () => {
         </motion.div>
       </div>
 
-      {/* 5. IMPORTANT INFO - Slide From Sides */}
       <div className="max-w-7xl mx-auto px-6 mt-12">
         <div className="bg-gray-900 rounded-[3.5rem] p-10 md:p-16 relative overflow-hidden text-white border-b-8 border-[#ff6600]">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -286,6 +285,7 @@ const PricingPage = () => {
               <h2 className="text-4xl font-black italic uppercase tracking-tighter mb-8 text-[#ff6600]">
                 Important Information
               </h2>
+
               <div className="space-y-8 text-left">
                 {[
                   {
@@ -300,12 +300,16 @@ const PricingPage = () => {
                     t: "Driving Test hire",
                     d: "£250*. Existing students only. Includes 1.5h tuition, insurance, and drop off.",
                   },
+                  {
+                    t: "Test Centres Covered",
+                    d: "Mill Hill, Hendon, Pinner, Borehamwood and Isleworth",
+                  },
                 ].map((info, i) => (
                   <div key={i} className="border-l-2 border-[#ff6600] pl-4">
-                    <h4 className="font-black uppercase italic text-sm mb-1">
+                    <h4 className="font-black uppercase italic text-sm mb-1 text-white">
                       {info.t}
                     </h4>
-                    <p className="text-gray-400 text-xs font-medium uppercase italic">
+                    <p className="text-gray-400 text-xs font-medium uppercase italic leading-relaxed">
                       {info.d}
                     </p>
                   </div>
