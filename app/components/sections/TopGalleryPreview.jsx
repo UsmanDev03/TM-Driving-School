@@ -80,29 +80,30 @@ const TopGalleryPreview = () => {
       </motion.div>
 
       {/* IMAGES SECTION - Popup logic removed */}
-      <div className="pt-6 border-t border-gray-100 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mx-auto justify-items-center">
-          {certificates.map((img) => (
-            <div
-              key={img.id}
-              className="overflow-hidden rounded-3xl shadow-xl border border-gray-100 aspect-[4/3] relative group w-full max-w-[400px] bg-gray-50"
-            >
-              <img
-                src={img.url}
-                alt={img.title}
-                className="w-full h-full object-cover object-top transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
+     <div className="pt-6 border-t border-gray-100 w-full">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mx-auto justify-items-center">
+    {certificates.map((img) => (
+      <div
+        key={img.id}
+        className="overflow-hidden rounded-3xl shadow-xl border border-gray-100 w-full max-w-[400px] bg-gray-50 relative group"
+      >
+        <img
+          src={img.url}
+          alt={img.title}
+          className="w-full h-auto object-contain transition-transform duration-700"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
 
-              <div className="absolute bottom-6 left-8">
-                <p className="text-white font-black uppercase tracking-tighter text-lg md:text-xl leading-none">
-                  {img.title}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="absolute bottom-6 left-8">
+          <p className="text-white font-black uppercase tracking-tighter text-lg md:text-xl leading-none">
+            {img.title}
+          </p>
         </div>
       </div>
+    ))}
+  </div>
+</div>
+
     </div>
   );
 };

@@ -31,25 +31,25 @@ const IntroSection = () => {
         {/* 1. Top Contact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-orange-100/50">
 
-  <ContactCard
-    icon={<BookOpen size={22} />}
-    value="Structured Learning & Expert Instruction"
-    bgColor="bg-[#ff6600]"
-  />
+        <ContactCard
+          icon={<BookOpen size={22} />}
+          value="Structured Learning & Expert Instruction"
+          bgColor="bg-[#ff6600]"
+        />
 
-  <ContactCard
-    icon={<ShieldCheck size={22} />}
-    value="Safety & Defensive Driving Techniques"
-    bgColor="bg-[#e65c00]"
-  />
+        <ContactCard
+          icon={<ShieldCheck size={22} />}
+          value="Safety & Defensive Driving Techniques"
+          bgColor="bg-[#e65c00]"
+        />
 
-  <ContactCard
-    icon={<Award size={22} />}
-    value="High Pass Rate"
-    bgColor="bg-[#cc5200]"
-  />
+        <ContactCard
+          icon={<Award size={22} />}
+          value="High Pass Rate"
+          bgColor="bg-[#cc5200]"
+        />
 
-</div>
+      </div>
 
 
         {/* 2. Main Content Area */}
