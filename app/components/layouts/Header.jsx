@@ -91,25 +91,31 @@ const Header = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* Logo Section */}
           <Link href="/" className="inline-block cursor-pointer">
-            <div className="relative h-12 w-44">
+            {/* Height aur Width ko thora barha diya gaya hai */}
+            <div className="relative h-16 w-60">
               <Image
                 src="/images/logo/logo-.webp"
                 alt="TM Driving School Logo"
                 fill
-                className="object-contain xl:scale-[1.8] scale-[1.3]"
+                className="object-contain xl:scale-[1.7] scale-[1.4]"
                 priority
               />
             </div>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8 text-[15px]">
+          <div className="hidden md:flex items-center gap-10 text-[16px]">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href} className="relative group">
-                <span className="text-gray-600 font-[900] tracking-tight group-hover:text-[#ff6600] transition-colors duration-300">
+              <Link
+                key={link.name}
+                href={link.href}
+                className="relative group py-2"
+              >
+                <span className="text-gray-700 font-bold uppercase tracking-wide group-hover:text-[#ff6600] transition-colors duration-300">
                   {link.name}
                 </span>
-                <span className="absolute bottom-[-4px] left-0 w-0 h-0.5 bg-[#ff6600] transition-all duration-300 group-hover:w-full"></span>
+                {/* Animated Underline: Thori si thick aur smooth transition ke sath */}
+                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ff6600] transition-all duration-300 ease-in-out group-hover:w-full"></span>
               </Link>
             ))}
 

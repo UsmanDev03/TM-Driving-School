@@ -55,13 +55,14 @@ const Footer = () => {
         {/* 1. Brand Section */}
         <div className="flex flex-col">
           {/* Sirf yahan tabdeeli ki hai: Logo add kiya hai */}
-          <Link href="/" className="inline-block cursor-pointer w-fit">
-            <div className="relative h-12 w-44">
+          <Link href="/" className="inline-block cursor-pointer">
+            {/* Height aur Width ko thora barha diya gaya hai */}
+            <div className="relative h-16 w-60">
               <Image
                 src="/images/logo/logo-1-.webp"
                 alt="TM Driving School Logo"
                 fill
-                className="object-contain xl:scale-[1.8] scale-[1.3] xl:mt-[-8px]"
+                className="object-contain xl:scale-[1.7] scale-[1.4]"
                 priority
               />
             </div>
@@ -174,9 +175,7 @@ const Footer = () => {
                 <p className="text-xs text-gray-500 uppercase font-bold tracking-wider">
                   Our Office
                 </p>
-                <p className="text-sm font-bold leading-relaxed">
-                  West London
-                </p>
+                <p className="text-sm font-bold leading-relaxed">West London</p>
               </div>
             </motion.div>
           </div>
@@ -187,8 +186,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-medium">
           <p className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest">
-            © Copyright {new Date().getFullYear()} | TM Drive. All
-            Rights Reserved. | Powered by{" "}
+            © Copyright {new Date().getFullYear()} | TM Drive. All Rights
+            Reserved. | Powered by{" "}
             <a
               href="https://teqnoor.com/"
               target="_blank"
