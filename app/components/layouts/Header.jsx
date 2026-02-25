@@ -70,11 +70,11 @@ const Header = () => {
 
           {/* EMAIL */}
           <a
-            href="mailto:turonmiah123@aol.com"
+            href="mailto:info@tmdriveschool.co.uk"
             className="hidden md:flex items-center gap-2 hover:text-black transition-colors"
           >
             <Mail size={13} />
-            <span>turonmiah123@aol.com</span>
+            <span>info@tmdriveschool.co.uk</span>
           </a>
 
           <div className="h-4 w-[1px] bg-white/20 hidden lg:block"></div>

@@ -139,7 +139,7 @@ const Footer = () => {
             </motion.a>
 
             <motion.a
-              href="mailto:turonmiah123@aol.com"
+              href="mailto:info@tmdriveschool.co.uk"
               whileHover={{ scale: 1.02 }}
               className="flex items-start gap-4 group"
             >
@@ -154,7 +154,7 @@ const Footer = () => {
                   Email Us
                 </p>
                 <p className="text-base font-bold truncate">
-                  turonmiah123@aol.com
+                  info@tmdriveschool.co.uk
                 </p>
               </div>
             </motion.a>
