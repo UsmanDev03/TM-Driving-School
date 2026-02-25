@@ -12,7 +12,10 @@ import {
   MapPin,
   Clock,
   User,
+  Mail,
   Loader2,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -23,34 +26,16 @@ const ContactQueries = () => {
   const [queries, setQueries] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Sahi API Path jo aapke folder structure (app/api/add_edit_contact/route.js) se match karta hai
+  // --- PAGINATION STATES ---
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 20;
+
   const API_URL = "/api/add_edit_contact";
 
-  // --- 1. FETCH DATA FROM MONGODB ---
   const fetchQueries = async () => {
     try {
       setLoading(true);
-      const response = await fetch(API_URL, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      const contentType = response.headers.get("content-type");
-
-      if (
-        !response.ok ||
-        !contentType ||
-        !contentType.includes("application/json")
-      ) {
-        const errorText = await response.text();
-        console.error("API Error Response:", errorText.substring(0, 150));
-        throw new Error(
-          "Server ne JSON response nahi bheja. API route check karein.",
-        );
-      }
-
+      const response = await fetch(API_URL);
       const data = await response.json();
       setQueries(Array.isArray(data) ? data : []);
     } catch (error) {
@@ -64,22 +49,14 @@ const ContactQueries = () => {
     fetchQueries();
   }, []);
 
-  // --- 2. DELETE FROM MONGODB ---
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`${API_URL}?id=${id}`, {
-        method: "DELETE",
-      });
-
+      const response = await fetch(`${API_URL}?id=${id}`, { method: "DELETE" });
       if (response.ok) {
         setQueries((prev) => prev.filter((q) => q._id !== id));
         setDeleteId(null);
-      } else {
-        const errData = await response.json();
-        alert(errData.message || "Failed to delete from database");
       }
     } catch (error) {
-      console.error("Delete Error:", error);
       alert("Something went wrong while deleting.");
     }
   };
@@ -88,30 +65,35 @@ const ContactQueries = () => {
   const filteredQueries = queries.filter(
     (q) =>
       q.full_name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      q.area?.toLowerCase().includes(searchQuery.toLowerCase()),
+      q.area?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      q.email?.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // --- PAGINATION CALCULATIONS ---
+  const totalPages = Math.ceil(filteredQueries.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = filteredQueries.slice(indexOfFirstItem, indexOfLastItem);
+
+  // Reset to page 1 when searching
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchQuery]);
 
   return (
     <div className="p-4 md:p-10 space-y-8 max-w-7xl mx-auto font-sans">
-      {/* --- HEADER --- */}
+      {/* HEADER SECTION */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-black text-gray-900 tracking-tight">
-            Contact Queries
-          </h1>
-          <p className="text-blue-600 text-[10px] font-bold uppercase tracking-[0.2em] mt-1">
-            Inbox Management
-          </p>
+          <h1 className="text-3xl font-black text-gray-900 tracking-tight">Contact Queries</h1>
+          <p className="text-blue-600 text-[10px] font-bold uppercase tracking-[0.2em] mt-1">Inbox Management</p>
         </div>
 
         <div className="relative w-full lg:max-w-md">
-          <Search
-            className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-            size={18}
-          />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
           <input
             type="text"
-            placeholder="Search name or area..."
+            placeholder="Search name, area or email..."
             className="w-full pl-12 pr-4 py-3 bg-white border border-gray-200 rounded-2xl outline-none focus:ring-4 focus:ring-blue-50 focus:border-blue-500 transition-all shadow-sm text-sm"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -119,97 +101,116 @@ const ContactQueries = () => {
         </div>
       </div>
 
-      {/* --- TABLE --- */}
+      {/* TABLE SECTION */}
       <div className="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           {loading ? (
             <div className="flex flex-col items-center justify-center p-20 space-y-4">
               <Loader2 className="animate-spin text-blue-600" size={40} />
-              <p className="text-gray-400 font-bold text-xs uppercase tracking-widest">
-                Loading Records...
-              </p>
+              <p className="text-gray-400 font-bold text-xs uppercase tracking-widest">Loading Records...</p>
             </div>
           ) : (
-            <table className="w-full text-left border-collapse min-w-[900px]">
-              <thead>
-                <tr className="bg-gray-50/50 border-b border-gray-50">
-                  <th className="px-8 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest">
-                    Student
-                  </th>
-                  <th className="px-6 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest">
-                    Mobile
-                  </th>
-                  <th className="px-6 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest">
-                    Area
-                  </th>
-                  <th className="px-6 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest">
-                    Pref. Time
-                  </th>
-                  <th className="px-8 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest text-right">
-                    Actions
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-50">
-                {filteredQueries.map((q) => (
-                  <tr
-                    key={q._id}
-                    className="hover:bg-blue-50/20 transition-colors group"
-                  >
-                    <td className="px-8 py-5">
-                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xs shadow-lg shadow-blue-100">
-                          {q.full_name?.charAt(0) || "U"}
-                        </div>
-                        <p className="text-sm font-black text-gray-900 leading-none">
-                          {q.full_name}
-                        </p>
-                      </div>
-                    </td>
-                    <td className="px-6 py-5 text-xs font-bold text-gray-600">
-                      {q.mobile_number}
-                    </td>
-                    <td className="px-6 py-5 text-xs font-bold text-gray-600">
-                      <div className="flex items-center gap-2">
-                        <MapPin size={14} className="text-blue-500" />
-                        {q.area}
-                      </div>
-                    </td>
-                    <td className="px-6 py-5">
-                      <div className="flex items-center gap-2 text-gray-500 text-[11px] font-bold">
-                        <Clock size={14} className="text-blue-400" />
-                        {q.preferred_time}
-                      </div>
-                    </td>
-                    <td className="px-8 py-5 text-right">
-                      <div className="flex items-center justify-end gap-2">
-                        <button
-                          onClick={() => setSelectedQuery(q)}
-                          className="p-2.5 text-blue-600 hover:bg-blue-50 rounded-xl transition-all"
-                        >
-                          <Eye size={18} />
-                        </button>
-                        <button
-                          onClick={() => setDeleteId(q._id)}
-                          className="p-2.5 text-red-400 hover:bg-red-50 rounded-xl transition-all"
-                        >
-                          <Trash2 size={18} />
-                        </button>
-                      </div>
-                    </td>
+            <>
+              <table className="w-full text-left border-collapse min-w-[1000px]">
+                <thead>
+                  <tr className="bg-gray-50/50 border-b border-gray-50">
+                    <th className="px-8 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest">Student</th>
+                    <th className="px-6 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest">Email</th>
+                    <th className="px-6 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest">Mobile</th>
+                    <th className="px-6 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest">Area</th>
+                    <th className="px-6 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest">Pref. Time</th>
+                    <th className="px-8 py-5 text-[10px] font-black uppercase text-gray-400 tracking-widest text-right">Actions</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y divide-gray-50">
+                  {currentItems.map((q) => (
+                    <tr key={q._id} className="hover:bg-blue-50/20 transition-colors group">
+                      <td className="px-8 py-5">
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-xs shadow-lg shadow-blue-100">
+                            {q.full_name?.charAt(0) || "U"}
+                          </div>
+                          <p className="text-sm font-black text-gray-900 leading-none">{q.full_name}</p>
+                        </div>
+                      </td>
+                      <td className="px-6 py-5 text-xs font-bold text-blue-500 underline decoration-blue-200">
+                        {q.email || "N/A"}
+                      </td>
+                      <td className="px-6 py-5 text-xs font-bold text-gray-600">{q.mobile_number}</td>
+                      <td className="px-6 py-5 text-xs font-bold text-gray-600">
+                        <div className="flex items-center gap-2">
+                          <MapPin size={14} className="text-blue-500" />
+                          {q.area}
+                        </div>
+                      </td>
+                      <td className="px-6 py-5">
+                        <div className="flex items-center gap-2 text-gray-500 text-[11px] font-bold">
+                          <Clock size={14} className="text-blue-400" />
+                          {q.preferred_time}
+                        </div>
+                      </td>
+                      <td className="px-8 py-5 text-right">
+                        <div className="flex items-center justify-end gap-2">
+                          <button onClick={() => setSelectedQuery(q)} className="p-2.5 text-blue-600 hover:bg-blue-50 rounded-xl transition-all">
+                            <Eye size={18} />
+                          </button>
+                          <button onClick={() => setDeleteId(q._id)} className="p-2.5 text-red-400 hover:bg-red-50 rounded-xl transition-all">
+                            <Trash2 size={18} />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              {/* --- PAGINATION CONTROLS --- */}
+              {totalPages > 1 && (
+                <div className="px-8 py-6 bg-gray-50/50 border-t border-gray-50 flex items-center justify-between">
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-widest">
+                    Showing {indexOfFirstItem + 1} - {Math.min(indexOfLastItem, filteredQueries.length)} of {filteredQueries.length}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <button
+                      disabled={currentPage === 1}
+                      onClick={() => setCurrentPage((p) => p - 1)}
+                      className="p-2 rounded-xl border border-gray-200 bg-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+                    >
+                      <ChevronLeft size={18} className="text-gray-600" />
+                    </button>
+                    
+                    {[...Array(totalPages)].map((_, i) => (
+                      <button
+                        key={i + 1}
+                        onClick={() => setCurrentPage(i + 1)}
+                        className={`w-9 h-9 rounded-xl text-xs font-bold transition-all ${
+                          currentPage === i + 1
+                            ? "bg-blue-600 text-white shadow-lg shadow-blue-100"
+                            : "bg-white border border-gray-200 text-gray-600 hover:bg-gray-50"
+                        }`}
+                      >
+                        {i + 1}
+                      </button>
+                    )).slice(Math.max(0, currentPage - 3), Math.min(totalPages, currentPage + 2))}
+
+                    <button
+                      disabled={currentPage === totalPages}
+                      onClick={() => setCurrentPage((p) => p + 1)}
+                      className="p-2 rounded-xl border border-gray-200 bg-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-gray-50 transition-colors"
+                    >
+                      <ChevronRight size={18} className="text-gray-600" />
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
           )}
+
           {!loading && filteredQueries.length === 0 && (
-            <div className="p-20 text-center text-gray-400 font-bold text-sm">
-              No queries found.
-            </div>
+            <div className="p-20 text-center text-gray-400 font-bold text-sm">No queries found.</div>
           )}
         </div>
       </div>
-
       {/* --- DETAIL MODAL --- */}
       <AnimatePresence>
         {selectedQuery && (
