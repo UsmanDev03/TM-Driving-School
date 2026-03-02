@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Driving School West London | Manual Lessons | TM Drive",
   description: "Get expert manual driving lessons in West London. High pass rates and affordable tuition in Notting Hill & Chelsea. Book your first driving lesson now!",
+  verification: {
+    google: "bAHx5SsNFJFRdSCMlB7VrzS7qxIyCaTnkPQXUi-j264",
+  },
 };
 
 export default function RootLayout({ children }) {

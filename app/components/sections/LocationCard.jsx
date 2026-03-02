@@ -57,10 +57,12 @@ const LocationCard = () => {
               <div className="bg-orange-50 w-10 h-10 rounded-lg flex items-center justify-center mb-2 text-[#ff6600] group-hover:bg-[#ff6600] group-hover:text-white transition-all duration-300">
                 <MapPin size={18} strokeWidth={3} />
               </div>
-
-              <h4 className="font-[900] text-gray-900 text-[12px] uppercase tracking-tight italic leading-tight">
+              {/* <p className="font-[900] text-gray-900 text-[12px] uppercase tracking-tight italic leading-tight">
                 {loc.area}
-              </h4>
+              </p> */}
+              <h3 className="font-[900] text-gray-900 text-[12px] uppercase tracking-tight italic leading-tight">
+                {loc.area}
+              </h3>
 
               {loc.postcode && (
                 <span className="text-[#ff6600] text-[10px] font-[1000] uppercase tracking-wider mt-1">
