@@ -11,6 +11,7 @@ import {
   Facebook,
   Send,
   MapPin,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -120,6 +121,35 @@ const Header = () => {
             ))}
 
             {/* --- ANIMATED CONTACT BUTTON --- */}
+            {/* --- TRUSTPILOT BUTTON --- */}
+            <Link 
+              href="https://www.trustpilot.com/review/tmdriveschool.co.uk" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <motion.button
+                whileHover={{ y: -2, scale: 1.02 }}
+                whileTap={{ scale: 0.95 }}
+                className="relative flex items-center gap-2 bg-[#00b67a] text-white px-6 py-2.5 rounded-full font-black text-sm uppercase tracking-widest overflow-hidden group shadow-lg"
+              >
+                {/* Big Star Icon */}
+                <Star 
+                  size={20} 
+                  strokeWidth={0} 
+                  className="fill-white" 
+                />
+                
+                <div className="flex flex-col items-start leading-none">
+                  <span className="text-[9px] opacity-80 font-bold uppercase tracking-tighter">Review on</span>
+                  <span className="text-[13px] tracking-tight">Trustpilot</span>
+                </div>
+
+                {/* Hover par light effect */}
+                <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.button>
+            </Link>
+
+            {/* --- CONTACT BUTTON --- */}
             <Link href="/contact">
               <motion.button
                 variants={buttonVariants}
@@ -175,6 +205,23 @@ const Header = () => {
                   </motion.div>
                 </Link>
               ))}
+              {/* --- MOBILE TRUSTPILOT BUTTON --- */}
+              <Link 
+                href="https://www.trustpilot.com/review/tmdriveschool.co.uk" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={closeMenu}
+              >
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full bg-[#00b67a] text-white py-4 rounded-xl font-black text-lg shadow-lg flex items-center justify-center gap-3 mt-4"
+                >
+                  Review on Trustpilot <Star size={24} strokeWidth={0} className="fill-white" />
+                </motion.button>
+              </Link>
+
+              {/* --- YOUR EXISTING CONTACT BUTTON --- */}
               <Link href="/contact" onClick={closeMenu}>
                 <motion.button
                   whileHover={{ scale: 1.02 }}
