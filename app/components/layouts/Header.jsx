@@ -106,22 +106,7 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10 text-[16px]">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="relative group py-2"
-              >
-                <span className="text-gray-700 font-bold uppercase tracking-wide group-hover:text-[#ff6600] transition-colors duration-300">
-                  {link.name}
-                </span>
-                {/* Animated Underline: Thori si thick aur smooth transition ke sath */}
-                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ff6600] transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </Link>
-            ))}
-
-            {/* --- ANIMATED CONTACT BUTTON --- */}
-            {/* --- TRUSTPILOT BUTTON --- */}
+             {/* --- TRUSTPILOT BUTTON --- */}
             <Link 
               href="https://www.trustpilot.com/review/tmdriveschool.co.uk" 
               target="_blank" 
@@ -148,6 +133,22 @@ const Header = () => {
                 <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="relative group py-2"
+              >
+                <span className="text-gray-700 font-bold uppercase tracking-wide group-hover:text-[#ff6600] transition-colors duration-300">
+                  {link.name}
+                </span>
+                {/* Animated Underline: Thori si thick aur smooth transition ke sath */}
+                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ff6600] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+              </Link>
+            ))}
+
+            {/* --- ANIMATED CONTACT BUTTON --- */}
+           
 
             {/* --- CONTACT BUTTON --- */}
             <Link href="/contact">
@@ -193,19 +194,7 @@ const Header = () => {
             className="md:hidden bg-white border-t border-gray-100 absolute w-full left-0 z-0 shadow-xl overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col gap-5">
-              {navLinks.map((link, index) => (
-                <Link key={link.name} href={link.href} onClick={closeMenu}>
-                  <motion.div
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-gray-800 font-bold text-xl hover:text-[#ff6600]"
-                  >
-                    {link.name}
-                  </motion.div>
-                </Link>
-              ))}
-              {/* --- MOBILE TRUSTPILOT BUTTON --- */}
+               {/* --- MOBILE TRUSTPILOT BUTTON --- */}
               <Link 
                 href="https://www.trustpilot.com/review/tmdriveschool.co.uk" 
                 target="_blank" 
@@ -220,6 +209,19 @@ const Header = () => {
                   Review on Trustpilot <Star size={24} strokeWidth={0} className="fill-white" />
                 </motion.button>
               </Link>
+              {navLinks.map((link, index) => (
+                <Link key={link.name} href={link.href} onClick={closeMenu}>
+                  <motion.div
+                    initial={{ x: -20, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="text-gray-800 font-bold text-xl hover:text-[#ff6600]"
+                  >
+                    {link.name}
+                  </motion.div>
+                </Link>
+              ))}
+             
 
               {/* --- YOUR EXISTING CONTACT BUTTON --- */}
               <Link href="/contact" onClick={closeMenu}>
