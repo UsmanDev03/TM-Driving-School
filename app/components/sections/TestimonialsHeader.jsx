@@ -24,14 +24,14 @@ const TestimonialsHeader = () => {
           Real Results, Real People
         </motion.span>
 
-        <motion.h2
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-5xl md:text-7xl font-black italic uppercase tracking-tighter text-white leading-[0.85]"
         >
           Our Students <br />
           <span className="text-[#ff6600]">Pass With Pride</span>
-        </motion.h2>
+        </motion.h1>
 
         {/* 4. PASS RATE BADGE */}
         <motion.div
