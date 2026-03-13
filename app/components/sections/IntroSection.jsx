@@ -121,23 +121,24 @@ const IntroSection = () => {
         <ActionFooter />
       </div>
       {/* Certificates Section */}
-      <div className="py-16 flex justify-center gap-6 flex-wrap">
-        {certificates.map((img) => (
-          <motion.div
-            key={img.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-white p-3 rounded-2xl shadow-lg border border-gray-100"
-          >
-            <img
-              src={img.url}
-              alt="Driving Instructor Certificate"
-              className="w-[200px] h-auto object-contain"
-            />
-          </motion.div>
-        ))}
-      </div>
+<div className="py-16 flex flex-wrap justify-center gap-6">
+  {certificates.map((img) => (
+    <motion.div
+      key={img.id}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="bg-white p-3 rounded-2xl shadow-lg border border-gray-100
+                 w-[140px] sm:w-[160px] md:w-[200px] flex justify-center"
+    >
+      <img
+        src={img.url}
+        alt="Driving Instructor Certificate"
+        className="w-full h-auto object-contain"
+      />
+    </motion.div>
+  ))}
+</div>
     </section>
   );
 };
