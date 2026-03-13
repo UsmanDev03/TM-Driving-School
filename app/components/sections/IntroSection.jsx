@@ -15,14 +15,21 @@ const ActionFooter = dynamic(
   () => import("@/app/components/sections/ActionFooter"),
   { ssr: false },
 );
+
 const Map = dynamic(() => import("@/app/components/sections/Map"), {
   ssr: false,
   loading: () => <div className="h-96 bg-gray-100 animate-pulse rounded-2xl" />,
 });
+
 const TopGalleryPreview = dynamic(
   () => import("@/app/components/sections/TopGalleryPreview"),
   { ssr: false },
 );
+
+const certificates = [
+  { id: 1, url: "/images/li/li-1.webp" },
+  { id: 2, url: "/images/li/li-2.webp" },
+];
 
 const IntroSection = () => {
   return (
@@ -30,27 +37,24 @@ const IntroSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* 1. Top Contact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-12 rounded-2xl overflow-hidden shadow-2xl shadow-orange-100/50">
+          <ContactCard
+            icon={<BookOpen size={22} />}
+            value="Structured Learning & Expert Instruction"
+            bgColor="bg-[#ff6600]"
+          />
 
-        <ContactCard
-          icon={<BookOpen size={22} />}
-          value="Structured Learning & Expert Instruction"
-          bgColor="bg-[#ff6600]"
-        />
+          <ContactCard
+            icon={<ShieldCheck size={22} />}
+            value="Safety & Defensive Driving Techniques"
+            bgColor="bg-[#e65c00]"
+          />
 
-        <ContactCard
-          icon={<ShieldCheck size={22} />}
-          value="Safety & Defensive Driving Techniques"
-          bgColor="bg-[#e65c00]"
-        />
-
-        <ContactCard
-          icon={<Award size={22} />}
-          value="High Pass Rate"
-          bgColor="bg-[#cc5200]"
-        />
-
-      </div>
-
+          <ContactCard
+            icon={<Award size={22} />}
+            value="High Pass Rate"
+            bgColor="bg-[#cc5200]"
+          />
+        </div>
 
         {/* 2. Main Content Area */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-12">
@@ -64,6 +68,7 @@ const IntroSection = () => {
                 Premium Driving Tuition <br />
                 <span className="text-[#ff6600]">In London</span>
               </h2>
+
               <div className="prose prose-lg text-gray-600 space-y-6 font-sans">
                 <p className="text-xl leading-relaxed">
                   Learning to drive is one of the greatest milestones in your
@@ -89,23 +94,49 @@ const IntroSection = () => {
               </div>
               Quick Info
             </h3>
+
             <div className="space-y-8">
               <InfoItem
                 label="Manual Lessons"
                 detail="High standard manual tuition"
               />
+
               <InfoItem
                 label="Success Rate"
                 detail="High First-Time Pass Rate"
               />
+
               <InfoItem label="Value" detail="Affordable Expert Coaching" />
             </div>
           </motion.div>
         </div>
 
+        {/* Instructor Section */}
         <TopGalleryPreview />
+
+        
         <Map />
+
+        
         <ActionFooter />
+      </div>
+      {/* Certificates Section */}
+      <div className="py-16 flex justify-center gap-6 flex-wrap">
+        {certificates.map((img) => (
+          <motion.div
+            key={img.id}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white p-3 rounded-2xl shadow-lg border border-gray-100"
+          >
+            <img
+              src={img.url}
+              alt="Driving Instructor Certificate"
+              className="w-[200px] h-auto object-contain"
+            />
+          </motion.div>
+        ))}
       </div>
     </section>
   );
@@ -119,9 +150,11 @@ const ContactCard = ({ icon, label, value, bgColor }) => (
     <div className="bg-white/20 p-3 rounded-xl mb-2 group-hover:scale-110 transition-transform">
       {icon}
     </div>
+
     <span className="text-[10px] uppercase tracking-[0.2em] font-black opacity-70">
       {label}
     </span>
+
     <span className="text-lg font-bold tracking-tight">{value}</span>
   </motion.div>
 );
@@ -131,6 +164,7 @@ const InfoItem = ({ label, detail }) => (
     <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest mb-1 group-hover:text-[#ff6600]">
       {label}
     </p>
+
     <p className="text-lg text-gray-800 font-extrabold leading-tight">
       {detail}
     </p>

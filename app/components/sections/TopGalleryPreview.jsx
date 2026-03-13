@@ -2,11 +2,6 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
-const certificates = [
-  { id: 1, url: "/images/li/li-1.webp" },
-  { id: 2, url: "/images/li/li-2.webp" },
-];
-
 const TopGalleryPreview = () => {
   return (
     <div className="max-w-7xl mx-auto bg-white font-sans">
@@ -78,25 +73,6 @@ const TopGalleryPreview = () => {
           </div>
         </div>
       </motion.div>
-
-      {/* CERTIFICATES SECTION */}
-      <div className="pt-6 border-t border-gray-100 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl mx-auto justify-items-center">
-          {certificates.map((img) => (
-            <div
-              key={img.id}
-              className="overflow-hidden rounded-3xl shadow-xl border border-gray-100 w-full max-w-[320px] bg-gray-50 relative group"
-            >
-              <img
-                src={img.url}
-                alt="Certificate"
-                className="w-full h-auto object-contain transition-transform duration-700"
-              />
-             
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 };
