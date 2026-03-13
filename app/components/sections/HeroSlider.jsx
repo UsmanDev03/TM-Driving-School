@@ -9,8 +9,6 @@ const slides = [
   {
     image: "/images/gallery/F-3.webp",
     title: "Welcome to\nTM Drive",
-    description:
-      "I offer a high standard of driving tuition at a price that you can afford!",
     buttonText: "Book your session",
     link: "/price",
   },
@@ -81,13 +79,15 @@ const HeroSlider = () => {
               {slides[current].title}
             </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-gray-200 text-[15px] md:text-lg font-bold uppercase tracking-[0.25em] max-w-xl mb-10"
-            >
-              {slides[current].description}
-            </motion.p>
+            {slides[current].description && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-gray-200 text-[15px] md:text-lg font-bold uppercase tracking-[0.25em] max-w-xl mb-6"
+              >
+                {slides[current].description}
+              </motion.p>
+            )}
             <Link href={slides[current].link}>
               <button className="group bg-white text-black px-10 py-4 rounded-full font-black uppercase tracking-widest text-[10px] md:text-xs shadow-2xl flex items-center gap-2 hover:bg-[#ff6600] hover:text-white transition-all">
                 {slides[current].buttonText}
