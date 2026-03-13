@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+
 const TikTokIcon = ({ size = 20 }) => (
   <svg
     width={size}
@@ -17,6 +18,7 @@ const TikTokIcon = ({ size = 20 }) => (
     <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
   </svg>
 );
+
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Prices", href: "/price" },
@@ -24,7 +26,7 @@ const navLinks = [
   { name: "Gallery", href: "/gallery" },
 ];
 
-import { Phone, Mail, MapPin, Car, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight, Star } from "lucide-react";
 import { Facebook, Instagram, X } from "lucide-react";
 
 const socialLinks = [
@@ -54,7 +56,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* 1. Brand Section */}
         <div className="flex flex-col">
-          <Link href="/" className="inline-block cursor-pointer">
+          <Link href="/" className="inline-block cursor-pointer mb-6">
             <div className="relative h-16 w-64">
               <Image
                 src="/images/logo/logo-1-.webp"
@@ -66,13 +68,14 @@ const Footer = () => {
             </div>
           </Link>
 
-          <p className="text-gray-400 leading-relaxed text-[16px] mt-6">
+          <p className="text-gray-400 leading-relaxed text-[16px] mb-6">
             I offer a high standard of driving tuition at a price that you can
             afford. With a focus on expert coaching and safety, I help you
             master the road and pass your test with confidence.
           </p>
 
-          <div className="flex mt-8 gap-5">
+          {/* Social Links + Trustpilot */}
+          <div className="flex flex-wrap gap-4 items-center">
             {socialLinks.map(({ icon: Icon, url }, i) => (
               <motion.a
                 key={i}
@@ -82,9 +85,25 @@ const Footer = () => {
                 whileHover={{ y: -5, color: "#ff6600" }}
                 className="bg-white/5 p-3 rounded-full cursor-pointer transition-colors"
               >
-                <Icon size={22} /> 
+                <Icon size={22} />
               </motion.a>
             ))}
+
+            {/* Trustpilot Button */}
+            <Link
+              href="https://www.trustpilot.com/review/tmdriveschool.co.uk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <motion.button
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center gap-2 bg-[#00b67a] text-white px-5 py-3 rounded-full font-black text-sm uppercase tracking-widest shadow-lg"
+              >
+                <Star size={20} strokeWidth={0} className="fill-white" />
+                <span>Review on Trustpilot</span>
+              </motion.button>
+            </Link>
           </div>
         </div>
 
@@ -108,7 +127,7 @@ const Footer = () => {
                     {item.name}
                   </a>
                 </motion.li>
-              ),
+              )
             )}
           </ul>
         </div>
@@ -178,15 +197,13 @@ const Footer = () => {
             </motion.div>
           </div>
         </div>
-
-     </div>
+      </div>
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/5">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 font-medium">
           <p className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest">
-            © Copyright {new Date().getFullYear()} | TM Drive. All Rights
-            Reserved. | Powered by{" "}
+            © Copyright {currentYear} | TM Drive. All Rights Reserved. | Powered by{" "}
             <a
               href="https://teqnoor.com/"
               target="_blank"

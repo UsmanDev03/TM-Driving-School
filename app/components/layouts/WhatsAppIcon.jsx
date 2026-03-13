@@ -21,11 +21,7 @@ export default function WhatsAppIcon() {
       `}</style>
 
       <div className="fixed bottom-6 right-6 z-50 flex items-center justify-center animate-float">
-        {/* Ping Animation - icon ke peeche wali lines */}
-        <span 
-          className="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75 animate-ping"
-          style={{ width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }} // Icon se thoda bada
-        ></span>
+       
         
         {/* Actual WhatsApp Icon */}
         <a 

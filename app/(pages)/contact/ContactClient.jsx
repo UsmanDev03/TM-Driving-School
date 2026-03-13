@@ -53,7 +53,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic leading-none"
           >
-            Contact <span className="text-[#ff6600] ml-2">Turon Miah</span>
+            Contact <span className="text-[#ff6600] ml-2">Us</span>
           </motion.h1>
         </div>
       </div>

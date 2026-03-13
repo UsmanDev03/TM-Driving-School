@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
 const certificates = [
-  { id: 1, url: "/images/li/li-1.webp", title: "DVSA" },
-  { id: 2, url: "/images/li/li-2.webp", title: "Pass Plus" },
+  { id: 1, url: "/images/li/li-1.webp" },
+  { id: 2, url: "/images/li/li-2.webp" },
 ];
 
 const TopGalleryPreview = () => {
@@ -39,7 +39,7 @@ const TopGalleryPreview = () => {
               DVSA Approved Driving Instructor
             </span>{" "}
             based in central London. I cover West, NW, SW of London and
-            surroundings areas.
+            surrounding areas.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-1 w-full">
@@ -79,31 +79,24 @@ const TopGalleryPreview = () => {
         </div>
       </motion.div>
 
-      {/* IMAGES SECTION - Popup logic removed */}
-     <div className="pt-6 border-t border-gray-100 w-full">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mx-auto justify-items-center">
-    {certificates.map((img) => (
-      <div
-        key={img.id}
-        className="overflow-hidden rounded-3xl shadow-xl border border-gray-100 w-full max-w-[400px] bg-gray-50 relative group"
-      >
-        <img
-          src={img.url}
-          alt={img.title}
-          className="w-full h-auto object-contain transition-transform duration-700"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
-
-        <div className="absolute bottom-6 left-8">
-          <p className="text-white font-black uppercase tracking-tighter text-lg md:text-xl leading-none">
-            {img.title}
-          </p>
+      {/* CERTIFICATES SECTION */}
+      <div className="pt-6 border-t border-gray-100 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl mx-auto justify-items-center">
+          {certificates.map((img) => (
+            <div
+              key={img.id}
+              className="overflow-hidden rounded-3xl shadow-xl border border-gray-100 w-full max-w-[320px] bg-gray-50 relative group"
+            >
+              <img
+                src={img.url}
+                alt="Certificate"
+                className="w-full h-auto object-contain transition-transform duration-700"
+              />
+             
+            </div>
+          ))}
         </div>
       </div>
-    ))}
-  </div>
-</div>
-
     </div>
   );
 };

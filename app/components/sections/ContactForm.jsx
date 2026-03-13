@@ -38,13 +38,14 @@ const ContactForm = () => {
       validationErrors.email = "Invalid email format";
     }
 
-    if (!formData.phone.trim()) validationErrors.phone = "Phone number is required";
+    if (!formData.phone.trim())
+      validationErrors.phone = "Phone number is required";
     if (!formData.area) validationErrors.area = "Area selection is required";
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       toast.error("Please fill in the required fields correctly.");
-      return; 
+      return;
     }
 
     setLoading(true);
@@ -60,12 +61,23 @@ const ContactForm = () => {
         message: formData.message,
       });
 
-      toast.success(response.data.message || "Request sent successfully!", { id: toastId });
-      setFormData({ name: "", email: "", phone: "", area: "", time: "", message: "" });
+      toast.success(response.data.message || "Request sent successfully!", {
+        id: toastId,
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        area: "",
+        time: "",
+        message: "",
+      });
       setErrors({});
     } catch (error) {
       console.error("Submission Error:", error);
-      toast.error(error.response?.data?.message || "Failed to send request.", { id: toastId });
+      toast.error(error.response?.data?.message || "Failed to send request.", {
+        id: toastId,
+      });
     } finally {
       setLoading(false);
     }
@@ -74,18 +86,27 @@ const ContactForm = () => {
   return (
     <div className="max-w-7xl mx-auto px-6 -mt-24 relative z-20">
       <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-gray-100 grid grid-cols-1 lg:grid-cols-2">
-        
         <div className="p-8 md:p-12 space-y-8">
           <div>
-            <h2 className="text-3xl font-black text-gray-900 italic tracking-tighter uppercase">Book Your Lesson</h2>
-            <p className="text-gray-500 font-medium mt-2 text-sm">Fill out the details and I'll get back to you within 24 hours.</p>
-            <p className="text-gray-400 font-bold mt-1 text-[12px] italic tracking-tight">Fields marked with * are mandatory.</p>
+            <h2 className="text-3xl font-black text-gray-900 italic tracking-tighter uppercase">
+              Book Your Lesson
+            </h2>
+            <p className="text-gray-500 font-medium mt-2 text-sm">
+              Fill out the details and I'll get back to you within 24 hours.
+            </p>
+            <p className="text-gray-400 font-bold mt-1 text-[12px] italic tracking-tight">
+              Fields marked with * are mandatory.
+            </p>
           </div>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
             {formFields.map((data) => {
-              const isRequired = ["name", "email", "phone", "area"].includes(data.id);
-              const starPlaceholder = isRequired ? `${data.placeholder} *` : data.placeholder;
+              const isRequired = ["name", "email", "phone", "area"].includes(
+                data.id,
+              );
+              const starPlaceholder = isRequired
+                ? `${data.placeholder} *`
+                : data.placeholder;
 
               return (
                 <div key={data.id} className="flex flex-col gap-1">
@@ -97,9 +118,9 @@ const ContactForm = () => {
                     options={data.options}
                     value={formData[data.id]}
                     onChange={(e) => handleChange(data.id, e.target.value)}
-                    style={errors[data.id] ? { borderColor: '#ef4444' } : {}}
+                    style={errors[data.id] ? { borderColor: "#ef4444" } : {}}
                   />
-                  
+
                   {errors[data.id] && (
                     <p className="text-[11px] font-black uppercase italic ml-4 mt-0.5 tracking-wider text-red-600">
                       {errors[data.id]}
@@ -110,7 +131,10 @@ const ContactForm = () => {
             })}
 
             <div className="relative group">
-              <MessageSquare className="absolute left-4 top-5 text-gray-400 group-focus-within:text-[#ff6600] transition-colors" size={18} />
+              <MessageSquare
+                className="absolute left-4 top-5 text-gray-400 group-focus-within:text-[#ff6600] transition-colors"
+                size={18}
+              />
               <textarea
                 rows={3}
                 value={formData.message}
@@ -127,35 +151,52 @@ const ContactForm = () => {
               whileTap={{ scale: 0.98 }}
               className={`w-full bg-[#ff6600] text-white py-5 rounded-2xl font-black text-lg flex items-center justify-center gap-3 group shadow-xl shadow-orange-100 ${loading ? "opacity-70 cursor-not-allowed" : ""}`}
             >
-              {loading ? "Sending..." : "Send Request"} 
-              <Send className="group-hover:translate-x-2 transition-transform" size={20} />
+              {loading ? "Sending..." : "Send Request"}
+              <Send
+                className="group-hover:translate-x-2 transition-transform"
+                size={20}
+              />
             </motion.button>
           </form>
 
           <div className="pt-6 border-t border-gray-100 flex flex-wrap gap-4 justify-between">
             <div>
-              <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter">Call Now</p>
-              <p className="text-md font-bold text-gray-900 italic">+44 7949 488211</p>
+              <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter">
+                Call Now
+              </p>
+              <a
+                href="tel:+447949488211"
+                className="text-md font-bold text-gray-900 italic hover:text-[#ff6600] transition-colors"
+              >
+                +44 7949 488211
+              </a>
             </div>
+
             <div>
-              <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter text-right">Email</p>
-              <p className="text-md font-bold text-gray-900 italic">info@tmdriveschool.co.uk</p>
+              <p className="text-[10px] font-black uppercase text-gray-400 tracking-tighter text-right">
+                Email
+              </p>
+              <a
+                href="mailto:info@tmdriveschool.co.uk"
+                className="text-md font-bold text-gray-900 italic hover:text-[#ff6600]"
+              >
+                info@tmdriveschool.co.uk
+              </a>
             </div>
           </div>
         </div>
 
         <div className="relative min-h-[500px] bg-gray-900 group overflow-hidden">
-          <img 
-            src="/images/gallery/F-3.webp" 
-            alt="Driving Lesson" 
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90" 
+          <img
+            src="/images/gallery/F-3.webp"
+            alt="Driving Lesson"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
           <div className="absolute top-8 right-8 bg-[#ff6600] text-white p-4 rounded-full shadow-2xl animate-pulse">
             <Car size={32} strokeWidth={2.5} />
           </div>
         </div>
-
       </div>
     </div>
   );
