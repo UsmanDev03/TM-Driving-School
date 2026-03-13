@@ -120,8 +120,8 @@ const IntroSection = () => {
         
         <ActionFooter />
       </div>
-      {/* Certificates Section */}
-<div className="py-16 flex flex-wrap justify-center gap-6">
+    {/* Certificates Section */}
+<div className="mt-8 md:mt-10 mb-4 flex flex-wrap justify-center gap-6">
   {certificates.map((img) => (
     <motion.div
       key={img.id}
