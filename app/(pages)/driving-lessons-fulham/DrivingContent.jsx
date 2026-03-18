@@ -6,25 +6,25 @@ import Link from "next/link";
 
 export default function DrivingContent() {
   const instructorPoints = [
-    "• moving off and stopping",
-    "• clutch control",
-    "• gear changes",
-    "• meeting traffic",
-    "• roundabouts",
-    "• lane use",
-    "• parked cars",
-    "• junctions",
-    "• parking",
-    "• mock test work",
+    " moving off and stopping",
+    " clutch control",
+    " gear changes",
+    " meeting traffic",
+    " roundabouts",
+    " lane use",
+    " parked cars",
+    " junctions",
+    " parking",
+    " mock test work",
   ];
 
   const whyChooseUs = [
-    "• calm and clear teaching",
-    "• one-to-one manual lessons",
-    "• local road knowledge",
-    "• support for nervous learners",
-    "• lessons planned around your level",
-    "• help from first lesson to test day",
+    " calm and clear teaching",
+    " one-to-one manual lessons",
+    " local road knowledge",
+    " support for nervous learners",
+    " lessons planned around your level",
+    " help from first lesson to test day",
   ];
 
   return (
@@ -187,19 +187,19 @@ export default function DrivingContent() {
         <ul className="pl-8 space-y-2">
           <li className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4">
             <Link href="/price">
-              • View{" "}
+               View{" "}
               <span className="font-bold text-[#ff6600]">lesson prices</span>
             </Link>
           </li>
           <li className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4">
             <Link href="/testimonials">
-              • Read{" "}
+               Read{" "}
               <span className="font-bold text-[#ff6600]">pupil reviews</span>
             </Link>
           </li>
           <li className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4">
             <Link href="/contact">
-              • Use the{" "}
+               Use the{" "}
               <span className="font-bold text-[#ff6600]">contact page</span> to
               book
             </Link>
