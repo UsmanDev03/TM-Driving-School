@@ -24,6 +24,7 @@ const navLinks = [
   { name: "Prices", href: "/price" },
   { name: "Testimonials", href: "/testimonials" },
   { name: "Gallery", href: "/gallery" },
+  { name: "About", href: "/about" },
 ];
 
 import { Phone, Mail, MapPin, ArrowRight, Star } from "lucide-react";

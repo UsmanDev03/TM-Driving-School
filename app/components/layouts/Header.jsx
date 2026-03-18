@@ -19,11 +19,20 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navLinks = [
     { name: "Home", href: "/" },
+    {
+      name: "Locations",
+      dropdown: [
+        { name: "Fulham", href: "/driving-lessons-fulham/" },
+        { name: "Notting Hill", href: "/driving-lessons-notting-hill/" },
+        // { name: "South Kensington", href: "/driving-lessons-south-kensington/" },
+        // { name: "Maida Vale", href: "/driving-lessons-maida-vale/" },
+      ],
+    },
     { name: "Prices", href: "/price" },
-    { name: "Testimonials", href: "/testimonials" },
-    { name: "Gallery", href: "/gallery" },
+  { name: "Testimonials", href: "/testimonials" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "About", href: "/about" },
   ];
-
   const closeMenu = () => setIsOpen(false);
 
   // Button Animation Variants
@@ -103,18 +112,35 @@ const Header = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-10 text-[16px]">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="relative group py-2"
-              >
-                <span className="text-gray-700 font-bold uppercase tracking-wide group-hover:text-[#ff6600] transition-colors duration-300">
-                  {link.name}
-                </span>
-                <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ff6600] transition-all duration-300 ease-in-out group-hover:w-full"></span>
-              </Link>
-            ))}
+            {navLinks.map((link) =>
+              link.dropdown ? (
+                <div key={link.name} className="relative group py-2">
+                  <span className="text-gray-700 font-bold uppercase tracking-wide group-hover:text-[#ff6600] transition-colors duration-300 cursor-pointer">
+                    {link.name}
+                  </span>
+
+                  {/* Dropdown */}
+                  <div className="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 shadow-lg rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div className="flex flex-col py-2">
+                      {link.dropdown.map((item) => (
+                        <Link key={item.name} href={item.href}>
+                          <div className="px-4 py-2 text-gray-700 font-medium hover:text-[#ff6600] hover:bg-[#ff6600]/10 rounded-lg transition">
+                            {item.name}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link key={link.name} href={link.href} className="relative group py-2">
+                  <span className="text-gray-700 font-bold uppercase tracking-wide group-hover:text-[#ff6600] transition-colors duration-300">
+                    {link.name}
+                  </span>
+                  <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#ff6600] transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                </Link>
+              )
+            )}
 
             {/* CONTACT BUTTON */}
             <Link href="/contact">
@@ -160,18 +186,33 @@ const Header = () => {
             className="md:hidden bg-white border-t border-gray-100 absolute w-full left-0 z-0 shadow-xl overflow-hidden"
           >
             <div className="px-6 py-8 flex flex-col gap-5">
-              {navLinks.map((link, index) => (
-                <Link key={link.name} href={link.href} onClick={closeMenu}>
-                  <motion.div
-                    initial={{ x: -20, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-gray-800 font-bold text-xl hover:text-[#ff6600]"
-                  >
-                    {link.name}
-                  </motion.div>
-                </Link>
-              ))}
+              {navLinks.map((link, index) =>
+                link.dropdown ? (
+                  <div key={link.name}>
+                    <div className="text-gray-800 font-bold text-xl mb-2">{link.name}</div>
+                    <div className="ml-4 flex flex-col gap-2">
+                      {link.dropdown.map((item) => (
+                        <Link key={item.name} href={item.href} onClick={closeMenu}>
+                          <div className="text-gray-600 text-lg hover:text-[#ff6600] transition">
+                            {item.name}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link key={link.name} href={link.href} onClick={closeMenu}>
+                    <motion.div
+                      initial={{ x: -20, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="text-gray-800 font-bold text-xl hover:text-[#ff6600]"
+                    >
+                      {link.name}
+                    </motion.div>
+                  </Link>
+                )
+              )}
 
               {/* CONTACT BUTTON */}
               <Link href="/contact" onClick={closeMenu}>
