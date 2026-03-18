@@ -18,20 +18,20 @@ export default function DrivingLessonsMaidaVale() {
   ];
 
   const extraPracticePoints = [
-    "• parking",
-    "• busy roads",
-    "• junctions",
-    "• clutch work",
-    "• road confidence",
+    " parking",
+    " busy roads",
+    " junctions",
+    " clutch work",
+    " road confidence",
   ];
 
   const whyChooseUs = [
-    "• calm one-to-one teaching",
-    "• manual driving lessons",
-    "• local road knowledge",
-    "• simple lesson plans",
-    "• support for nervous learners",
-    "• help before test day",
+    " calm one-to-one teaching",
+    " manual driving lessons",
+    " local road knowledge",
+    " simple lesson plans",
+    " support for nervous learners",
+    " help before test day",
   ];
 
   return (
@@ -211,15 +211,15 @@ export default function DrivingLessonsMaidaVale() {
 
         <ul className="pl-8 space-y-2">
           <li>
-            • View{" "}
+             View{" "}
             <span className="text-[#ff6600] font-bold">lesson prices</span>
           </li>
           <li>
-            • Read{" "}
+             Read{" "}
             <span className="text-[#ff6600] font-bold">pupil reviews</span>
           </li>
           <li>
-            • Use our{" "}
+            Use our{" "}
             <span className="text-[#ff6600] font-bold">contact page</span> to
             ask about lesson times
           </li>

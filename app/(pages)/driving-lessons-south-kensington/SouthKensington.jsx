@@ -6,32 +6,32 @@ import Link from "next/link";
 
 export default function DrivingLessonsSouthKensington() {
   const instructorPoints = [
-    "• mirror checks",
-    "• lane use",
-    "• clutch work",
-    "• road planning",
-    "• parking",
-    "• junction control",
-    "• meeting traffic",
-    "• mock test skill",
+    " mirror checks",
+    " lane use",
+    " clutch work",
+    " road planning",
+    " parking",
+    " junction control",
+    " meeting traffic",
+    " mock test skill",
   ];
 
   const testHelpPoints = [
-    "• weak points",
-    "• parking",
-    "• junctions",
-    "• mirrors",
-    "• mock tests",
-    "• confidence on busy roads",
+    " weak points",
+    " parking",
+    " junctions",
+    " mirrors",
+    " mock tests",
+    " confidence on busy roads",
   ];
 
   const whyChooseUs = [
-    "• calm teaching",
-    "• local road knowledge",
-    "• manual driving lessons",
-    "• help for nervous learners",
-    "• simple lesson structure",
-    "• clear support before the test",
+    " calm teaching",
+    " local road knowledge",
+    " manual driving lessons",
+    " help for nervous learners",
+    " simple lesson structure",
+    " clear support before the test",
   ];
 
   return (
@@ -207,14 +207,14 @@ export default function DrivingLessonsSouthKensington() {
 
         <ul className="pl-8 space-y-2">
           <li>
-            • Check{" "}
+             Check{" "}
             <span className="text-[#ff6600] font-bold">lesson prices</span>
           </li>
           <li>
-            • Read <span className="text-[#ff6600] font-bold">reviews</span>
+             Read <span className="text-[#ff6600] font-bold">reviews</span>
           </li>
           <li>
-            • Use the{" "}
+             Use the{" "}
             <span className="text-[#ff6600] font-bold">contact page</span> to
             ask about local cover
           </li>

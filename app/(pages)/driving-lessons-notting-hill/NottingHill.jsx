@@ -6,23 +6,23 @@ import Link from "next/link";
 
 export default function DrivingLessonsNottingHill() {
   const instructorPoints = [
-    "• clutch control",
-    "• safe mirror use",
-    "• lane position",
-    "• meeting traffic",
-    "• junction work",
-    "• parking",
-    "• planning ahead",
-    "• mock test skills",
+    " clutch control",
+    " safe mirror use",
+    " lane position",
+    " meeting traffic",
+    " junction work",
+    " parking",
+    " planning ahead",
+    " mock test skills",
   ];
 
   const whyChooseUs = [
-    "• calm one-to-one lessons",
-    "• simple and clear teaching",
-    "• local road knowledge",
-    "• support for nervous learners",
-    "• help before test day",
-    "• lesson plans built around your level",
+    " calm one-to-one lessons",
+    " simple and clear teaching",
+    " local road knowledge",
+    " support for nervous learners",
+    " help before test day",
+    " lesson plans built around your level",
   ];
 
   return (
@@ -183,19 +183,19 @@ export default function DrivingLessonsNottingHill() {
         <ul className="pl-8 space-y-2">
           <li className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4">
             <Link href="/price">
-              • View{" "}
+               View{" "}
               <span className="font-bold text-[#ff6600]">lesson prices</span>
             </Link>
           </li>
           <li className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4">
             <Link href="/testimonials">
-              • Read{" "}
+               Read{" "}
               <span className="font-bold text-[#ff6600]">pupil reviews</span>
             </Link>
           </li>
           <li className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4">
             <Link href="/contact">
-              • Use the{" "}
+               Use the{" "}
               <span className="font-bold text-[#ff6600]">contact page</span> to
               ask about lesson times
             </Link>
