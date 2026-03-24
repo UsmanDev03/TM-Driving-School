@@ -177,7 +177,7 @@ export default function DrivingLessonsNottingHill() {
         </h2>
 
         {/* Book Links Grid */}
-  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1">
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1">
   <Link
     href="/price"
     className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
@@ -194,7 +194,7 @@ export default function DrivingLessonsNottingHill() {
 
   <Link
     href="/contact"
-    className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+    className="flex items-center gap-1 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
   >
     <span>Use the</span>
     <span className="text-[#ff6600]">contact page</span>
