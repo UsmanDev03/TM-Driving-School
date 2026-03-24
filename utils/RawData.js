@@ -511,5 +511,23 @@ export const testimonialsData = [
     date: "Nov 2025",
     img: "/images/star.png",
     role: "Verified Student"
+  },
+  {
+    id: 17,
+    name: "Shafi", // Aap yahan image se dekh kar sahi naam likh sakte hain
+    rating: 5,
+    text: "Amazing instructor, got me test ready within 20 hours highly recommend ",
+    date: "March 2026",
+    img: "/images/star.png",
+    role: "Verified Student"
+  },
+  {
+    id: 18,
+    name: "Sin U Sou", // Aap yahan image se dekh kar sahi naam likh sakte hain
+    rating: 5,
+    text: "Great experience!I had a great experience learning with Turon over 7 months and passed my test first time.He was very detailed and made sure I fully understood everything before moving on. He made sure that I can drive confidently in real situations. He often shared insights from his own experience, which made the lessons really practical.Overall, I’d highly recommend him to anyone looking for a patient and thorough instructor.",
+    date: "March 2026",
+    img: "/images/star.png",
+    role: "Verified Student"
   }
 ];

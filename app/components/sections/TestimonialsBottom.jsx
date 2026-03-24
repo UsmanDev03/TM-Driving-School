@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
 
 const TestimonialsBottom = () => {
   return (
-    <div className="mt-8 md:mt-16 bg-gray-900 rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-12 relative overflow-hidden mx-4 md:mx-0">
+    <div className="mt-8 md:mt-16 bg-gray-900 rounded-[2rem] md:rounded-[3.5rem] p-8 md:p-12 relative overflow-hidden mx-auto max-w-md md:max-w-lg">
+      
       {/* 1. BACKGROUND GLOW */}
       <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-[#ff6600] blur-[80px] md:blur-[120px] opacity-20"></div>
       
       {/* 2. STATS GRID */}
-      <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-4 md:gap-8 text-center">
+      <div className="relative z-10 grid grid-cols-2 gap-y-10 gap-x-4 text-center">
         {[
           { label: "Pass Rate", val: "98%" },
           { label: "Reviews", val: "5-Star" }
@@ -23,7 +24,7 @@ const TestimonialsBottom = () => {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default TestimonialsBottom
+export default TestimonialsBottom;
