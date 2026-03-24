@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
 
 // ✅ Slider images (fixed IDs)
 const sliderImages = [
@@ -65,16 +64,12 @@ const Gallery = () => {
       </div>
 
       {/* ✅ SLIDER */}
-      <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20 pb-12">
+      <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20 pb-12"> {/* Added padding-bottom */}
         <Swiper
-          modules={[Autoplay, Navigation]}
+          modules={[Autoplay]}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           spaceBetween={20}
           slidesPerView={1}
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
           breakpoints={{
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 4 },
@@ -103,14 +98,6 @@ const Gallery = () => {
               </motion.div>
             </SwiperSlide>
           ))}
-
-          {/* Styled Navigation Arrows */}
-          <div className="swiper-button-prev absolute top-1/2 -left-4 z-50 text-[#ff6600] hover:text-[#ff4500] transition-all cursor-pointer">
-            <ChevronLeft size={36} />
-          </div>
-          <div className="swiper-button-next absolute top-1/2 -right-4 z-50 text-[#ff6600] hover:text-[#ff4500] transition-all cursor-pointer">
-            <ChevronRight size={36} />
-          </div>
         </Swiper>
       </div>
 
