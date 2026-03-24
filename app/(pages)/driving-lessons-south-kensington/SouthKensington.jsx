@@ -46,7 +46,7 @@ export default function DrivingLessonsSouthKensington() {
           className="w-full h-full object-cover"
           alt="Driving"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#fafafa]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#fafafa]" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <motion.h1
@@ -110,16 +110,16 @@ export default function DrivingLessonsSouthKensington() {
           A local driving instructor in South Kensington can help you improve:
         </p>
 
-        <ul className="pl-8 space-y-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
           {instructorPoints.map((item, i) => (
-            <li
+            <div
               key={i}
-              className="pl-4 relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:bg-black before:rounded-full before:content-['']"
+              className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-1"
             >
-              {item}
-            </li>
+              {item.trim()}
+            </div>
           ))}
-        </ul>
+        </div>
 
         <p className="text-lg">
           Each lesson is set up to help you improve one step at a time.
@@ -152,16 +152,16 @@ export default function DrivingLessonsSouthKensington() {
           If you are close to test standard, lessons can focus on:
         </p>
 
-        <ul className="pl-8 space-y-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
           {testHelpPoints.map((item, i) => (
-            <li
+            <div
               key={i}
-              className="pl-4 relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:bg-black before:rounded-full before:content-['']"
+              className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-1"
             >
-              {item}
-            </li>
+              {item.trim()}
+            </div>
           ))}
-        </ul>
+        </div>
 
         <p className="text-lg">
           If you want to ask about lesson options, use our{" "}
@@ -176,16 +176,16 @@ export default function DrivingLessonsSouthKensington() {
           Why learners choose TM Drive School in South Kensington
         </h2>
 
-        <ul className="pl-8 space-y-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-2">
           {whyChooseUs.map((item, i) => (
-            <li
+            <div
               key={i}
-              className="pl-4 relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:bg-black before:rounded-full before:content-['']"
+              className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-1"
             >
-              {item}
-            </li>
+              {item.trim()}
+            </div>
           ))}
-        </ul>
+        </div>
 
         <p className="text-lg">
           If you want proof before you book, read our{" "}
@@ -205,20 +205,26 @@ export default function DrivingLessonsSouthKensington() {
           instructor, take the next step today.
         </p>
 
-        <ul className="pl-8 space-y-2">
-          <li>
-             Check{" "}
-            <span className="text-[#ff6600] font-bold">lesson prices</span>
-          </li>
-          <li>
-             Read <span className="text-[#ff6600] font-bold">reviews</span>
-          </li>
-          <li>
-             Use the{" "}
-            <span className="text-[#ff6600] font-bold">contact page</span> to
-            ask about local cover
-          </li>
-        </ul>
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1">
+  <Link
+    href="/price"
+    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+  >
+    Check <span className="text-[#ff6600] ml-1">lesson prices</span>
+  </Link>
+  <Link
+    href="/testimonials"
+    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+  >
+    Read <span className="text-[#ff6600] ml-1">pupil reviews</span>
+  </Link>
+  <Link
+    href="/contact"
+    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+  >
+    Use the<span className="text-[#ff6600] ml-1">contact page</span> to ask about local cover
+  </Link>
+</div>
       </section>
 
       <ClientFAQ />

@@ -6,23 +6,23 @@ import Link from "next/link";
 
 export default function DrivingLessonsNottingHill() {
   const instructorPoints = [
-    " clutch control",
-    " safe mirror use",
-    " lane position",
-    " meeting traffic",
-    " junction work",
-    " parking",
-    " planning ahead",
-    " mock test skills",
+    "clutch control",
+    "safe mirror use",
+    "lane position",
+    "meeting traffic",
+    "junction work",
+    "parking",
+    "planning ahead",
+    "mock test skills",
   ];
 
   const whyChooseUs = [
-    " calm one-to-one lessons",
-    " simple and clear teaching",
-    " local road knowledge",
-    " support for nervous learners",
-    " help before test day",
-    " lesson plans built around your level",
+    "calm one-to-one lessons",
+    "simple and clear teaching",
+    "local road knowledge",
+    "support for nervous learners",
+    "help before test day",
+    "lesson plans built around your level",
   ];
 
   return (
@@ -37,7 +37,7 @@ export default function DrivingLessonsNottingHill() {
           className="w-full h-full object-cover"
           alt="Driving"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#fafafa]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#fafafa]" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <motion.h1
             initial={{ opacity: 0, scale: 0.85 }}
@@ -99,23 +99,24 @@ export default function DrivingLessonsNottingHill() {
           normal London traffic. These roads can give learners strong practice
           when lessons are clear and well planned.
         </p>
-        <p className="text-lg leading-relaxed">
-          A local driving instructor in Notting Hill can help you with:
+
+        <p className="text-lg leading-relaxed mb-2">
+          A local driving instructor in Notting Hill can help you get used to:
         </p>
 
-        {/* Instructor Points */}
-        <ul className="pl-8 space-y-2">
+        {/* Instructor Points Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
           {instructorPoints.map((point, idx) => (
-            <li
+            <div
               key={idx}
-              className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4"
+              className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-1"
             >
-              {point}
-            </li>
+              {point.trim()}
+            </div>
           ))}
-        </ul>
+        </div>
 
-        <p className="text-lg leading-relaxed mt-2">
+        <p className="text-lg leading-relaxed mt-4">
           Lessons are kept simple and focused. That helps you leave each lesson
           with clear progress.
         </p>
@@ -151,19 +152,19 @@ export default function DrivingLessonsNottingHill() {
           Why learners choose TM Drive School in Notting Hill
         </h2>
 
-        {/* Why Choose Us List */}
-        <ul className="pl-8 space-y-2">
+        {/* Why Choose Us Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-2">
           {whyChooseUs.map((item, idx) => (
-            <li
+            <div
               key={idx}
-              className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4"
+              className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-1"
             >
-              {item}
-            </li>
+              {item.trim()}
+            </div>
           ))}
-        </ul>
+        </div>
 
-        <p className="text-lg leading-relaxed mt-2">
+        <p className="text-lg leading-relaxed mt-4">
           If you want learner proof before you book, read our{" "}
           <Link href="/testimonials" className="text-[#ff6600] font-bold">
             pupil reviews
@@ -174,33 +175,28 @@ export default function DrivingLessonsNottingHill() {
         <h2 className="text-2xl font-bold mt-8">
           Book driving lessons in Notting Hill
         </h2>
-        <p className="text-lg leading-relaxed">
-          If you want driving lessons in Notting Hill with a calm local
-          instructor, take the next step today.
-        </p>
 
-        {/* Book Links */}
-        <ul className="pl-8 space-y-2">
-          <li className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4">
-            <Link href="/price">
-               View{" "}
-              <span className="font-bold text-[#ff6600]">lesson prices</span>
-            </Link>
-          </li>
-          <li className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4">
-            <Link href="/testimonials">
-               Read{" "}
-              <span className="font-bold text-[#ff6600]">pupil reviews</span>
-            </Link>
-          </li>
-          <li className="relative before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-2 before:h-2 before:rounded-full before:bg-black before:content-[''] pl-4">
-            <Link href="/contact">
-               Use the{" "}
-              <span className="font-bold text-[#ff6600]">contact page</span> to
-              ask about lesson times
-            </Link>
-          </li>
-        </ul>
+        {/* Book Links Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1">
+  <Link
+    href="/price"
+    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+  >
+    View <span className="text-[#ff6600] ml-1">lesson prices</span>
+  </Link>
+  <Link
+    href="/testimonials"
+    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+  >
+    Read <span className="text-[#ff6600] ml-1">pupil reviews</span>
+  </Link>
+  <Link
+    href="/contact"
+    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+  >
+    Use the<span className="text-[#ff6600] ml-1">contact page</span>to ask about lesson times
+  </Link>
+</div>
       </section>
 
       <ClientFAQ />
