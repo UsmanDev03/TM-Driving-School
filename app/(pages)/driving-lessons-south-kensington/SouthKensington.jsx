@@ -219,11 +219,12 @@ export default function DrivingLessonsSouthKensington() {
     Read <span className="text-[#ff6600] ml-1">pupil reviews</span>
   </Link>
   <Link
-    href="/contact"
-    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
-  >
-    Use the<span className="text-[#ff6600] ml-1">contact page</span> to ask about local cover
-  </Link>
+  href="/contact"
+  className="flex items-center gap-1 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors flex-wrap"
+>
+  Use the <span className="text-[#ff6600]">contact page</span> to ask about local cover
+</Link>
+  
 </div>
       </section>
 
