@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react"; // added chevrons
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules"; // import both at once
 import "swiper/css";
+import "swiper/css/navigation"; // required for navigation buttons
 
 // ✅ Slider images (fixed IDs)
 const sliderImages = [
@@ -64,15 +65,29 @@ const Gallery = () => {
       </div>
 
       {/* ✅ SLIDER */}
-      <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20 pb-12"> {/* Added padding-bottom */}
+      <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20 pb-12">
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay, Navigation]}
           autoplay={{ delay: 2500, disableOnInteraction: false }}
           spaceBetween={20}
           slidesPerView={1}
+          navigation={{
+            nextEl: ".swiper-button-next-custom",
+            prevEl: ".swiper-button-prev-custom",
+          }}
           breakpoints={{
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 4 },
+          }}
+          onSwiper={(swiper) => {
+            // Initialize custom navigation
+            setTimeout(() => {
+              swiper.params.navigation.nextEl = ".swiper-button-next-custom";
+              swiper.params.navigation.prevEl = ".swiper-button-prev-custom";
+              swiper.navigation.destroy();
+              swiper.navigation.init();
+              swiper.navigation.update();
+            });
           }}
         >
           {sliderImages.map((item) => (
@@ -98,6 +113,14 @@ const Gallery = () => {
               </motion.div>
             </SwiperSlide>
           ))}
+
+          {/* Custom navigation buttons */}
+          <div className="swiper-button-prev-custom absolute top-1/2 left-0 z-30 -translate-y-1/2 p-2 cursor-pointer text-white/80 hover:text-[#ff6600]">
+            <ChevronLeft size={40} />
+          </div>
+          <div className="swiper-button-next-custom absolute top-1/2 right-0 z-30 -translate-y-1/2 p-2 cursor-pointer text-white/80 hover:text-[#ff6600]">
+            <ChevronRight size={40} />
+          </div>
         </Swiper>
       </div>
 
