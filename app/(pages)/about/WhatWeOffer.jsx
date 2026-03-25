@@ -43,7 +43,7 @@ const WhatWeOffer = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 md:px-12 mt-16">
+    <div className="max-w-7xl mx-auto px-6 md:px-12 mt-12">
       {/* Heading */}
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900">
