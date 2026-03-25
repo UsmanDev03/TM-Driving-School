@@ -67,9 +67,14 @@ const WhatWeOffer = () => {
             whileHover={{ y: -6, scale: 1.03 }}
             className="bg-white rounded-3xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center"
           >
-            <div className="mb-6 p-4 bg-orange-50 text-[#ff6600] rounded-2xl">
+            <motion.div
+              className="mb-6 p-4 rounded-2xl flex items-center justify-center"
+              initial={{ backgroundColor: '#fff4e6', color: '#ff6600' }}
+              whileHover={{ backgroundColor: '#ff6600', color: '#ffffff' }} // nice orange hover
+              transition={{ duration: 0.3 }}
+            >
               {item.icon}
-            </div>
+            </motion.div>
             <h3 className="text-lg font-black uppercase italic mb-2">
               {item.title}
             </h3>
@@ -77,10 +82,6 @@ const WhatWeOffer = () => {
           </motion.div>
         ))}
       </motion.div>
-
-    
-
-
     </div>
   );
 };
