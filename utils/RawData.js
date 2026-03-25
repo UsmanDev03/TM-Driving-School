@@ -442,6 +442,15 @@ export const testimonialsData = [
   },
   {
     id: 9,
+    name: "Sin U Sou", 
+    rating: 5,
+    text: "Great experience!I had a great experience learning with Turon over 7 months and passed my test first time.He was very detailed and made sure I fully understood everything before moving on. He made sure that I can drive confidently in real situations. He often shared insights from his own experience, which made the lessons really practical.Overall, I’d highly recommend him to anyone looking for a patient and thorough instructor.",
+    date: "March 2026",
+    img: "/images/star.png",
+    role: "Verified Student"
+  },
+  {
+    id: 10,
     name: "Amine Achour",
     rating: 5,
     text: "I don't think there is a better driving instructor to go through if you are looking for a license. My instructor's patience and great understanding of the roads made me feel so confident on the road and therefore made my test feel so easy. I really appreciate the patience and hard work I was put through.",
@@ -450,7 +459,7 @@ export const testimonialsData = [
     role: "Verified Student"
   },
   {
-    id: 10,
+    id: 11,
     name: "Graziele Perini",
     rating: 5,
     text: "Today I passed my test with 0 faults thanks to my instructor Turon Miah! He was so helpful and patient with me along my journey learning how to drive a manual car. His teaching is exceptional, he is so dedicated to his students.",
@@ -459,7 +468,7 @@ export const testimonialsData = [
     role: "Passed with 0 Faults"
   },
   {
-    id: 11,
+    id: 12,
     name: "Franz-Mathias Kurg",
     rating: 5,
     text: "Great instructor got me to pass my test first time. Highly recommended for anyone looking to learn quickly and safely.",
@@ -468,7 +477,7 @@ export const testimonialsData = [
     role: "First Time Pass"
   },
   {
-    id: 12,
+    id: 13,
     name: "Melo Brion",
     rating: 5,
     text: "Passed my driving test first attempt with ONLY 1 fault. Excellent feedback from the instructor. You worked hard for this. Thank you Turon!",
@@ -477,7 +486,7 @@ export const testimonialsData = [
     role: "1st Attempt Pass"
   },
   {
-    id: 13,
+    id: 14,
     name: "Oscar",
     rating: 5,
     text: "Passed my driving Test with only 2 driver faults. Turon is a legend! See you on the road.",
@@ -486,7 +495,7 @@ export const testimonialsData = [
     role: "2 Minors Pass"
   },
   {
-    id: 14,
+    id: 15,
     name: "Judi",
     rating: 5,
     text: "Passed my driving test in Mill Hill. Good to be independent. Turon's teaching was key to my success. Very well done to me but thanks to him!",
@@ -495,7 +504,7 @@ export const testimonialsData = [
     role: "Verified Student"
   },
   {
-    id: 15,
+    id: 16,
     name: "Sophie Brett",
     rating: 5,
     text: "Passed my test first time in Pinner. Big thanks to Turon Miah for being an amazing instructor and helping me through the process.",
@@ -504,8 +513,8 @@ export const testimonialsData = [
     role: "First Time Pass"
   },
   {
-    id: 16,
-    name: "Daniel Smith", // Aap yahan image se dekh kar sahi naam likh sakte hain
+    id: 17,
+    name: "Daniel Smith", 
     rating: 5,
     text: "Turon made the whole experience so much easier. His calm nature and expertise are unmatched. Fully recommend to anyone looking to pass quickly!",
     date: "Nov 2025",
@@ -513,21 +522,12 @@ export const testimonialsData = [
     role: "Verified Student"
   },
   {
-    id: 17,
-    name: "Shafi", // Aap yahan image se dekh kar sahi naam likh sakte hain
+    id: 18,
+    name: "Shafi", 
     rating: 5,
     text: "Amazing instructor, got me test ready within 20 hours highly recommend ",
     date: "March 2026",
     img: "/images/star.png",
     role: "Verified Student"
   },
-  {
-    id: 18,
-    name: "Sin U Sou", // Aap yahan image se dekh kar sahi naam likh sakte hain
-    rating: 5,
-    text: "Great experience!I had a great experience learning with Turon over 7 months and passed my test first time.He was very detailed and made sure I fully understood everything before moving on. He made sure that I can drive confidently in real situations. He often shared insights from his own experience, which made the lessons really practical.Overall, I’d highly recommend him to anyone looking for a patient and thorough instructor.",
-    date: "March 2026",
-    img: "/images/star.png",
-    role: "Verified Student"
-  }
 ];
