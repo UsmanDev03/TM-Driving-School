@@ -65,12 +65,12 @@ const WhatWeOffer = () => {
             key={idx}
             variants={fadeInUp}
             whileHover={{ y: -6, scale: 1.03 }}
-            className="bg-white rounded-3xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center"
+            className="bg-white rounded-3xl p-6 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center"
           >
             <motion.div
-              className="mb-6 p-4 rounded-2xl flex items-center justify-center"
+              className="mb-4 p-3 rounded-2xl flex items-center justify-center"
               initial={{ backgroundColor: '#fff4e6', color: '#ff6600' }}
-              whileHover={{ backgroundColor: '#ff6600', color: '#ffffff' }} // nice orange hover
+              whileHover={{ backgroundColor: '#ff6600', color: '#ffffff' }}
               transition={{ duration: 0.3 }}
             >
               {item.icon}
