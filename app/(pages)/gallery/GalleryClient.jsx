@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react"; // added chevrons
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules"; // import both at once
+import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation"; // required for navigation buttons
+import "swiper/css/navigation";
 
 // ✅ Slider images (fixed IDs)
 const sliderImages = [
@@ -23,19 +23,25 @@ const sliderImages = [
 const gridImages = Array.from({ length: 22 }, (_, i) => ({
   id: i + 1,
   url: `/images/gallery/${i + 1}.jpeg`,
-  title: `Driving Session ${i + 1}`,
 }));
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedTitle, setSelectedTitle] = useState(""); // keep title for slider modal
 
-  const openModal = (image) => setSelectedImage(image);
-  const closeModal = () => setSelectedImage(null);
+  const openModal = (image, title = "") => {
+    setSelectedImage(image);
+    setSelectedTitle(title);
+  };
+  const closeModal = () => {
+    setSelectedImage(null);
+    setSelectedTitle("");
+  };
 
   return (
     <div className="bg-white min-h-screen pb-20">
 
-      {/* ✅ HERO */}
+      {/* HERO */}
       <div className="relative h-[450px] md:h-[500px] w-full overflow-hidden bg-gray-900">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-50"
@@ -64,7 +70,7 @@ const Gallery = () => {
         </div>
       </div>
 
-      {/* ✅ SLIDER */}
+      {/* SLIDER */}
       <div className="max-w-7xl mx-auto px-6 -mt-20 relative z-20 pb-12">
         <Swiper
           modules={[Autoplay, Navigation]}
@@ -80,7 +86,6 @@ const Gallery = () => {
             1024: { slidesPerView: 4 },
           }}
           onSwiper={(swiper) => {
-            // Initialize custom navigation
             setTimeout(() => {
               swiper.params.navigation.nextEl = ".swiper-button-next-custom";
               swiper.params.navigation.prevEl = ".swiper-button-prev-custom";
@@ -96,7 +101,7 @@ const Gallery = () => {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 className="bg-white rounded-2xl shadow-lg cursor-pointer overflow-hidden border border-gray-100 flex flex-col"
-                onClick={() => openModal(item)}
+                onClick={() => openModal(item.url, item.title)}
               >
                 <div className="h-64 w-full flex items-center justify-center bg-gray-50 overflow-hidden">
                   <img
@@ -124,7 +129,7 @@ const Gallery = () => {
         </Swiper>
       </div>
 
-      {/* ✅ GRID */}
+      {/* GRID */}
       <div className="max-w-7xl mx-auto px-6 mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {gridImages.map((item) => (
           <motion.div
@@ -132,25 +137,21 @@ const Gallery = () => {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.98 }}
             className="bg-white rounded-2xl shadow-lg cursor-pointer overflow-hidden border border-gray-100 flex flex-col"
-            onClick={() => openModal(item)}
+            onClick={() => openModal(item.url)}
           >
             <div className="h-64 w-full flex items-center justify-center bg-gray-50 overflow-hidden">
               <img
                 src={item.url}
-                alt={item.title}
+                alt={`Image ${item.id}`}
                 className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
               />
             </div>
-            <div className="p-3 text-center">
-              <p className="text-gray-900 font-bold uppercase text-sm tracking-wide">
-                {item.title}
-              </p>
-            </div>
+            {/* Title removed from grid */}
           </motion.div>
         ))}
       </div>
 
-      {/* ✅ MODAL */}
+      {/* MODAL */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -173,13 +174,16 @@ const Gallery = () => {
               className="relative max-w-5xl w-full h-[70vh] flex flex-col items-center justify-center z-[120] pointer-events-none"
             >
               <img
-                src={selectedImage.url}
+                src={selectedImage}
                 alt="Selected"
                 className="max-w-full max-h-full object-contain shadow-2xl rounded-lg border-2 border-white/10 pointer-events-auto"
               />
-              <p className="text-white mt-6 text-lg md:text-xl font-bold italic uppercase tracking-widest text-center">
-                {selectedImage.title}
-              </p>
+              {/* Show title only if available (slider) */}
+              {selectedTitle && (
+                <p className="text-white mt-6 text-lg md:text-xl font-bold italic uppercase tracking-widest text-center">
+                  {selectedTitle}
+                </p>
+              )}
             </motion.div>
           </motion.div>
         )}
