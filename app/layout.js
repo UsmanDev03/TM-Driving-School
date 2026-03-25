@@ -21,11 +21,6 @@ export const metadata = {
   verification: {
     google: "bAHx5SsNFJFRdSCMlB7VrzS7qxIyCaTnkPQXUi-j264",
   },
-
-  metadataBase: new URL("https://www.tmdriveschool.co.uk"),
-  alternates: {
-    canonical: "/",
-  },
 };
 
 export default function RootLayout({ children }) {

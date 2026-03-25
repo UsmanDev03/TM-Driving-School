@@ -11,7 +11,13 @@ import {
   ArrowRight,
   Scale,
 } from "lucide-react";
-
+export const metadata = {
+  title: "Terms & Conditions | TM Driving School UK",
+  description: "Review our professional standards for manual driving tuition. Details on bookings, cancellations, legal requirements, and safety policies.",
+  alternates: {
+    canonical: "https://www.tmdriveschool.co.uk/terms",
+  },
+};
 const TermsPage = () => {
   const sections = [
     {

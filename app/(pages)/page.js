@@ -3,6 +3,13 @@ import Header from "../components/layouts/Header";
 import HeroSlider from "../components/sections/HeroSlider";
 import IntroSection from "../components/sections/IntroSection";
 
+export const metadata = {
+  title: "TM Drive School | Manual Driving Lessons in West London",
+  description: "...",
+  alternates: {
+    canonical: "https://www.tmdriveschool.co.uk/",
+  },
+};
 export default function Home() {
 
   const serviceJsonLd = {

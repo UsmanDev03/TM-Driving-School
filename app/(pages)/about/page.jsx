@@ -3,6 +3,13 @@
 import { motion } from "framer-motion";
 import WhatWeOffer from "./WhatWeOffer";
 
+export const metadata = {
+  title: "About Us | TM Drive School",
+  description: "Learn more about our driving school...",
+  alternates: {
+    canonical: "https://www.tmdriveschool.co.uk/about",
+  },
+};
 export default function AboutPage() {
   return (
     <main className="font-sans bg-[#fafafa] text-gray-900">

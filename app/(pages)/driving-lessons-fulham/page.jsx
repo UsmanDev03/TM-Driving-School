@@ -4,7 +4,10 @@ export const metadata = {
   title: "Driving Lessons Fulham | Manual Driving Lessons in West London",
   description:
     "Need driving lessons in Fulham? Learn with a calm local instructor. View lesson prices, read pupil reviews, and book your first manual driving lesson.",
-};
+    alternates: {
+    canonical: "https://www.tmdriveschool.co.uk/driving-lessons-fulham",
+  },
+  };
 export default function Page() {
   const fulhamJsonLd = {
     "@context": "https://schema.org",
