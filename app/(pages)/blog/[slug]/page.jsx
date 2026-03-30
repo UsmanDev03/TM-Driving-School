@@ -26,13 +26,14 @@ const blog = {
 export default function SingleBlogPage() {
   return (
     <main className="bg-[#fafafa] min-h-screen pb-24 font-sans text-gray-900 w-full">
-      {/* Outer wrapper */}
-      <div className="max-w-5xl mx-auto px-6 sm:px-10 md:px-16">
-        {/* Breadcrumb */}
-        <nav className="pt-12 mt-6">
+      {/* Outer wrapper - mt-0 and pt-6/8 reduces the large gap at the very top */}
+      <div className="max-w-5xl mx-auto px-6 sm:px-10 md:px-16 pt-8">
+        
+        {/* Breadcrumb - Removed mt-6 to pull it closer to the top */}
+        <nav className="mb-12">
           <Link
             href="/blog"
-            className="group inline-flex items-center gap-2 text-[#ff6600] font-black uppercase tracking-widest text-[10px] mb-12 hover:opacity-80 transition-opacity"
+            className="group inline-flex items-center gap-2 text-[#ff6600] font-black uppercase tracking-widest text-[10px] hover:opacity-80 transition-opacity"
           >
             <ChevronLeft
               size={16}
@@ -65,7 +66,7 @@ export default function SingleBlogPage() {
             </div>
           </header>
 
-          {/* Centered Image - Flush with no container background */}
+          {/* Centered Image */}
           <div className="mb-16 flex justify-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
@@ -89,17 +90,11 @@ export default function SingleBlogPage() {
               </h2>
 
               <p className="text-lg leading-relaxed text-gray-700">
-                Need driving lessons in Fulham? A calm lesson, a clear plan, and
-                a local instructor can help you make better progress. Good
-                lessons should help you build skill step by step, not leave you
-                confused at the end.
+                Need driving lessons that actually get you to test standard? A calm environment, a clear training plan, and a local instructor are the keys to making real progress.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700">
-                TM Drive School offers manual driving lessons in Fulham for new
-                learners, part-trained learners, and nervous learners. Each
-                lesson has a clear goal, so you know what you are working on and
-                what comes next.
+                Our manual driving lessons are structured around your specific level, whether you are a complete beginner or looking for a mock test to polish your skills.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700">
@@ -110,7 +105,7 @@ export default function SingleBlogPage() {
                 >
                   prices
                 </Link>
-                . If you want to get started, use our
+                . If you are ready to start, head over to our
                 <Link
                   href="/contact"
                   className="text-[#ff6600] font-bold ml-1 hover:underline underline-offset-4 decoration-2"
@@ -123,7 +118,7 @@ export default function SingleBlogPage() {
 
             <section className="bg-white p-8 md:p-10 rounded-[3rem] shadow-sm border border-gray-100 max-w-4xl mx-auto mt-12">
               <h3 className="text-2xl font-black mb-8 uppercase italic text-[#0f172a] border-l-8 border-[#ff6600] pl-5">
-                What You'll Master
+                WHAT YOU'LL MASTER
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {blog.lessonHighlights.map((point, idx) => (
