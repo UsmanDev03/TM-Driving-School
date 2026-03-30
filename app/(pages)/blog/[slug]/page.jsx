@@ -1,0 +1,148 @@
+"use client";
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Calendar, ChevronLeft, Clock } from "lucide-react";
+
+const blog = {
+  title: {
+    black: "Mastering the",
+    orange2: "Isleworth & Ashford Routes:",
+    sub: "tm-drive",
+  },
+  date: "MARCH 20, 2026",
+  readTime: "6 MIN READ",
+  mainImage: "/images/hero-3.avif", // <-- your blog feed car image
+  lessonHighlights: [
+    "Clutch Control & Moving Off",
+    "Mastering Roundabouts",
+    "Meeting Heavy Traffic",
+    "Reverse Parking Maneuvers",
+    "Mock Test Preparation",
+    "Local Test Route Knowledge",
+  ],
+};
+
+export default function SingleBlogPage() {
+  return (
+    <main className="bg-[#fafafa] min-h-screen pb-24 font-sans text-gray-900 w-full">
+      {/* Outer wrapper */}
+      <div className="max-w-5xl mx-auto px-6 sm:px-10 md:px-16">
+        {/* Breadcrumb */}
+        <nav className="pt-12 mt-6">
+          <Link
+            href="/blog"
+            className="group inline-flex items-center gap-2 text-[#ff6600] font-black uppercase tracking-widest text-[10px] mb-12 hover:opacity-80 transition-opacity"
+          >
+            <ChevronLeft
+              size={16}
+              className="group-hover:-translate-x-1 transition-transform"
+            />
+            Back to all stories
+          </Link>
+        </nav>
+
+        <article>
+          {/* Header */}
+          <header className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[1.1] mb-6">
+              <span className="text-black italic">{blog.title.black}</span>{" "}
+              <span className="text-[#ff6600]">{blog.title.orange2}</span>
+              <br />
+              <span className="text-black text-2xl md:text-3xl tracking-tight block mt-2">
+                {blog.title.sub}
+              </span>
+            </h1>
+
+            <div className="flex items-center justify-center gap-6 text-gray-400 font-bold uppercase tracking-widest text-[11px] border-y border-gray-100 py-5">
+              <div className="flex items-center gap-2">
+                <Calendar size={14} className="text-[#ff6600]" /> {blog.date}
+              </div>
+              <div className="text-gray-200">|</div>
+              <div className="flex items-center gap-2">
+                <Clock size={14} className="text-[#ff6600]" /> {blog.readTime}
+              </div>
+            </div>
+          </header>
+
+          {/* Centered Car Image */}
+          <div className="mb-16 flex justify-center">
+            <div className="bg-[#3f4693] p-4 md:p-6 rounded-3xl shadow-2xl w-full sm:w-[90%] md:w-[80%]">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.98 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="relative aspect-video overflow-hidden rounded-[20px] border-4 border-[#3f4693]"
+              >
+                <img
+                  src={blog.mainImage}
+                  alt="Car Image"
+                  className="w-full h-full object-cover"
+                />
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="h-2 w-full bg-[#3f4693] mt-6 rounded-full opacity-20"></div>
+
+          {/* Content Body */}
+          <div className="space-y-12 max-w-3xl mx-auto">
+            <section className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
+                Mastering the Isleworth & Ashford Routes
+              </h2>
+
+              <p className="text-lg leading-relaxed text-gray-700">
+                Need driving lessons in Fulham? A calm lesson, a clear plan, and
+                a local instructor can help you make better progress. Good
+                lessons should help you build skill step by step, not leave you
+                confused at the end.
+              </p>
+
+              <p className="text-lg leading-relaxed text-gray-700">
+                TM Drive School offers manual driving lessons in Fulham for new
+                learners, part-trained learners, and nervous learners. Each
+                lesson has a clear goal, so you know what you are working on and
+                what comes next.
+              </p>
+
+              <p className="text-lg leading-relaxed text-gray-700">
+                If you want to check costs first, view our driving lesson
+                <Link
+                  href="/price"
+                  className="text-[#ff6600] font-bold ml-1 hover:underline underline-offset-4 decoration-2"
+                >
+                  prices
+                </Link>
+                . If you want to get started, use our
+                <Link
+                  href="/contact"
+                  className="text-[#ff6600] font-bold ml-1 hover:underline underline-offset-4 decoration-2"
+                >
+                  contact page
+                </Link>
+                .
+              </p>
+            </section>
+
+            <section className="bg-white p-8 md:p-10 rounded-[3rem] shadow-sm border border-gray-100 max-w-4xl mx-auto mt-12">
+              <h3 className="text-2xl font-black mb-8 uppercase italic text-[#0f172a] border-l-8 border-[#ff6600] pl-5">
+                What You'll Master
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {blog.lessonHighlights.map((point, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-900 font-bold text-[12px] uppercase border-l-4 border-[#ff6600] pl-4 py-4 bg-[#fafafa] hover:bg-white hover:shadow-md transition-all duration-300"
+                  >
+                    {point}
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+        </article>
+      </div>
+    </main>
+  );
+}
