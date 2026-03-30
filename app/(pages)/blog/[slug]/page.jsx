@@ -12,7 +12,7 @@ const blog = {
   },
   date: "MARCH 20, 2026",
   readTime: "6 MIN READ",
-  mainImage: "/images/hero-3.avif", // <-- your blog feed car image
+  mainImage: "/images/hero-3.avif",
   lessonHighlights: [
     "Clutch Control & Moving Off",
     "Mastering Roundabouts",
@@ -65,7 +65,7 @@ export default function SingleBlogPage() {
             </div>
           </header>
 
-          {/* Cleaned Image - Blue background and shadow container removed */}
+          {/* Centered Image - Flush with no container background */}
           <div className="mb-16 flex justify-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
@@ -80,9 +80,6 @@ export default function SingleBlogPage() {
               />
             </motion.div>
           </div>
-
-          {/* Divider */}
-          <div className="h-2 w-full max-w-3xl mx-auto bg-[#3f4693] mt-6 rounded-full opacity-20"></div>
 
           {/* Content Body */}
           <div className="space-y-12 max-w-3xl mx-auto mt-16">
