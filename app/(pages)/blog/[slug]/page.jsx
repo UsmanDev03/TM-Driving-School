@@ -116,21 +116,21 @@ export default function SingleBlogPage() {
               </p>
             </section>
 
-            <section className="bg-white p-8 md:p-10 rounded-[3rem] shadow-sm border border-gray-100 max-w-4xl mx-auto mt-12">
-              <h3 className="text-2xl font-black mb-8 uppercase italic text-[#0f172a] border-l-8 border-[#ff6600] pl-5">
-                WHAT YOU'LL MASTER
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {blog.lessonHighlights.map((point, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-center gap-3 text-gray-900 font-bold text-[12px] uppercase border-l-4 border-[#ff6600] pl-4 py-4 bg-[#fafafa] hover:bg-white hover:shadow-md transition-all duration-300"
-                  >
-                    {point}
-                  </div>
-                ))}
-              </div>
-            </section>
+           <section className="bg-white p-8 md:p-10 rounded-[3rem] shadow-sm border border-gray-100 max-w-4xl mx-auto mt-12">
+  <h3 className="text-2xl font-black mb-8 uppercase italic text-[#0f172a]">
+    WHAT YOU'LL MASTER
+  </h3>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {blog.lessonHighlights.map((point, idx) => (
+      <div
+        key={idx}
+        className="flex items-center gap-3 text-gray-900 font-bold text-[12px] uppercase border-l-4 border-[#ff6600] pl-4 py-4 bg-[#fafafa] hover:bg-white hover:shadow-md transition-all duration-300"
+      >
+        {point}
+      </div>
+    ))}
+  </div>
+</section>
           </div>
         </article>
       </div>
