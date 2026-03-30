@@ -65,28 +65,27 @@ export default function SingleBlogPage() {
             </div>
           </header>
 
-          {/* Centered Car Image */}
+          {/* Cleaned Image - Blue background and shadow container removed */}
           <div className="mb-16 flex justify-center">
-            <div className="bg-[#3f4693] p-4 md:p-6 rounded-3xl shadow-2xl w-full sm:w-[90%] md:w-[80%]">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="relative aspect-video overflow-hidden rounded-[20px] border-4 border-[#3f4693]"
-              >
-                <img
-                  src={blog.mainImage}
-                  alt="Car Image"
-                  className="w-full h-full object-cover"
-                />
-              </motion.div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative aspect-video overflow-hidden rounded-[30px] w-full sm:w-[90%] md:w-[85%]"
+            >
+              <img
+                src={blog.mainImage}
+                alt="Driving School Car"
+                className="w-full h-full object-cover shadow-lg"
+              />
+            </motion.div>
           </div>
 
           {/* Divider */}
-          <div className="h-2 w-full bg-[#3f4693] mt-6 rounded-full opacity-20"></div>
+          <div className="h-2 w-full max-w-3xl mx-auto bg-[#3f4693] mt-6 rounded-full opacity-20"></div>
 
           {/* Content Body */}
-          <div className="space-y-12 max-w-3xl mx-auto">
+          <div className="space-y-12 max-w-3xl mx-auto mt-16">
             <section className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
                 Mastering the Isleworth & Ashford Routes
