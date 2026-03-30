@@ -28,7 +28,6 @@ export default function SingleBlogPage() {
     <main className="bg-[#fafafa] min-h-screen pb-24 font-sans text-gray-900 w-full">
       {/* Outer wrapper - mt-0 and pt-6/8 reduces the large gap at the very top */}
       <div className="max-w-5xl mx-auto px-6 sm:px-10 md:px-16 pt-8">
-        
         {/* Breadcrumb - Removed mt-6 to pull it closer to the top */}
         <nav className="mb-12">
           <Link
@@ -90,25 +89,29 @@ export default function SingleBlogPage() {
               </h2>
 
               <p className="text-lg leading-relaxed text-gray-700">
-                Need driving lessons that actually get you to test standard? A calm environment, a clear training plan, and a local instructor are the keys to making real progress.
+                Need driving lessons that actually get you to test standard? A
+                calm environment, a clear training plan, and a local instructor
+                are the keys to making real progress.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700">
-                Our manual driving lessons are structured around your specific level, whether you are a complete beginner or looking for a mock test to polish your skills.
+                Our manual driving lessons are structured around your specific
+                level, whether you are a complete beginner or looking for a mock
+                test to polish your skills.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700">
                 If you want to check costs first, view our driving lesson
                 <Link
                   href="/price"
-                  className="text-[#ff6600] font-bold ml-1 hover:underline underline-offset-4 decoration-2"
+                  className="text-[#ff6600] font-bold ml-1 hover:text-orange-600 transition-colors"
                 >
                   prices
                 </Link>
                 . If you are ready to start, head over to our
                 <Link
                   href="/contact"
-                  className="text-[#ff6600] font-bold ml-1 hover:underline underline-offset-4 decoration-2"
+                  className="text-[#ff6600] font-bold ml-1 hover:text-orange-600 transition-colors"
                 >
                   contact page
                 </Link>
@@ -116,21 +119,21 @@ export default function SingleBlogPage() {
               </p>
             </section>
 
-           <section className="bg-white p-8 md:p-10 rounded-[3rem] shadow-sm border border-gray-100 max-w-4xl mx-auto mt-12">
-  <h3 className="text-2xl font-black mb-8 uppercase italic text-[#0f172a]">
-    WHAT YOU'LL MASTER
-  </h3>
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    {blog.lessonHighlights.map((point, idx) => (
-      <div
-        key={idx}
-        className="flex items-center gap-3 text-gray-900 font-bold text-[12px] uppercase border-l-4 border-[#ff6600] pl-4 py-4 bg-[#fafafa] hover:bg-white hover:shadow-md transition-all duration-300"
-      >
-        {point}
-      </div>
-    ))}
-  </div>
-</section>
+            <section className="bg-white p-8 md:p-10 rounded-[3rem] shadow-sm border border-gray-100 max-w-4xl mx-auto mt-12">
+              <h3 className="text-2xl font-black mb-8 uppercase italic text-[#0f172a]">
+                WHAT YOU'LL MASTER
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {blog.lessonHighlights.map((point, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-900 font-bold text-[12px] uppercase border-l-4 border-[#ff6600] pl-4 py-4 bg-[#fafafa] hover:bg-white hover:shadow-md transition-all duration-300"
+                  >
+                    {point}
+                  </div>
+                ))}
+              </div>
+            </section>
           </div>
         </article>
       </div>
