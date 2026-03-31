@@ -7,33 +7,21 @@ export default function Blog1() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
-    {
-      q: "Can my instructor still see my booking?",
-      a: "Yes. Give us your number and we can check our diary.",
-    },
-    {
-      q: "What if I get ill?",
-      a: "You can get a refund if you give 10 working days' notice.",
-    },
-    {
-      q: "Are the rules the same for all cars?",
-      a: "Yes, these rules apply to both manual and automatic car tests.",
-    },
+    { q: "Can my instructor still see my booking?", a: "Yes. Give us your number and we can check our diary." },
+    { q: "What if I get ill?", a: "You can get a refund if you give 10 working days' notice." },
+    { q: "Are the rules the same for all cars?", a: "Yes, these rules apply to both manual and automatic car tests." },
   ];
 
   return (
     <main className="bg-white min-h-screen pb-24 font-sans text-gray-900 w-full">
-      {/* NAVIGATION */}
       <div className="max-w-5xl mx-auto px-6 pt-8">
+        {/* NAVIGATION */}
         <nav className="mb-12">
           <Link
             href="/blog"
             className="group inline-flex items-center gap-2 text-[#ff6600] font-black uppercase tracking-widest text-[10px]"
           >
-            <ChevronLeft
-              size={16}
-              className="group-hover:-translate-x-1 transition-transform"
-            />
+            <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
             Back to all stories
           </Link>
         </nav>
@@ -43,9 +31,7 @@ export default function Blog1() {
           <header className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[1.1] mb-6 italic">
               New Driving Test Rules for <br />
-              <span className="text-[#ff6600]">
-                West London Learners in 2026
-              </span>
+              <span className="text-[#ff6600]">West London Learners in 2026</span>
             </h1>
 
             <div className="flex items-center justify-center gap-6 text-gray-400 font-bold uppercase tracking-widest text-[11px] border-y border-gray-100 py-5">
@@ -79,6 +65,7 @@ export default function Blog1() {
                 DVSA wants to stop people from reselling test slots. They also
                 want to make sure you are ready to pass before you book.
               </p>
+
               <div>
                 <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
                   Major Booking Changes Starting March 2026
@@ -129,11 +116,11 @@ export default function Blog1() {
               </p>
             </section>
 
+            {/* FAQ */}
             <section className="max-w-5xl mx-auto px-6 md:px-12 py-12">
               <h2 className="text-3xl md:text-4xl font-extrabold mb-10 text-center text-gray-900">
                 Frequently Asked Questions
               </h2>
-
               <div className="space-y-4">
                 {faqs.map((faq, idx) => {
                   const isOpen = openIndex === idx;
@@ -146,7 +133,6 @@ export default function Blog1() {
                           : "border border-gray-200"
                       }`}
                     >
-                      {/* Question */}
                       <button
                         onClick={() => setOpenIndex(isOpen ? null : idx)}
                         className={`w-full text-left px-6 py-4 flex justify-between items-center transition-colors duration-300 ${
@@ -155,9 +141,7 @@ export default function Blog1() {
                             : "bg-gray-50 hover:bg-gray-100"
                         }`}
                       >
-                        <span className="font-semibold text-gray-900">
-                          {faq.q}
-                        </span>
+                        <span className="font-semibold text-gray-900">{faq.q}</span>
                         <span
                           className={`text-xl font-bold transform transition-transform duration-300 ${
                             isOpen ? "rotate-45" : "rotate-0"
@@ -166,29 +150,23 @@ export default function Blog1() {
                           +
                         </span>
                       </button>
-
-                      {/* Answer - only visible when open */}
                       <div
                         className={`px-6 overflow-hidden transition-all duration-300 ${
                           isOpen ? "max-h-96 py-4 bg-white" : "max-h-0"
                         }`}
                       >
-                        {isOpen && (
-                          <p className="text-gray-700 text-lg">{faq.a}</p>
-                        )}
+                        {isOpen && <p className="text-gray-700 text-lg">{faq.a}</p>}
                       </div>
                     </div>
                   );
                 })}
               </div>
             </section>
+
             {/* CONCLUSION */}
             <section className="space-y-6 pt-4">
               <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic">
-                Conclusion:{" "}
-                <span className="text-[#ff6600]">
-                  Getting Ready for Your 2026 Test
-                </span>
+                Conclusion: <span className="text-[#ff6600]">Getting Ready for Your 2026 Test</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 The new DVSA rules mean you must be sure of your skills before
