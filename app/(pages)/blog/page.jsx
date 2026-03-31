@@ -7,45 +7,38 @@ import { ArrowRight, Clock } from "lucide-react";
 const allPosts = [
   {
     id: 1,
-    title: "Mastering the Isleworth & Ashford Routes",
-    description: "Local test centers are notorious for specific 'trap' junctions. We've mapped out the exact routes examiners are taking this month to help you prepare.",
-    date: "MARCH 20, 2026",
-    readTime: "6 MIN READ",
-    category: "LOCAL GUIDES",
-    slug: "mastering-west-london-routes"
+    title: "New Driving Test Rules for West London Learners in 2026",
+    description: "The way you book a driving test just changed. From the 'two-move limit' to geographic restrictions, learn how to protect your booking in Notting Hill.",
+    date: "MARCH 31, 2026",
+    readTime: "5 MIN READ",
+    category: "TEST PREP",
+    slug: "new-driving-test-rules-2026"
   },
   {
     id: 2,
-    title: "Why Learners Fail: The 2026 Update",
-    description: "New regulations and stricter observations are changing the pass rates in West London. Learn the 5 most common mistakes reported by local examiners.",
-    date: "MARCH 15, 2026",
-    readTime: "7 MIN READ",
-    category: "TEST PREP",
-    slug: "why-students-fail-test"
+    title: "Driving Near the A40 Westway: Navigating 2026 Roadworks",
+    description: "The Westway is shut for major repairs. Learn how we are adjusting lesson routes in W10 and W11 to help you master heavy traffic and local hazards.",
+    date: "MARCH 28, 2026",
+    readTime: "6 MIN READ",
+    category: "LOCAL GUIDES",
+    slug: "a40-westway-roadworks-2026"
   },
   {
     id: 3,
-    title: "Top 5 Mistakes During Your Driving Test",
-    description: "Examiners notice common mistakes that are easy to avoid. Here’s how to pass your test confidently.",
-    date: "MARCH 10, 2026",
-    readTime: "5 MIN READ",
+    title: "Manual vs Automatic in 2026: Why a Manual License is Smart",
+    description: "Even with the rise of electric cars, a manual license offers lower insurance costs and more job freedom. See why our learners still choose the gearbox.",
+    date: "MARCH 25, 2026",
+    readTime: "4 MIN READ",
     category: "TIPS & TRICKS",
-    slug: "top-5-driving-test-mistakes"
+    slug: "manual-vs-automatic-benefits"
   },
-  {
-    id: 4,
-    title: "Navigating Roundabouts: Expert Tips",
-    description: "Roundabouts can be tricky for learners. Learn how to master them with expert guidance.",
-    date: "MARCH 5, 2026",
-    readTime: "6 MIN READ",
-    category: "TEST PREP",
-    slug: "roundabout-expert-tips"
-  }
+ 
 ];
 
 export default function BlogPage() {
   const heroImg = "/images/hero-3.avif";
-  const [visiblePosts, setVisiblePosts] = useState(2); // initially show 2 posts
+  // Updated to show initial set (you can set this to 3 or 4 depending on preference)
+  const [visiblePosts, setVisiblePosts] = useState(4); 
 
   const loadMore = () => {
     setVisiblePosts((prev) => Math.min(prev + 2, allPosts.length));
@@ -80,7 +73,7 @@ export default function BlogPage() {
             transition={{ delay: 0.5 }}
             className="text-gray-200 mt-4 max-w-2xl font-bold uppercase tracking-widest text-sm italic"
           >
-            Expert Insights & Driving Guides
+            2026 Updates & West London Driving Guides
           </motion.p>
         </div>
       </div>
