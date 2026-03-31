@@ -18,7 +18,7 @@ const allPosts = [
     id: 2,
     title: "Driving Near the A40 Westway: Navigating 2026 Roadworks",
     description: "The Westway is shut for major repairs. Learn how we are adjusting lesson routes in W10 and W11 to help you master heavy traffic and local hazards.",
-    date: "MARCH 28, 2026",
+    date: "MARCH 31, 2026",
     readTime: "6 MIN READ",
     category: "LOCAL GUIDES",
     slug: "a40-westway-roadworks-2026"
@@ -27,7 +27,7 @@ const allPosts = [
     id: 3,
     title: "Manual vs Automatic in 2026: Why a Manual License is Smart",
     description: "Even with the rise of electric cars, a manual license offers lower insurance costs and more job freedom. See why our learners still choose the gearbox.",
-    date: "MARCH 25, 2026",
+    date: "MARCH 31, 2026",
     readTime: "4 MIN READ",
     category: "TIPS & TRICKS",
     slug: "manual-vs-automatic-benefits"
