@@ -11,5 +11,6 @@ export default function sitemap() {
     { url: `${baseUrl}/gallery`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/terms`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/driving-lessons-fulham`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/driving-lessons-notting-hill`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
   ];
-}
+} 
