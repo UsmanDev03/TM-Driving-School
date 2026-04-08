@@ -24,11 +24,13 @@ const Header = () => {
       dropdown: [
         { name: "Fulham", href: "/driving-lessons-fulham/" },
         { name: "Notting Hill", href: "/driving-lessons-notting-hill/" },
+        { name: "South Kensington", href: "/driving-lessons-south-kensington/" },
+        { name: "Maida Vale", href: "/driving-lessons-maida-vale/" },
       ],
     },
     { name: "Prices", href: "/price" },
     { name: "Testimonials", href: "/testimonials" },
-    { name: "Blogs", href: "/blog" }, // <--- ADD THIS LINE
+    { name: "Blogs", href: "/blog" }, 
     { name: "Gallery", href: "/gallery" },
     { name: "About", href: "/about" },
   ];
