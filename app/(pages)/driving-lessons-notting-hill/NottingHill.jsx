@@ -39,7 +39,7 @@ export default function DrivingLessonsNottingHill() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#fafafa]" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <motion.h1
+          <motion.p
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -49,7 +49,7 @@ export default function DrivingLessonsNottingHill() {
             <span className="text-[#ff6600] tracking-wide md:tracking-wider">
               Hill
             </span>
-          </motion.h1>
+          </motion.p>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -176,28 +176,28 @@ export default function DrivingLessonsNottingHill() {
           Book driving lessons in Notting Hill
         </h2>
 
-        {/* Book Links Grid */}
-      {/* Book Links Grid Styling */}
-       <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-  <Link
-    href="/price"
-    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
-  >
-    View <span className="text-[#ff6600] ml-1">lesson prices</span>
-  </Link>
-  <Link
-    href="/testimonials"
-    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
-  >
-    Read <span className="text-[#ff6600] ml-1">pupil reviews</span>
-  </Link>
-  <Link
-  href="/contact"
-  className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
->
-  Use <span className="text-[#ff6600] ml-1">contact page</span> to ask about lessons
-</Link>
-</div>
+  
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+          <Link
+            href="/price"
+            className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+          >
+            View <span className="text-[#ff6600] ml-1">lesson prices</span>
+          </Link>
+          <Link
+            href="/testimonials"
+            className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+          >
+            Read <span className="text-[#ff6600] ml-1">pupil reviews</span>
+          </Link>
+          <Link
+            href="/contact"
+            className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+          >
+            Use <span className="text-[#ff6600] ml-1">contact page</span> to ask
+            about lessons
+          </Link>
+        </div>
       </section>
 
       <ClientFAQ />

@@ -49,7 +49,7 @@ export default function DrivingLessonsSouthKensington() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#fafafa]" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          {/* Changed from H1 to plain text to match hierarchy */}
+          
           <motion.p
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
