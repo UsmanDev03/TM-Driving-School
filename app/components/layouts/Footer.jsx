@@ -110,9 +110,9 @@ const Footer = () => {
 
         {/* 2. Quick Links */}
         <div>
-          <h4 className="text-xl font-bold mb-6 border-l-4 border-[#ff6600] pl-3">
+          <h3 className="text-xl font-bold mb-6 border-l-4 border-[#ff6600] pl-3">
             Quick Links
-          </h4>
+          </h3>
           <ul className="flex flex-col gap-5 font-[600]">
             {[...navLinks, { name: "Contact", href: "/contact" }].map(
               (item) => (
@@ -135,9 +135,9 @@ const Footer = () => {
 
         {/* 3. Contact Details */}
         <div>
-          <h4 className="text-xl font-bold mb-6 border-l-4 border-[#ff6600] pl-3">
+          <h3 className="text-xl font-bold mb-6 border-l-4 border-[#ff6600] pl-3">
             Get In Touch
-          </h4>
+          </h3>
           <div className="flex flex-col gap-6">
             <motion.a
               href="tel:+447949488211"

@@ -16,7 +16,7 @@ export default function DrivingLessonsSouthKensington() {
     " mock test skill",
   ];
 
-  const testHelpPoints = [
+  const extraPracticePoints = [
     " weak points",
     " parking",
     " junctions",
@@ -49,14 +49,15 @@ export default function DrivingLessonsSouthKensington() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#fafafa]" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <motion.h1
+          {/* Changed from H1 to plain text to match hierarchy */}
+          <motion.p
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-5xl md:text-7xl font-black uppercase italic text-white leading-[1.1] tracking-tight"
           >
             South <span className="text-[#ff6600]">Kensington</span>
-          </motion.h1>
+          </motion.p>
 
           <p className="text-gray-200 mt-4 font-bold uppercase tracking-widest text-sm italic">
             Driving Lessons in South Kensington
@@ -66,6 +67,7 @@ export default function DrivingLessonsSouthKensington() {
 
       {/* CONTENT */}
       <section className="max-w-5xl mx-auto px-6 md:px-12 py-12 space-y-6">
+        {/* H1 - Primary Heading */}
         <h1 className="text-4xl md:text-5xl font-black">
           Driving Lessons in South Kensington
         </h1>
@@ -95,7 +97,7 @@ export default function DrivingLessonsSouthKensington() {
           .
         </p>
 
-        {/* Instructor */}
+        {/* H2 - Local Instructor */}
         <h2 className="text-2xl font-bold mt-8">
           Learn with a local driving instructor in South Kensington
         </h2>
@@ -125,7 +127,7 @@ export default function DrivingLessonsSouthKensington() {
           Each lesson is set up to help you improve one step at a time.
         </p>
 
-        {/* Manual */}
+        {/* H2 - Manual Lessons */}
         <h2 className="text-2xl font-bold mt-8">
           Manual driving lessons in South Kensington
         </h2>
@@ -140,8 +142,11 @@ export default function DrivingLessonsSouthKensington() {
           current skill level, manual driving lessons can be a strong option.
         </p>
 
-        {/* Test Help */}
-        <h2 className="text-2xl font-bold mt-8">Help before test day</h2>
+        {/* H2 - Refresher/Extra Practice (Updated Heading) */}
+        <h2 className="text-2xl font-bold mt-8">
+          Help before test day
+
+        </h2>
 
         <p className="text-lg">
           Some learners need full lessons from the start. Some learners need
@@ -153,7 +158,7 @@ export default function DrivingLessonsSouthKensington() {
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 py-2">
-          {testHelpPoints.map((item, i) => (
+          {extraPracticePoints.map((item, i) => (
             <div
               key={i}
               className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-1"
@@ -171,7 +176,7 @@ export default function DrivingLessonsSouthKensington() {
           .
         </p>
 
-        {/* Why */}
+        {/* H2 - Why Choose Us */}
         <h2 className="text-2xl font-bold mt-8">
           Why learners choose TM Drive School in South Kensington
         </h2>
@@ -195,7 +200,7 @@ export default function DrivingLessonsSouthKensington() {
           .
         </p>
 
-        {/* Book */}
+        {/* H2 - Book Lessons */}
         <h2 className="text-2xl font-bold mt-8">
           Book driving lessons in South Kensington
         </h2>
@@ -205,27 +210,27 @@ export default function DrivingLessonsSouthKensington() {
           instructor, take the next step today.
         </p>
 
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1">
-  <Link
-    href="/price"
-    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
-  >
-    Check <span className="text-[#ff6600] ml-1">lesson prices</span>
-  </Link>
-  <Link
-    href="/testimonials"
-    className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
-  >
-    Read <span className="text-[#ff6600] ml-1">pupil reviews</span>
-  </Link>
-  <Link
-  href="/contact"
-  className="flex items-center gap-1 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors flex-wrap"
->
-  Use the <span className="text-[#ff6600]">contact page</span> to ask about local cover
-</Link>
-  
-</div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1">
+          <Link
+            href="/price"
+            className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+          >
+            Check <span className="text-[#ff6600] ml-1">lesson prices</span>
+          </Link>
+          <Link
+            href="/testimonials"
+            className="flex items-center gap-2 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+          >
+            Read <span className="text-[#ff6600] ml-1">pupil reviews</span>
+          </Link>
+          <Link
+            href="/contact"
+            className="flex items-center gap-1 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors flex-wrap"
+          >
+            Use the <span className="text-[#ff6600]">contact page</span> to ask
+            about local cover
+          </Link>
+        </div>
       </section>
 
       <ClientFAQ />

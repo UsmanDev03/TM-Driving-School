@@ -36,7 +36,7 @@ export default function DrivingLessonsMaidaVale() {
 
   return (
     <main className="font-sans bg-[#fafafa] text-gray-900">
-      {/* HERO */}
+      {/* HERO SECTION */}
       <div className="relative h-[500px] w-full overflow-hidden">
         <motion.img
           initial={{ scale: 1.2 }}
@@ -44,20 +44,21 @@ export default function DrivingLessonsMaidaVale() {
           transition={{ duration: 1.5 }}
           src="/images/hero-3.avif"
           className="w-full h-full object-cover"
-          alt="Driving"
+          alt="Driving in Maida Vale"
         />
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#fafafa]" />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <motion.h1
+          {/* Changed from H1 to plain text as per image hierarchy */}
+          <motion.p
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-5xl md:text-7xl font-black uppercase italic text-white leading-[1.1] tracking-tight"
           >
             Maida <span className="text-[#ff6600]">Vale</span>
-          </motion.h1>
+          </motion.p>
 
           <p className="text-gray-200 mt-4 font-bold uppercase tracking-widest text-sm italic">
             Driving Lessons in Maida Vale
@@ -65,8 +66,10 @@ export default function DrivingLessonsMaidaVale() {
         </div>
       </div>
 
-      {/* CONTENT */}
+      {/* MAIN CONTENT */}
       <section className="max-w-5xl mx-auto px-6 md:px-12 py-12 space-y-6">
+        
+        {/* H1 - Primary Heading */}
         <h1 className="text-4xl md:text-5xl font-black">
           Driving Lessons in Maida Vale
         </h1>
@@ -96,7 +99,7 @@ export default function DrivingLessonsMaidaVale() {
           .
         </p>
 
-        {/* Instructor */}
+        {/* H2 - Local Instructor */}
         <h2 className="text-2xl font-bold mt-8">
           Learn with a local driving instructor in Maida Vale
         </h2>
@@ -127,7 +130,7 @@ export default function DrivingLessonsMaidaVale() {
           without feeling rushed.
         </p>
 
-        {/* Manual */}
+        {/* H2 - Manual Lessons */}
         <h2 className="text-2xl font-bold mt-8">
           Manual driving lessons in Maida Vale
         </h2>
@@ -142,7 +145,7 @@ export default function DrivingLessonsMaidaVale() {
           manual driving lessons can be a good fit.
         </p>
 
-        {/* Extra Practice */}
+        {/* H2 - Refresher */}
         <h2 className="text-2xl font-bold mt-8">
           Refresher and extra practice lessons
         </h2>
@@ -175,7 +178,7 @@ export default function DrivingLessonsMaidaVale() {
           .
         </p>
 
-        {/* Why */}
+        {/* H2 - Why Choose Us */}
         <h2 className="text-2xl font-bold mt-8">
           Why learners choose TM Drive School in Maida Vale
         </h2>
@@ -199,7 +202,7 @@ export default function DrivingLessonsMaidaVale() {
           .
         </p>
 
-        {/* Book */}
+        {/* H2 - Book Lessons */}
         <h2 className="text-2xl font-bold mt-8">
           Book driving lessons in Maida Vale
         </h2>
@@ -208,28 +211,30 @@ export default function DrivingLessonsMaidaVale() {
           If you want driving lessons in Maida Vale with a calm local
           instructor, take the next step today.
         </p>
-<div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1">
-  <Link
-    href="/price"
-    className="flex flex-wrap items-center gap-1 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
-  >
-    View <span className="text-[#ff6600]">lesson prices</span>
-  </Link>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 py-1">
+          <Link
+            href="/price"
+            className="flex flex-wrap items-center gap-1 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+          >
+            View <span className="text-[#ff6600]">lesson prices</span>
+          </Link>
 
-  <Link
-    href="/testimonials"
-    className="flex flex-wrap items-center gap-1 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
-  >
-    Read <span className="text-[#ff6600]">pupil reviews</span>
-  </Link>
+          <Link
+            href="/testimonials"
+            className="flex flex-wrap items-center gap-1 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+          >
+            Read <span className="text-[#ff6600]">pupil reviews</span>
+          </Link>
 
-  <Link
-    href="/contact"
-    className="flex flex-wrap items-center gap-1 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
-  >
-    Use our <span className="text-[#ff6600]">contact page</span> to ask about lesson times
-  </Link>
-</div>
+          <Link
+            href="/contact"
+            className="flex flex-wrap items-center gap-1 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-3 py-1.5 bg-white/50 hover:bg-white transition-colors"
+          >
+            Use our <span className="text-[#ff6600]">contact page</span> to ask
+            about lesson times
+          </Link>
+        </div>
       </section>
 
       <ClientFAQ />
