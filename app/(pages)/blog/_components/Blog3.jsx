@@ -79,7 +79,14 @@ export default function Blog3() {
               <br />
               If you want to understand more about our instructors, training
               style, and how we help beginners become confident drivers, you can
-              visit our About TM Drive School.
+              visit our{" "}
+              <Link
+                href="/about"
+                className="text-[#ff6600] font-bold hover:text-[#e65c00] transition-colors"
+              >
+                About TM Drive School
+              </Link>
+              .
             </p>
 
             <section className="space-y-6 pt-10 border-t border-gray-100">
@@ -141,193 +148,199 @@ export default function Blog3() {
                 insurance costs.
               </p>
             </section>
-<section className="space-y-6 pt-10 border-t border-gray-100">
-  <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
-    Manual vs Automatic in Real Life (London Driving Conditions)
-  </h2>
-  <p className="text-lg text-gray-600 leading-relaxed">
-    Driving in London is very different from other places. You deal with heavy traffic, 
-    tight roads, frequent stops, and busy roundabouts.
-  </p>
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                Manual vs Automatic in Real Life (London Driving Conditions)
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Driving in London is very different from other places. You deal
+                with heavy traffic, tight roads, frequent stops, and busy
+                roundabouts.
+              </p>
 
-  <div className="space-y-4">
-    <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
-      Manual driving helps you handle situations like:
-    </p>
+              <div className="space-y-4">
+                <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
+                  Manual driving helps you handle situations like:
+                </p>
 
-    {/* BRANDED GRID LIST */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {[
-        "Stop start traffic during rush hour",
-        "Narrow streets with parked cars",
-        "Hill starts in busy areas",
-        "Complex junctions and roundabouts",
-      ].map((item, idx) => (
-        <div
-          key={idx}
-          className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
-        >
-          {item}
-        </div>
-      ))}
-    </div>
-  </div>
+                {/* BRANDED GRID LIST */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Stop start traffic during rush hour",
+                    "Narrow streets with parked cars",
+                    "Hill starts in busy areas",
+                    "Complex junctions and roundabouts",
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-  <p className="text-lg text-gray-600 leading-relaxed">
-    Learning manual builds stronger control and awareness, especially in real London driving conditions.
-  </p>
-</section>
-<section className="space-y-6 pt-10 border-t border-gray-100">
-  <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
-    Cost Comparison in 2026
-  </h2>
-  <p className="text-lg text-gray-600 leading-relaxed">
-    Cost is one of the biggest reasons learners choose manual over automatic. 
-    Even in 2026, opting for a manual gearbox provides several financial advantages for new drivers.
-  </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Learning manual builds stronger control and awareness,
+                especially in real London driving conditions.
+              </p>
+            </section>
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                Cost Comparison in 2026
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Cost is one of the biggest reasons learners choose manual over
+                automatic. Even in 2026, opting for a manual gearbox provides
+                several financial advantages for new drivers.
+              </p>
 
-  <div className="space-y-4">
-    <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
-      Here is how manual helps you save money:
-    </p>
+              <div className="space-y-4">
+                <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
+                  Here is how manual helps you save money:
+                </p>
 
-    {/* BRANDED GRID LIST */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {[
-        "Lower car purchase price",
-        "More affordable used cars available",
-        "Cheaper driving lessons in most cases",
-        "Better fuel control with gear use",
-        "Lower insurance costs for many drivers",
-      ].map((item, idx) => (
-        <div
-          key={idx}
-          className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
-        >
-          {item}
-        </div>
-      ))}
-    </div>
-  </div>
+                {/* BRANDED GRID LIST */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Lower car purchase price",
+                    "More affordable used cars available",
+                    "Cheaper driving lessons in most cases",
+                    "Better fuel control with gear use",
+                    "Lower insurance costs for many drivers",
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-  <p className="text-lg text-gray-600 leading-relaxed">
-    Overall, manual driving remains the more budget-friendly option for those starting 
-    their driving journey in 2026.
-  </p>
-</section>
-<section className="space-y-6 pt-10 border-t border-gray-100">
-  <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
-    Who Should Choose Automatic Instead
-  </h2>
-  <p className="text-lg text-gray-600 leading-relaxed">
-    Manual driving is not for everyone, and that is completely fine. 
-  </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Overall, manual driving remains the more budget-friendly option
+                for those starting their driving journey in 2026.
+              </p>
+            </section>
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                Who Should Choose Automatic Instead
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Manual driving is not for everyone, and that is completely fine.
+              </p>
 
-  <div className="space-y-4">
-    <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
-      Automatic may be better if you:
-    </p>
+              <div className="space-y-4">
+                <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
+                  Automatic may be better if you:
+                </p>
 
-    {/* BRANDED GRID LIST */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {[
-        "Feel very nervous about driving",
-        "Want a simpler learning experience",
-        "Drive mainly in heavy traffic",
-        "Struggle with clutch control",
-      ].map((item, idx) => (
-        <div
-          key={idx}
-          className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
-        >
-          {item}
-        </div>
-      ))}
-    </div>
-  </div>
+                {/* BRANDED GRID LIST */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Feel very nervous about driving",
+                    "Want a simpler learning experience",
+                    "Drive mainly in heavy traffic",
+                    "Struggle with clutch control",
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-  <p className="text-lg text-gray-600 leading-relaxed">
-    Automatic cars remove gear changes, making driving easier, but keep in mind they 
-    limit your licence to automatic vehicles only.
-  </p>
-</section>
-<section className="space-y-6 pt-10 border-t border-gray-100">
-  <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
-    Tips for Learning Manual Faster
-  </h2>
-  <p className="text-lg text-gray-600 leading-relaxed">
-    Learning manual becomes much easier if you follow the right steps. With the right 
-    guidance, most learners improve quickly and feel comfortable within a few weeks.
-  </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Automatic cars remove gear changes, making driving easier, but
+                keep in mind they limit your licence to automatic vehicles only.
+              </p>
+            </section>
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                Tips for Learning Manual Faster
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Learning manual becomes much easier if you follow the right
+                steps. With the right guidance, most learners improve quickly
+                and feel comfortable within a few weeks.
+              </p>
 
-  <div className="space-y-4">
-    <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
-      To accelerate your progress:
-    </p>
+              <div className="space-y-4">
+                <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
+                  To accelerate your progress:
+                </p>
 
-    {/* BRANDED GRID LIST */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {[
-        "Focus on clutch control early",
-        "Practise moving off smoothly",
-        "Stay calm in traffic situations",
-        "Take regular driving lessons",
-        "Listen carefully to your instructor",
-        "Don’t worry about stalling at first",
-        "Build confidence step by step",
-      ].map((item, idx) => (
-        <div
-          key={idx}
-          className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
-        >
-          {item}
-        </div>
-      ))}
-    </div>
-  </div>
+                {/* BRANDED GRID LIST */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Focus on clutch control early",
+                    "Practise moving off smoothly",
+                    "Stay calm in traffic situations",
+                    "Take regular driving lessons",
+                    "Listen carefully to your instructor",
+                    "Don’t worry about stalling at first",
+                    "Build confidence step by step",
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-  <p className="text-lg text-gray-600 leading-relaxed">
-    Consistency is key. Regular practice helps the physical movements of manual 
-    driving become second nature, allowing you to focus on the road ahead.
-  </p>
-</section>
-<section className="space-y-6 pt-10 border-t border-gray-100">
-  <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
-    Why Manual Still Matters in the Future
-  </h2>
-  <p className="text-lg text-gray-600 leading-relaxed">
-    Even with electric and automatic cars increasing, manual driving is still very important 
-    in 2026.
-  </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Consistency is key. Regular practice helps the physical
+                movements of manual driving become second nature, allowing you
+                to focus on the road ahead.
+              </p>
+            </section>
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                Why Manual Still Matters in the Future
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Even with electric and automatic cars increasing, manual driving
+                is still very important in 2026.
+              </p>
 
-  <div className="space-y-4">
-    <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
-      Key benefits for your future:
-    </p>
+              <div className="space-y-4">
+                <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
+                  Key benefits for your future:
+                </p>
 
-    {/* BRANDED GRID LIST */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-      {[
-        "Many jobs still require manual skills",
-        "You can drive both manual and automatic cars",
-        "You gain better vehicle control understanding",
-        "More flexibility when buying cars",
-        "Stronger long term driving skills",
-      ].map((item, idx) => (
-        <div
-          key={idx}
-          className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
-        >
-          {item}
-        </div>
-      ))}
-    </div>
-  </div>
+                {/* BRANDED GRID LIST */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Many jobs still require manual skills",
+                    "You can drive both manual and automatic cars",
+                    "You gain better vehicle control understanding",
+                    "More flexibility when buying cars",
+                    "Stronger long term driving skills",
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
 
-  <p className="text-lg text-gray-600 leading-relaxed">
-    Manual driving is still a valuable skill for the future, especially in the UK job market.
-  </p>
-</section>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Manual driving is still a valuable skill for the future,
+                especially in the UK job market.
+              </p>
+            </section>
             {/* FAQ SECTION */}
             <section className="max-w-5xl mx-auto py-12 border-t border-gray-100">
               <h2 className="text-3xl md:text-4xl font-black mb-10 text-center text-gray-900 uppercase italic">
@@ -381,42 +394,44 @@ export default function Blog3() {
               </div>
             </section>
 
-           <section className="space-y-6 pt-16 border-t border-gray-100">
+            <section className="space-y-6 pt-16 border-t border-gray-100">
               <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic">
                 Conclusion:{" "}
                 <span className="text-[#ff6600]">
-                 Pick the License That Gives You More
+                  Pick the License That Gives You More
                 </span>
               </h2>
-  
- <p className="text-lg text-gray-600 leading-relaxed">
-    Even in 2026, a manual driving license is still one of the smartest choices for 
-    new drivers in London. It offers versatility and a deeper understanding of 
-    vehicle mechanics that serves you for a lifetime.
-  </p>
 
-  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto mb-10 text-left">
-    {[
-      "More freedom to drive different cars",
-      "Lower long term costs",
-      "Better control on busy roads",
-      "More job opportunities",
-      "Strong driving skills for life",
-    ].map((item, idx) => (
-      <div
-        key={idx}
-        className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
-      >
-        {item}
-      </div>
-    ))}
-  </div>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Even in 2026, a manual driving license is still one of the
+                smartest choices for new drivers in London. It offers
+                versatility and a deeper understanding of vehicle mechanics that
+                serves you for a lifetime.
+              </p>
 
-   <p className="text-lg text-gray-600 leading-relaxed">
-    If you are ready to start your driving journey, book your lessons with a 
-    trusted driving school London and learn with confidence.
-  </p>
-</section>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto mb-10 text-left">
+                {[
+                  "More freedom to drive different cars",
+                  "Lower long term costs",
+                  "Better control on busy roads",
+                  "More job opportunities",
+                  "Strong driving skills for life",
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                If you are ready to start your driving journey, book your
+                lessons with a trusted driving school London and learn with
+                confidence.
+              </p>
+            </section>
           </div>
         </article>
       </div>

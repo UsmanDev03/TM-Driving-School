@@ -74,7 +74,7 @@ export default function Blog2() {
               If you drive in Notting Hill or Shepherd’s Bush, you have seen the
               cones. The A40 Westway is closed for major repairs, and this has
               changed how learners and instructors plan driving lessons in West
-              London
+              London.
               <br />
               At our driving school London, we understand how frustrating
               roadworks can feel for beginners. However, these conditions also
@@ -82,7 +82,14 @@ export default function Blog2() {
               busy environments.
               <br />
               If you want to know more about our instructors and training
-              approach, visit our About TM Drive School page.
+              approach, visit our{" "}
+              <Link
+                href="/about"
+                className="text-[#ff6600] font-bold hover:text-[#e65c00] transition-colors"
+              >
+                About TM Drive School
+              </Link>{" "}
+              page.
             </p>
 
             <section className="space-y-6 pt-10 border-t border-gray-100">
@@ -135,7 +142,8 @@ export default function Blog2() {
 
               <div className="space-y-4">
                 <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
-                  This increased traffic creates real world learning conditions such as:
+                  This increased traffic creates real world learning conditions
+                  such as:
                 </p>
 
                 {/* BRANDED GRID LIST */}
@@ -279,7 +287,8 @@ export default function Blog2() {
               <p className="text-lg text-gray-600 leading-relaxed">
                 Our Mercedes A-Class is smooth and easy to handle, which helps
                 learners stay calm even in heavy congestion. We believe real
-                driving confidence comes from real road experience, not just quiet practice routes.
+                driving confidence comes from real road experience, not just
+                quiet practice routes.
               </p>
             </section>
             <section className="space-y-6 pt-10 border-t border-gray-100">
