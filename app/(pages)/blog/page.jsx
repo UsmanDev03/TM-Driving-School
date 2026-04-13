@@ -8,40 +8,42 @@ const allPosts = [
   {
     id: 1,
     title: "New Driving Test Rules for West London Learners in 2026",
-    description: "The way you book a driving test just changed. From the 'two-move limit' to geographic restrictions, learn how to protect your booking in Notting Hill.",
+    description:
+      "The way you book a driving test just changed. From the 'two-move limit' to geographic restrictions, learn how to protect your booking in Notting Hill.",
     date: "MARCH 31, 2026",
     readTime: "5 MIN READ",
     category: "TEST PREP",
-    // Match this to Blog1 mapping
-    slug: "new-driving-test-rules-2026" 
+    slug: "new-driving-test-rules-2026",
+    image: "/images/blog1.png",
   },
   {
     id: 2,
     title: "Driving Near the A40 Westway: Navigating 2026 Roadworks",
-    description: "The Westway is shut for major repairs. Learn how we are adjusting lesson routes in W10 and W11 to help you master heavy traffic and local hazards.",
+    description:
+      "The Westway is shut for major repairs. Learn how we are adjusting lesson routes in W10 and W11 to help you master heavy traffic and local hazards.",
     date: "MARCH 31, 2026",
     readTime: "6 MIN READ",
     category: "LOCAL GUIDES",
-    // Match this to Blog2 mapping
-    slug: "a40-westway-roadworks-2026"
+    slug: "a40-westway-roadworks-2026",
+    image: "/images/blog2.png",
   },
   {
     id: 3,
     title: "Manual vs Automatic in 2026: Why a Manual License is Smart",
-    description: "Even with the rise of electric cars, a manual license offers lower insurance costs and more job freedom. See why our learners still choose the gearbox.",
+    description:
+      "Even with the rise of electric cars, a manual license offers lower insurance costs and more job freedom. See why our learners still choose the gearbox.",
     date: "MARCH 31, 2026",
     readTime: "4 MIN READ",
     category: "TIPS & TRICKS",
-    // Match this to Blog3 mapping
-    slug: "manual-vs-automatic-benefits"
+    slug: "manual-vs-automatic-benefits",
+    image: "/images/blog3.png",
   },
 ];
- 
 
 export default function BlogPage() {
   const heroImg = "/images/hero-3.avif";
   // Updated to show initial set (you can set this to 3 or 4 depending on preference)
-  const [visiblePosts, setVisiblePosts] = useState(4); 
+  const [visiblePosts, setVisiblePosts] = useState(4);
 
   const loadMore = () => {
     setVisiblePosts((prev) => Math.min(prev + 2, allPosts.length));
@@ -49,7 +51,6 @@ export default function BlogPage() {
 
   return (
     <main className="font-sans bg-[#fafafa] text-gray-900 pb-24">
-      
       {/* --- HERO BANNER --- */}
       <div className="relative h-[500px] w-full overflow-hidden">
         <motion.img
@@ -95,7 +96,7 @@ export default function BlogPage() {
             <div className="w-full lg:w-1/2 p-4 md:p-6 flex items-center justify-center">
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[30px] shadow-sm">
                 <img
-                  src={heroImg} 
+                  src={post.image} // Changed from heroImg to post.image
                   alt={post.title}
                   className="w-full h-full object-cover"
                 />
@@ -109,7 +110,9 @@ export default function BlogPage() {
                   {post.category}
                 </span>
                 <span className="text-gray-300 text-[11px]">|</span>
-                <span className="text-gray-400 font-bold text-[11px] tracking-widest">{post.date}</span>
+                <span className="text-gray-400 font-bold text-[11px] tracking-widest">
+                  {post.date}
+                </span>
               </div>
 
               <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic leading-[1.1] mb-4 line-clamp-2">
@@ -125,10 +128,14 @@ export default function BlogPage() {
                   <Clock size={14} className="text-[#ff6600]" />
                   {post.readTime}
                 </div>
-                
+
                 <Link href={`/blog/${post.slug}`}>
                   <div className="flex items-center gap-2 text-[#ff6600] font-black uppercase tracking-[0.2em] text-[10px] cursor-pointer group">
-                    READ STORY <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
+                    READ STORY{" "}
+                    <ArrowRight
+                      size={16}
+                      className="group-hover:translate-x-2 transition-transform"
+                    />
                   </div>
                 </Link>
               </div>
@@ -149,7 +156,6 @@ export default function BlogPage() {
             </motion.button>
           </div>
         )}
-        
       </section>
     </main>
   );

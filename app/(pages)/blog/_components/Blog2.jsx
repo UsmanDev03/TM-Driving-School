@@ -61,7 +61,7 @@ export default function Blog2() {
           <div className="mb-16 flex justify-center">
             <div className="relative aspect-video overflow-hidden rounded-[30px] w-full max-w-4xl shadow-sm">
               <img
-                src="/images/hero-3.avif"
+                src="/images/blog2.png"
                 alt="A40 Westway Roadworks 2026"
                 className="w-full h-full object-cover"
               />

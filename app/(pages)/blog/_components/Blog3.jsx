@@ -63,7 +63,7 @@ export default function Blog3() {
           <div className="mb-16 flex justify-center">
             <div className="relative aspect-video overflow-hidden rounded-[30px] w-full max-w-4xl shadow-sm">
               <img
-                src="/images/hero-3.avif"
+                src="/images/blog3.png"
                 alt="Manual vs Automatic Driving 2026"
                 className="w-full h-full object-cover"
               />
