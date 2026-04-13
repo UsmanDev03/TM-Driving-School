@@ -7,9 +7,18 @@ export default function Blog1() {
   const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
-    { q: "Can my instructor still see my booking?", a: "Yes. Give us your number and we can check our diary." },
-    { q: "What if I get ill?", a: "You can get a refund if you give 10 working days' notice." },
-    { q: "Are the rules the same for all cars?", a: "Yes, these rules apply to both manual and automatic car tests." },
+    {
+      q: "Can my instructor still see my booking?",
+      a: "Yes. If you share your booking details, your instructor can review your test date and help you plan accordingly.",
+    },
+    {
+      q: "What if I get ill before my test?",
+      a: "You can request a refund or reschedule if you provide at least 10 working days notice.",
+    },
+    {
+      q: "Are the new rules the same for manual and automatic tests?",
+      a: "Yes. These DVSA changes apply to all driving tests, regardless of vehicle type.",
+    },
   ];
 
   return (
@@ -21,7 +30,10 @@ export default function Blog1() {
             href="/blog"
             className="group inline-flex items-center gap-2 text-[#ff6600] font-black uppercase tracking-widest text-[10px]"
           >
-            <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+            <ChevronLeft
+              size={16}
+              className="group-hover:-translate-x-1 transition-transform"
+            />
             Back to all stories
           </Link>
         </nav>
@@ -31,7 +43,9 @@ export default function Blog1() {
           <header className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter leading-[1.1] mb-6 italic">
               New Driving Test Rules for <br />
-              <span className="text-[#ff6600]">West London Learners in 2026</span>
+              <span className="text-[#ff6600]">
+                West London Learners in 2026
+              </span>
             </h1>
 
             <div className="flex items-center justify-center gap-6 text-gray-400 font-bold uppercase tracking-widest text-[11px] border-y border-gray-100 py-5">
@@ -58,61 +72,268 @@ export default function Blog1() {
 
           {/* MAIN CONTENT AREA */}
           <div className="max-w-3xl mx-auto space-y-12 px-4">
-            <section className="space-y-8 pt-10">
-              <p className="text-lg leading-relaxed text-gray-600 font-medium">
-                The way you book a driving test in the UK just changed. If you
-                live in Notting Hill or nearby, you must know these facts. The
-                DVSA wants to stop people from reselling test slots. They also
-                want to make sure you are ready to pass before you book.
+            <p className="text-lg leading-relaxed text-gray-600 font-medium">
+              The way you book a driving test in the UK has changed in 2026. If
+              you live in Notting Hill, Shepherd’s Bush, or nearby West London
+              areas, these updates are very important to understand before you
+              book your test.
+              <br />
+              The DVSA has introduced new rules to reduce waiting times, prevent
+              test slot misuse, and ensure learners are fully ready before
+              booking a practical test. For many students, this means planning
+              lessons more carefully and working closely with their instructor
+              from a trusted driving school London.
+            </p>
+
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                Why These Changes Have Been Introduced
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Over the past few years, driving test demand in London has
+                increased significantly. Many learners were booking tests too
+                early or rescheduling multiple times, which created long waiting
+                lists and limited availability.
               </p>
 
-              <div>
-                <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
-                  Major Booking Changes Starting March 2026
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  The government has made it harder to move your test date. This
-                  is to stop the long queues for tests in London.
+              <div className="space-y-4">
+                <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
+                  The DVSA now aims to:
                 </p>
+
+                {/* BRANDED GRID LIST */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Reduce test booking abuse",
+                    "Stop automated systems and bots",
+                    "Ensure learners are test ready before booking",
+                    "Improve fairness for all candidates",
+                    "Reduce long waiting times in busy areas like West London",
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="space-y-4">
-                <h3 className="text-xl font-black text-[#ff6600] uppercase italic">
-                  The Two-Move Limit on Test Dates
-                </h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  From 31 March 2026, you can only change your test date two
-                  times. Before, you could move it six times. If you try to move
-                  it a third time, the system will cancel your test. You will
-                  lose the money you paid. Do not book a test just to "save a
-                  spot." Wait until we say you are ready for your manual driving
-                  lessons.
-                </p>
-              </div>
-
-              <div className="space-y-4">
-                <h3 className="text-xl font-black text-[#ff6600] uppercase italic">
-                  You Must Book Your Own Test
-                </h3>
-                <p className="text-lg text-gray-600 leading-relaxed">
-                  From 12 May 2026, only the learner can book the test. Driving
-                  schools and apps cannot do it for you. You have to tick a box
-                  to say you are booking for yourself. This stops bots from
-                  taking all the slots in West London.
-                </p>
-              </div>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                These changes are designed to make the system more efficient,
+                but they also mean learners must be more prepared than before.
+              </p>
             </section>
 
-            {/* GEOGRAPHIC RESTRICTIONS */}
-            <section className="space-y-6 pt-10">
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                Major Booking Changes Starting March 2026
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                From March 2026, several new rules will affect how learners book
+                and manage their driving tests. These updates are especially
+                important for learners in high demand areas like London. The
+                biggest changes include stricter rescheduling limits, personal
+                booking requirements, and location restrictions.
+                <br />
+                At our driving school London, we always advise learners to
+                understand these rules before planning their test date to avoid
+                unnecessary stress or loss of fees.
+              </p>
+            </section>
+
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                The Two Move Limit on Test Dates
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                From 31 March 2026, learners can only change their driving test
+                date two times. Previously, learners were allowed to move their
+                test up to six times.
+              </p>
+
+              <div className="space-y-4">
+                <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
+                  What this means for you:
+                </p>
+
+                {/* BRANDED GRID LIST */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "Choose your test date more carefully",
+                    "Only two chances to reschedule",
+                    "A third change will cancel your booking",
+                    "You may lose your test fee completely",
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                This rule is very important for learners in West London, where
+                test centres are already in high demand. Because of this change,
+                it is strongly recommended that you only book your test when
+                your instructor confirms you are fully ready during your manual
+                driving lessons or automatic training sessions.
+              </p>
+            </section>
+
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                You Must Book Your Own Test
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                From 12 May 2026, only the learner is allowed to book their
+                driving test. Driving schools, instructors, and third party apps
+                can no longer complete bookings on your behalf.
+              </p>
+
+              <div className="space-y-4">
+                <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
+                  Key points of this rule:
+                </p>
+
+                {/* BRANDED GRID LIST */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "You must log in and book yourself",
+                    "You must confirm you are the actual learner",
+                    "You must manually select your test date",
+                    "You must prevent automated bookings or bots",
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                This change has been introduced to stop unfair booking systems
+                that were blocking test availability in busy London centres.
+                Even though instructors cannot book for you, a professional
+                driving school London can still guide you on the best time to
+                book based on your progress.
+              </p>
+            </section>
+
+            <section className="space-y-6 pt-10 border-t border-gray-100">
               <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic">
                 Geographic Restrictions on Test Centres
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                From 9 June 2026, you can only move your test to a centre near
-                your first choice. You can pick from the three closest sites.
-                You cannot book a test in a quiet town and then move it to a
-                busy place like Greenford or Isleworth later.
+                From 9 June 2026, learners will face new restrictions when
+                changing test centres. You will only be allowed to switch your
+                test to one of the three nearest test centres from your original
+                booking location.
+              </p>
+
+              <div className="space-y-4">
+                <p className="text-lg text-gray-600 leading-relaxed font-bold uppercase tracking-tight text-sm italic">
+                  This means:
+                </p>
+
+                {/* BRANDED GRID LIST */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {[
+                    "No switching to distant quieter towns",
+                    "Only nearby test centres allowed",
+                    "Less flexibility in changing locations",
+                    "More consistency in test environments",
+                  ].map((item, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                For example, if you book in West London, you cannot later move
+                your test to a quieter rural area. This ensures fairness and
+                equal difficulty levels across all candidates. This is
+                especially important for learners who prepare through real
+                traffic conditions during their driving lessons in London.
+              </p>
+            </section>
+
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic">
+                How These Rules Affect Learners in West London
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                For learners in areas like Notting Hill, Ladbroke Grove, and
+                Shepherd’s Bush, these changes mean:
+              </p>
+
+              {/* BRANDED GRID LIST */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Less flexibility in test planning",
+                  "More importance on lesson readiness",
+                  "Higher pressure to pass first or second attempt",
+                  "Need for better preparation before booking",
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                This is why it is more important than ever to train with an
+                experienced instructor who understands local test routes and
+                DVSA expectations.
+              </p>
+            </section>
+
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                How to Prepare for These Changes
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                To stay ahead of the new system, learners should focus on proper
+                preparation rather than early booking. Here are some key tips:
+              </p>
+
+              {/* BRANDED GRID LIST */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Only book your test when your instructor confirms readiness",
+                  "Take consistent lessons to build confidence",
+                  "Practise common test routes in West London",
+                  "Focus on weak areas like roundabouts and parking",
+                  "Avoid rushing your test booking",
+                  "Follow your instructor’s feedback carefully",
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-lg text-gray-600 leading-relaxed">
+                A structured learning approach is the best way to avoid losing
+                test chances under the new rules.
               </p>
             </section>
 
@@ -141,7 +362,9 @@ export default function Blog1() {
                             : "bg-gray-50 hover:bg-gray-100"
                         }`}
                       >
-                        <span className="font-semibold text-gray-900">{faq.q}</span>
+                        <span className="font-semibold text-gray-900">
+                          {faq.q}
+                        </span>
                         <span
                           className={`text-xl font-bold transform transition-transform duration-300 ${
                             isOpen ? "rotate-45" : "rotate-0"
@@ -155,7 +378,9 @@ export default function Blog1() {
                           isOpen ? "max-h-96 py-4 bg-white" : "max-h-0"
                         }`}
                       >
-                        {isOpen && <p className="text-gray-700 text-lg">{faq.a}</p>}
+                        {isOpen && (
+                          <p className="text-gray-700 text-lg">{faq.a}</p>
+                        )}
                       </div>
                     </div>
                   );
@@ -164,16 +389,33 @@ export default function Blog1() {
             </section>
 
             {/* CONCLUSION */}
-            <section className="space-y-6 pt-4">
+            <section className="space-y-6 pt-16 border-t border-gray-100">
               <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic">
-                Conclusion: <span className="text-[#ff6600]">Getting Ready for Your 2026 Test</span>
+                Conclusion:{" "}
+                <span className="text-[#ff6600]">
+                  Getting Ready for Your 2026 Test
+                </span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                The new DVSA rules mean you must be sure of your skills before
-                you book. In West London, test spots are valuable. We help you
-                check your progress so you don't waste your two chances to move
-                a date. If you want to pass without the stress of these new
-                rules, get in touch with us today.
+                The new DVSA driving test rules in 2026 mean learners must be
+                more prepared, more focused, and more confident before booking
+                their test.
+                <br />
+                
+                In West London, where test demand is already very high, careful
+                planning is now essential. You only get limited chances to
+                change your booking, so preparation matters more than ever.
+                <br />
+                
+                With the right guidance from a professional driving school
+                London, you can track your progress properly, avoid unnecessary
+                booking mistakes, and make sure you are fully ready before
+                taking your test.
+                <br />
+               
+                If you want to pass with confidence and avoid stress under the
+                new system, start your training early, follow your instructor’s
+                advice, and book your test only when you are truly ready.
               </p>
             </section>
           </div>

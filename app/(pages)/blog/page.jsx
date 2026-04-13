@@ -12,7 +12,8 @@ const allPosts = [
     date: "MARCH 31, 2026",
     readTime: "5 MIN READ",
     category: "TEST PREP",
-    slug: "new-driving-test-rules-2026"
+    // Match this to Blog1 mapping
+    slug: "new-driving-test-rules-2026" 
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const allPosts = [
     date: "MARCH 31, 2026",
     readTime: "6 MIN READ",
     category: "LOCAL GUIDES",
+    // Match this to Blog2 mapping
     slug: "a40-westway-roadworks-2026"
   },
   {
@@ -30,10 +32,11 @@ const allPosts = [
     date: "MARCH 31, 2026",
     readTime: "4 MIN READ",
     category: "TIPS & TRICKS",
+    // Match this to Blog3 mapping
     slug: "manual-vs-automatic-benefits"
   },
- 
 ];
+ 
 
 export default function BlogPage() {
   const heroImg = "/images/hero-3.avif";
