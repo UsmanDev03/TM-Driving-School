@@ -38,11 +38,22 @@ const allPosts = [
     slug: "manual-vs-automatic-benefits",
     image: "/images/blog3.png",
   },
+  {
+    id: 4,
+    title: "How Many Driving Lessons Do You Need Before Your Test?",
+    description:
+      "Most learners need 40-50 hours of professional tuition. Discover how local West London factors like the A40 and narrow Chelsea streets impact your timeline.",
+    date: "APRIL 15, 2026",
+    readTime: "7 MIN READ",
+    category: "LEARNER GUIDES",
+    slug: "how-many-driving-lessons-required",
+    image: "/images/blog4.png", 
+  },
 ];
 
 export default function BlogPage() {
   const heroImg = "/images/hero-3.avif";
-  // Updated to show initial set (you can set this to 3 or 4 depending on preference)
+ 
   const [visiblePosts, setVisiblePosts] = useState(4);
 
   const loadMore = () => {
@@ -96,7 +107,7 @@ export default function BlogPage() {
             <div className="w-full lg:w-1/2 p-4 md:p-6 flex items-center justify-center">
               <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[30px] shadow-sm">
                 <img
-                  src={post.image} // Changed from heroImg to post.image
+                  src={post.image} 
                   alt={post.title}
                   className="w-full h-full object-cover"
                 />

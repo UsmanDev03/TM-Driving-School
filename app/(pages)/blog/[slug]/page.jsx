@@ -1,6 +1,7 @@
 import Blog1 from "../_components/Blog1";
 import Blog2 from "../_components/Blog2";
 import Blog3 from "../_components/Blog3";
+import Blog4 from "../_components/Blog4";
 
 // --- SEO METADATA GENERATOR ---
 export async function generateMetadata({ params }) {
@@ -18,6 +19,10 @@ export async function generateMetadata({ params }) {
     "manual-vs-automatic-benefits": {
       title: "Manual vs Automatic 2026 | Driving Lessons London Guide",
       description: "Learn manual vs automatic in 2026. Discover costs, benefits, insurance savings, and why manual driving lessons in London still matter today.",
+    },
+    "how-many-driving-lessons-required": {
+      title: "How Many Driving Lessons Do I Need? | West London 2026 Guide",
+      description: "Find out how many hours of driving lessons are needed to pass your test in 2026. Expert breakdown for Fulham, Notting Hill, and London learners.",
     }
   };
 
@@ -37,6 +42,7 @@ export default async function BlogPost({ params }) {
     "new-driving-test-rules-2026": <Blog1 />,
     "a40-westway-roadworks-2026": <Blog2 />,
     "manual-vs-automatic-benefits": <Blog3 />,
+    "how-many-driving-lessons-required": <Blog4 />,
   };
 
   return (
