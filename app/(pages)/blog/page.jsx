@@ -43,7 +43,7 @@ const allPosts = [
     title: "How Many Driving Lessons Do You Need Before Your Test?",
     description:
       "Most learners need 40-50 hours of professional tuition. Discover how local West London factors like the A40 and narrow Chelsea streets impact your timeline.",
-    date: "APRIL 15, 2026",
+    date: "MAY 1, 2026",
     readTime: "7 MIN READ",
     category: "LEARNER GUIDES",
     slug: "how-many-driving-lessons-required",

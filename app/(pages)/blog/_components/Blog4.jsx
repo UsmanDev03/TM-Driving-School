@@ -35,7 +35,7 @@ export default function Blog4() {
 
             <div className="flex items-center justify-center gap-6 text-gray-400 font-bold uppercase tracking-widest text-[11px] border-y border-gray-100 py-5">
               <div className="flex items-center gap-2">
-                <Calendar size={14} className="text-[#ff6600]" /> APRIL 15, 2026
+                <Calendar size={14} className="text-[#ff6600]" /> MAY 1, 2026
               </div>
               <div className="text-gray-200">|</div>
               <div className="flex items-center gap-2">
@@ -172,13 +172,17 @@ export default function Blog4() {
                       <td className="px-6 py-4 text-gray-900">
                         1 lesson per week
                       </td>
-                      <td className="px-6 py-4 text-[#ff6600]">Steady learners</td>
+                      <td className="px-6 py-4 text-[#ff6600]">
+                        Steady learners
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
                       <td className="px-6 py-4 text-gray-900">
                         2 lessons per week
                       </td>
-                      <td className="px-6 py-4 text-[#ff6600]">Faster progress</td>
+                      <td className="px-6 py-4 text-[#ff6600]">
+                        Faster progress
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
                       <td className="px-6 py-4 text-gray-900">
@@ -239,14 +243,14 @@ export default function Blog4() {
                   "Complex junctions",
                   "Difficult parking situations",
                   "Stop-start driving",
-                   ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
-                    >
-                      {item}
-                    </div>
-                  ))}
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                  >
+                    {item}
+                  </div>
+                ))}
               </div>
 
               <p className="text-lg text-gray-600 leading-relaxed font-medium pt-4">
@@ -272,14 +276,14 @@ export default function Blog4() {
                   "General road awareness",
                   "Parking",
                   "Confidence on familiar roads",
-                  ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
-                    >
-                      {item}
-                    </div>
-                  ))}
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                  >
+                    {item}
+                  </div>
+                ))}
               </div>
 
               <p className="text-lg text-gray-600 leading-relaxed font-medium pt-4">
@@ -420,14 +424,14 @@ export default function Blog4() {
                   "Can commit to several lessons per week",
                   "Already understand basic driving skills",
                   "Need focused test preparation",
-                   ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
-                    >
-                      {item}
-                    </div>
-                  ))}
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                  >
+                    {item}
+                  </div>
+                ))}
               </div>
               <p className="text-lg text-gray-600 leading-relaxed font-medium">
                 However, complete beginners may still need a realistic number of
@@ -447,7 +451,7 @@ export default function Blog4() {
             </p>
 
             {/* GRID STYLING TO MATCH IMAGE_4C3097.PNG */}
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 "Mock tests",
                 "Manoeuvres",
@@ -456,14 +460,14 @@ export default function Blog4() {
                 "Independent driving",
                 "Test routes",
                 "Any recurring mistakes",
-                ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
-                    >
-                      {item}
-                    </div>
-                  ))}
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                >
+                  {item}
+                </div>
+              ))}
             </div>
             <p className="text-lg text-gray-600 leading-relaxed font-medium">
               Many learners take{" "}
