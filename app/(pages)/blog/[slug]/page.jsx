@@ -55,3 +55,4 @@ export default async function BlogPost({ params }) {
     </div>
   );
 }
+
