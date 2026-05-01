@@ -439,83 +439,86 @@ export default function Blog4() {
                 from zero.
               </p>
             </section>
-          </div>
-          {/* SECTION: FINAL TEST PREPARATION */}
-          <section className="space-y-6 pt-10 border-t border-gray-100">
-            <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
-              How many lessons should you take before the test itself?
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed font-medium">
-              In the final 1–2 weeks before your practical test, it is usually
-              helpful to take extra lessons focused on:
-            </p>
 
-            {/* GRID STYLING TO MATCH IMAGE_4C3097.PNG */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                "Mock tests",
-                "Manoeuvres",
-                "Roundabouts",
-                "Junctions",
-                "Independent driving",
-                "Test routes",
-                "Any recurring mistakes",
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+            {/* SECTION: FINAL TEST PREPARATION */}
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                How many lessons should you take before the test itself?
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed font-medium">
+                In the final 1–2 weeks before your practical test, it is usually
+                helpful to take extra lessons focused on:
+              </p>
+
+              {/* GRID STYLING TO MATCH IMAGE_4C3097.PNG */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Mock tests",
+                  "Manoeuvres",
+                  "Roundabouts",
+                  "Junctions",
+                  "Independent driving",
+                  "Test routes",
+                  "Any recurring mistakes",
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-900 font-bold text-sm uppercase border-l-4 border-[#ff6600] pl-4 py-2 bg-gray-50/50"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <p className="text-lg text-gray-600 leading-relaxed font-medium">
+                Many learners take{" "}
+                <span className="text-[#ff6600] font-black">2 to 5 final</span>{" "}
+                lessons before test day, depending on their confidence.
+              </p>
+            </section>
+
+            {/* SECTION: FINAL ANSWER */}
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                Final answer
+              </h2>
+
+              <p className="text-lg text-gray-600 leading-relaxed font-medium">
+                Most learners need{" "}
+                <span className="text-[#ff6600] font-black">
+                  40 to 50 hours
+                </span>{" "}
+                of professional driving lessons before taking their practical
+                driving test. Some need fewer, especially with private practice,
+                while nervous learners or learners in busy London areas may need
+                more.
+              </p>
+
+              <p className="text-lg text-gray-600 leading-relaxed font-medium mt-6">
+                The best measure is not the number of lessons. The best measure
+                is whether you can drive safely, independently, and confidently
+                without regular help from your instructor.
+              </p>
+            </section>
+
+            {/* SEPARATE SECTION */}
+            <section className="space-y-6 pt-10 border-t border-gray-100">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
+                Ready to find out how many lessons you need?
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed font-medium mt-4">
+                Book a driving lesson with{" "}
+                <a
+                  href="https://www.tmdriveschool.co.uk/"
+                  className="text-[#ff6600] font-black hover:underline underline-offset-4"
                 >
-                  {item}
-                </div>
-              ))}
-            </div>
-            <p className="text-lg text-gray-600 leading-relaxed font-medium">
-              Many learners take{" "}
-              <span className="text-[#ff6600] font-black">2 to 5 final</span>{" "}
-              lessons before test day, depending on their confidence.
-            </p>
-          </section>
-
-          {/* SECTION: FINAL ANSWER */}
-         <section className="space-y-6 pt-10 border-t border-gray-100">
-           <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
-              Final answer
-            </h2>
-
-            <p className="text-lg text-gray-600 leading-relaxed font-medium">
-              Most learners need{" "}
-              <span className="text-[#ff6600] font-black">40 to 50 hours</span>{" "}
-              of professional driving lessons before taking their practical
-              driving test. Some need fewer, especially with private practice,
-              while nervous learners or learners in busy London areas may need
-              more.
-            </p>
-
-            <p className="text-lg text-gray-600 leading-relaxed font-medium mt-6">
-              The best measure is not the number of lessons. The best measure is
-              whether you can drive safely, independently, and confidently
-              without regular help from your instructor.
-            </p>
-          </section>
-
-          {/* SEPARATE SECTION */}
-          <section className="space-y-6 pt-10 border-t border-gray-100">
-            <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
-              Ready to find out how many lessons you need?
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed font-medium mt-4">
-              Book a driving lesson with{" "}
-              <a
-                href="https://www.tmdriveschool.co.uk/"
-                className="text-[#ff6600] font-black hover:underline underline-offset-4"
-              >
-                TM Drive School
-              </a>{" "}
-              in Fulham, Notting Hill, South Kensington, or nearby West London
-              areas. Our instructor can assess your current level and recommend
-              the right plan for your test.
-            </p>
-          </section>
+                  TM Drive School
+                </a>{" "}
+                in Fulham, Notting Hill, South Kensington, or nearby West London
+                areas. Our instructor can assess your current level and
+                recommend the right plan for your test.
+              </p>
+            </section>
+          </div>
         </article>
       </div>
     </main>
