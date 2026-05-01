@@ -477,8 +477,8 @@ export default function Blog4() {
           </section>
 
           {/* SECTION: FINAL ANSWER */}
-          <section className="pt-10 border-t border-gray-100">
-            <h2 className="text-2xl font-black text-gray-900 uppercase italic mb-6">
+         <section className="space-y-6 pt-10 border-t border-gray-100">
+           <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
               Final answer
             </h2>
 
@@ -499,8 +499,8 @@ export default function Blog4() {
           </section>
 
           {/* SEPARATE SECTION */}
-          <section className="mt-12 pt-10 border-t border-gray-100">
-            <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic">
+          <section className="space-y-6 pt-10 border-t border-gray-100">
+            <h2 className="text-2xl md:text-3xl font-black text-gray-900 uppercase italic mb-6">
               Ready to find out how many lessons you need?
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed font-medium mt-4">
