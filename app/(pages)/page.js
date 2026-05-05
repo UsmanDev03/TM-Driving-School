@@ -5,7 +5,7 @@ import IntroSection from "../components/sections/IntroSection";
 
 export const metadata = {
   title: "TM Drive School | Manual Driving Lessons in West London",
-  description: "...",
+  description: "Learn to drive with confidence at TM Drive School. Expert manual driving lessons in London, high first-time pass rates, and affordable pricing. Book your lesson today",
   alternates: {
     canonical: "https://www.tmdriveschool.co.uk/",
   },

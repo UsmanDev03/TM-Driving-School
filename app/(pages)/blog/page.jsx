@@ -14,7 +14,7 @@ const allPosts = [
     readTime: "5 MIN READ",
     category: "TEST PREP",
     slug: "new-driving-test-rules-2026",
-    image: "/images/blog1.png",
+    image: "/images/blog1.webp",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const allPosts = [
     readTime: "6 MIN READ",
     category: "LOCAL GUIDES",
     slug: "a40-westway-roadworks-2026",
-    image: "/images/blog2.png",
+    image: "/images/blog2.webp",
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const allPosts = [
     readTime: "4 MIN READ",
     category: "TIPS & TRICKS",
     slug: "manual-vs-automatic-benefits",
-    image: "/images/blog3.png",
+    image: "/images/blog3.webp",
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const allPosts = [
     readTime: "7 MIN READ",
     category: "LEARNER GUIDES",
     slug: "how-many-driving-lessons-required",
-    image: "/images/blog4.png", 
+    image: "/images/blog4.webp", 
   },
 ];
 

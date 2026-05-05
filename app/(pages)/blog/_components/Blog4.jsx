@@ -48,7 +48,7 @@ export default function Blog4() {
           <div className="mb-16 flex justify-center">
             <div className="relative aspect-video overflow-hidden rounded-[30px] w-full max-w-4xl shadow-sm">
               <img
-                src="/images/blog4.png"
+                src="/images/blog4.webp"
                 alt="Driving Lesson Requirements 2026"
                 className="w-full h-full object-cover"
               />
