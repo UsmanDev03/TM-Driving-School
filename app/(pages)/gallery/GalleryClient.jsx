@@ -20,7 +20,7 @@ const sliderImages = [
 ];
 
 // ✅ Grid images (1 → 22)
-const gridImages = Array.from({ length: 22 }, (_, i) => ({
+const gridImages = Array.from({ length: 24 }, (_, i) => ({
   id: i + 1,
   url: `/images/gallery/${i + 1}.jpeg`,
 }));

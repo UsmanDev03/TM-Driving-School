@@ -530,4 +530,13 @@ export const testimonialsData = [
     img: "/images/star.png",
     role: "Verified Student"
   },
+  {
+    id: 19,
+    name: "Lucia Emi Shindate", 
+    rating: 5,
+    text: "Turon is a wonderfully calm, supportive and highly road-savvy driving instructor. I’ve been really lucky and grateful to learn manual with him; I truly appreciate how patient, communicative and encouraging he has been throughout my journey. He continuously tailored our lessons to maximise my confidence and skills before the test, targeting the right points to help me improve and grow into a well-rounded driver, across various London areas for the longer term too. Thank you Turon for believing in me - will do my best to remember and apply all skills you’ve given me for my lifetime!",
+    date: "May 2026",
+    img: "/images/star.png",
+    role: "Verified Student"
+  },
 ];
