@@ -12,7 +12,136 @@ import {
   MapPin,
   ShieldCheck,
 } from "lucide-react";
+
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Manual Driving Lessons",
+  "provider": {
+    "@type": "DrivingSchool",
+    "name": "TM Drive School",
+    "@id": "https://www.tmdriveschool.co.uk/#organization"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "West London",
+    "containedInPlace": {
+      "@type": "City",
+      "name": "London",
+      "containedInPlace": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      }
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Driving Lesson Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "position": 1,
+        "name": "10 Hour Program",
+        "price": "450",
+        "priceCurrency": "GBP",
+        "priceValidUntil": "2026-12-31",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "10 Hour Driving Lesson Package",
+          "description": "£45 per hour - Total £450"
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 2,
+        "name": "20 Hour Program",
+        "price": "860",
+        "priceCurrency": "GBP",
+        "priceValidUntil": "2026-12-31",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "20 Hour Driving Lesson Package",
+          "description": "£43 per hour - Total £860"
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 3,
+        "name": "30 Hour Program",
+        "price": "1260",
+        "priceCurrency": "GBP",
+        "priceValidUntil": "2026-12-31",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "30 Hour Driving Lesson Package",
+          "description": "£42 per hour - Total £1260"
+        }
+      },
+      {
+        "@type": "Offer",
+        "position": 4,
+        "name": "40 Hour Program",
+        "price": "1600",
+        "priceCurrency": "GBP",
+        "priceValidUntil": "2026-12-31",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "40 Hour Driving Lesson Package",
+          "description": "£40 per hour - Total £1600"
+        }
+      }
+    ]
+  }
+};
+
+// WebPage Schema with Breadcrumbs
+const webpageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.tmdriveschool.co.uk/services/#webpage",
+  "url": "https://www.tmdriveschool.co.uk/services",
+  "name": "Driving Lesson Prices | Block Booking Discounts West London",
+  "description": "Affordable manual driving lessons in West London. Block booking discounts from £40-£45 per hour. Introductory offer available.",
+  "isPartOf": {
+    "@id": "https://www.tmdriveschool.co.uk/#website"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.tmdriveschool.co.uk/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Prices & Areas",
+        "item": "https://www.tmdriveschool.co.uk/services"
+      }
+    ]
+  }
+};
+
+// PriceSpecification Schema
+const priceSpecificationSchema = {
+  "@context": "https://schema.org",
+  "@type": "PriceSpecification",
+  "price": "48",
+  "priceCurrency": "GBP",
+  "unitText": "hour",
+  "eligibleRegion": {
+    "@type": "City",
+    "name": "West London"
+  }
+};
+
+
 // Animation Variants
+
+
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   animate: { opacity: 1, y: 0 },
@@ -91,6 +220,19 @@ const PricingPage = () => {
   ];
 
   return (
+     <>
+          <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(priceSpecificationSchema) }}
+      />
     <div className="bg-[#fafafa] min-h-screen pb-24 font-sans text-gray-900 overflow-x-hidden">
       {/* 1. HERO BANNER - Parallax Effect */}
       <div className="relative h-[500px] w-full overflow-hidden">
@@ -347,6 +489,7 @@ const PricingPage = () => {
         </div>
       </div>
     </div>
+  </>
   );
 };
 

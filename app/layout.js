@@ -24,34 +24,54 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // const jsonLd = {
+  //   "@context": "https://schema.org",
+  //   "@type": "LocalBusiness",
+  //   "name": "TM Drive",
+  //   "alternateName": "TM Driving School",
+  //   "url": "https://www.tmdriveschool.co.uk/",
+  //   "telephone": "+44 7949 488211",
+  //   "email": "info@tmdriveschool.co.uk",
+  //   "description": "TM Drive offers high-standard manual driving lessons in West London.",
+  //   "address": {
+  //     "@type": "PostalAddress",
+  //     "addressLocality": "London",
+  //     "addressRegion": "West London",
+  //     "addressCountry": "GB"
+  //   },
+  //   "areaServed": [
+  //     { "@type": "City", "name": "West London" },
+  //     { "@type": "City", "name": "Central London" },
+  //     { "@type": "City", "name": "South West London" },
+  //     { "@type": "City", "name": "North West London" }
+  //   ],
+  //   "employee": {
+  //     "@type": "Person",
+  //     "name": "Turon",
+  //     "jobTitle": "DVSA Approved Driving Instructor"
+  //   }
+  // };
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "TM Drive",
-    "alternateName": "TM Driving School",
-    "url": "https://www.tmdriveschool.co.uk/",
-    "telephone": "+44 7949 488211",
-    "email": "turonmiah123@aol.com",
-    "description": "TM Drive offers high-standard manual driving lessons in West London.",
+    "@type": "DrivingSchool", // LocalBusiness se behtar hai
+    "@id": "https://www.tmdriveschool.co.uk/#organization",
+    "name": "TM Drive School",
+    "url": "https://www.tmdriveschool.co.uk",
+    "logo": "https://www.tmdriveschool.co.uk/images/logo.webp",
+    "telephone": "+447949488211",
+    "email": "info@tmdriveschool.co.uk",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "London",
       "addressRegion": "West London",
       "addressCountry": "GB"
     },
-    "areaServed": [
-      { "@type": "City", "name": "West London" },
-      { "@type": "City", "name": "Central London" },
-      { "@type": "City", "name": "South West London" },
-      { "@type": "City", "name": "North West London" }
-    ],
-    "employee": {
-      "@type": "Person",
-      "name": "Turon",
-      "jobTitle": "DVSA Approved Driving Instructor"
-    }
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61587049696186",
+      "https://www.instagram.com/tmdrive1",
+      "https://x.com/tmdrive1"
+    ]
   };
-
   return (
     <html lang="en">
       

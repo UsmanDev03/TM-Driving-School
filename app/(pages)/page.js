@@ -1,5 +1,3 @@
-import Footer from "../components/layouts/Footer";
-import Header from "../components/layouts/Header";
 import HeroSlider from "../components/sections/HeroSlider";
 import IntroSection from "../components/sections/IntroSection";
 
@@ -10,16 +8,30 @@ export const metadata = {
     canonical: "https://www.tmdriveschool.co.uk/",
   },
 };
-export default function Home() {
 
+export default function Home() {
+  // Only Service Schema - specific to home page
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     "serviceType": "Manual Driving Lessons",
     "provider": {
-      "@type": "LocalBusiness",
+      "@type": "DrivingSchool",
       "name": "TM Drive School",
+      "@id": "https://www.tmdriveschool.co.uk/#organization",
       "url": "https://www.tmdriveschool.co.uk/"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "West London",
+      "containedInPlace": {
+        "@type": "City",
+        "name": "London",
+        "containedInPlace": {
+          "@type": "Country",
+          "name": "United Kingdom"
+        }
+      }
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -27,51 +39,42 @@ export default function Home() {
       "itemListElement": [
         {
           "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "Standard Manual Lessons" }
+          "position": 1,
+          "itemOffered": { 
+            "@type": "Service", 
+            "name": "Standard Manual Lessons",
+            "description": "Pay as you go manual driving lessons in West London"
+          }
         },
         {
           "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "Intensive Driving Courses" }
+          "position": 2,
+          "itemOffered": { 
+            "@type": "Service", 
+            "name": "Intensive Driving Courses",
+            "description": "Fast-track your driving test with our intensive courses"
+          }
         },
         {
           "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "Pass Plus Training" }
+          "position": 3,
+          "itemOffered": { 
+            "@type": "Service", 
+            "name": "Pass Plus Training",
+            "description": "Advanced training for new drivers to reduce insurance"
+          }
         }
       ]
-    }
-  }
-
-
-  const ratingJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "TM Drive School",
-    "url": "https://www.tmdriveschool.co.uk/",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "bestRating": "5",
-      "ratingCount": "84",
-      "reviewCount": "84"
     }
   };
 
   return (
     <>
-      {/* Page content */}
-      {/* <Header/> */}
       <HeroSlider />
       <IntroSection />
-      {/* <Footer/> */}
-
-      {/* JSON-LDs */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(ratingJsonLd) }}
       />
     </>
   );
