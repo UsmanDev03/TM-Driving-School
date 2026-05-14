@@ -111,7 +111,7 @@ const getBreadcrumbSchema = (slug, title) => {
       },
       {
         "@type": "ListItem",
-        "position": 2",
+        "position": 2,
         "name": "Blog",
         "item": "https://www.tmdriveschool.co.uk/blog"
       },
